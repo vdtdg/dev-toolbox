@@ -1,0 +1,114 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding: 15px;
+    border-radius: 0.5rem;
+    height: calc(100vh - 30px);
+    min-width: 320px;
+}
+
+.tool-list {
+    background-color: var(--background-tint);
+    width: 20%;
+    max-width: 300px;
+    min-width: 120px;
+    min-height: 100px;
+    border-radius: 0.5rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.tool-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.tool-list li {
+    text-decoration: none;
+}
+
+.tool-list-title {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 1rem;
+}
+
+.toolbox-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    gap: 3px;
+}
+
+.tool-link {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: monospace;
+    color: var(--white);
+    display: block;
+    padding: 1vh 15px;
+    background-color: var(--middleground);
+    transition: background-color 0.3s ease;
+}
+
+.tool-link:hover {
+    background-color: var(--foreground);
+    color: var(--white-clearer);
+}
+
+.tool-link.active {
+    background-color: var(--support);
+    color: var(--white-clearer);
+    font-weight: bold;
+}
+
+.toolbox-footer {
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    width: max(100%, 320px);
+    border-radius: 0.5rem;
+    background-color: var(--background-tint);
+}
+
+.toolbox-footer-text {
+    font-size: 1.5vh;
+    font-family: monospace;
+    color: var(--white);
+    padding-left: max(1vw, 15px);
+}
+
+@media (max-width: 600px) {
+    .toolbox-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tool-list {
+        background-color: var(--background-tint);
+        width: 100%;
+        height: 20vh;
+        max-width: 600px;
+        border-radius: 0.5rem;
+        overflow-y: auto;
+    }
+
+    .tool-link {
+        font-size: 0.8rem;
+    }
+
+    .toolbox-footer {
+        height: 10vh;
+    }
+}

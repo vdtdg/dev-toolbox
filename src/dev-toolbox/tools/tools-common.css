@@ -1,0 +1,117 @@
+.tool-container {
+    background-color: var(--background-tint);
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.tool-section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    justify-content: start;
+    align-content: center;
+    gap: 10px;
+}
+
+.tool-title {
+    font-size: 1.61rem;
+    text-align: center;
+}
+
+.field {
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 0.7rem;
+    border: 1px solid var(--foreground-tint);
+    background-color: var(--foreground);
+    color: var(--white);
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.25s;
+    border-radius: 2rem;
+}
+
+.action-button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.action-button-group {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.action-button:last-child {
+    margin-right: 0;
+}
+
+.fixed-bottom {
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.field-label {
+    padding-top: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.centered-column-field-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.field:focus {
+    border-color: var(--white);
+    outline: none;
+}
+
+.mode-section {
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--white);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.bottom-warning {
+    font-size: 0.8rem;
+    margin-top: auto;
+    padding: 0.8rem;
+}
+
+.timer-display {
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 1rem;
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary);
+}
+
+.tooltip {
+    background-color: var(--foreground);
+    color: var(--white);
+    padding: 7px;
+    border-radius: 0.3rem;
+}
