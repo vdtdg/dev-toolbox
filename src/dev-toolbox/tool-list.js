@@ -14,6 +14,7 @@ import AsciiReferenceTable from "./tools/ascii/ascii-reference-table";
 import HelpMeStuckInVim from "./tools/vim/help-me-stuck-in-vim";
 import Ipv4Helper from "./tools/network/ipv4-helper";
 import React from "react";
+import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-timestamp-parser";
 
 export const toolList = [
     {
@@ -70,6 +71,11 @@ export const toolList = [
         path: "timestamp-to-time",
         name: "Timestamp to time",
         element: <TimestampToTime/>,
+    },
+    {
+        path: "linkedin-post-date-parser",
+        name: "LinkedIn Post Date Parser",
+        element: <LinkedinTimestampParser/>,
     },
     {
         path: "number-helper",
