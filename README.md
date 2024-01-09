@@ -63,6 +63,7 @@ Any contributions you make are greatly appreciated.
   + jwt helper
   + explain this shell command
   + image resizer
+  + SQL Polyglot tool.
 
 ## License
 Distributed under the GPU GPLv3 License. See LICENSE for more information.
