@@ -13,7 +13,7 @@ export default function HtmlEncoderDecoder() {
     const decode = (input) => {
         let str = input;
         let textarea = document.createElement("textarea");
-        textarea.innerHTML = str;
+        textarea.textContent = str;
         return textarea.value;
     }
 
