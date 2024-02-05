@@ -48,6 +48,8 @@ Any contributions you make are greatly appreciated.
 - Maybe join similar tools into one (I'm thinking all the cryptography tools for example)
 - Dark and light theme with a switch
 - Assign categories to tools and add these categories into the tool list display as a collapsible list. 
+- Add a pause button in the Pomodoro Tool
+- Add a work session visualization for the pomodoro tool.
 - New tools ideas:
   + crontab helper / generator
   + Emoji picker
