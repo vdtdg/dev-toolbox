@@ -66,6 +66,7 @@ Any contributions you make are greatly appreciated.
   + explain this shell command
   + image resizer
   + SQL Polyglot tool.
+  + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
 
 ## License
 Distributed under the GPU GPLv3 License. See LICENSE for more information.
