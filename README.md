@@ -66,6 +66,7 @@ Any contributions you make are greatly appreciated.
   + explain this shell command
   + image resizer
   + SQL Polyglot tool.
+  + SQL joins explanation
   + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
 
 ## License
