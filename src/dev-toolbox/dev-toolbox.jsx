@@ -54,8 +54,8 @@ export default function DevToolBox() {
                 </div>
                 {categories.map((category) => (
                   <details key={category}>
-                    <summary>{category}</summary>
-                    <ul>
+                    <summary className="category-title">{category}</summary>
+                    <ul className="links-ul">
                       {filteredTools
                         .filter((tool) => tool.category === category)
                         .map((tool) => (
@@ -86,9 +86,9 @@ export default function DevToolBox() {
                 />
               </div>
               {categories.map((category) => (
-                <details key={category}>
-                  <summary>{category}</summary>
-                  <ul>
+                <details key={category} className="category-section">
+                  <summary className="category-title">{category}</summary>
+                  <ul className="links-ul">
                     {filteredTools
                       .filter((tool) => tool.category === category)
                       .map((tool) => (
@@ -99,6 +99,7 @@ export default function DevToolBox() {
                         </li>
                       ))}
                   </ul>
+                  <br />
                 </details>
               ))}
             </aside>

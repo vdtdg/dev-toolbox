@@ -41,6 +41,14 @@
   padding-right: 4px;
   font-size: 1rem;
 }
+.category-title {
+  font-size: 1rem;  
+}
+.links-ul {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  background-color: rgb(35, 35, 35);
+}
 
 .toolbox-container {
   display: flex;
@@ -51,13 +59,18 @@
   gap: 3px;
 }
 
+.category-section {
+  padding: 0 10px;
+  margin-bottom: 7px;
+}
+
 .tool-link {
   text-decoration: none;
   font-size: 1rem;
   font-family: monospace;
   color: var(--white);
   display: block;
-  padding: 1vh 15px;
+  padding: 7px;
   background-color: var(--middleground);
   transition: background-color 0.3s ease;
 }
@@ -101,7 +114,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -111,8 +124,8 @@
   }
 
   .tool-link {
-    font-size: 4vw;
-    min-height: 45px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
@@ -198,7 +211,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -207,8 +220,8 @@
   }
 
   .tool-link {
-    font-size: 1.6rem;
-    min-height: 45px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
@@ -275,7 +288,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -283,8 +296,8 @@
   }
 
   .tool-link {
-    font-size: 1.9rem;
-    min-height: 51px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
@@ -355,7 +368,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -363,8 +376,8 @@
   }
 
   .tool-link {
-    font-size: 2rem;
-    min-height: 52px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
@@ -425,7 +438,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 1.9rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -433,8 +446,8 @@
   }
 
   .tool-link {
-    font-size: 1.5rem;
-    min-height: 53px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
@@ -489,7 +502,7 @@
     padding-bottom: 10px;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
 
   .tool-list {
@@ -497,8 +510,8 @@
   }
 
   .tool-link {
-    font-size: 1.7rem;
-    min-height: 58px;
+    font-size: 1rem;
+    min-height: fit-content;
   }
 
   .toolbox-footer {
