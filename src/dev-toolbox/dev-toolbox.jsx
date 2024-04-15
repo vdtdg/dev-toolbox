@@ -109,7 +109,7 @@ export default function DevToolBox() {
           <div className="toolbox-footer-text">
             All tools are running locally in your browser: no data is sent to
             the server &nbsp;|&nbsp; Made by{" "}
-            <a href="https://valerian.dtdg.fr">Valerian de Thézan de Gaussan</a>{" "}
+            <a href="https://valerian.dtdg.fr">Valérian de Thézan de Gaussan</a>{" "}
             &nbsp;|&nbsp; Code is open-sourced{" "}
             <a href="https://github.com/vdtdg/dev-toolbox">here</a>,
             contributions are welcomed!
