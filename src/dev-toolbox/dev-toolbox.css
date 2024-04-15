@@ -41,9 +41,14 @@
   padding-right: 4px;
   font-size: 1rem;
 }
+
 .category-title {
-  font-size: 1rem;  
+  font-size: 1rem;
+  color: var(--white);
+  font-family: monospace;
+  font-style: normal;
 }
+
 .links-ul {
   padding: 0 10px;
   margin-bottom: 10px;
@@ -61,7 +66,6 @@
 
 .category-section {
   padding: 0 10px;
-  margin-bottom: 7px;
 }
 
 .tool-link {

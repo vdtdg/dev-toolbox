@@ -1,16 +1,15 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
-import React from "react";
+import {NavLink, Outlet, useLocation} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 import "./dev-toolbox.css";
 
 import NoTool from "./tools/no-tool";
-import { toolList } from "./tool-list";
-import { slide as Menu } from "react-burger-menu";
-import { useState, useEffect } from "react";
+import {toolList} from "./tool-list";
+import {slide as Menu} from "react-burger-menu";
 
 export default function DevToolBox() {
   const currentLocation = useLocation().pathname;
   const noToolLoaded = currentLocation === "/" || currentLocation === "/";
-  const tool = noToolLoaded ? <NoTool /> : <Outlet />;
+  const tool = noToolLoaded ? <NoTool/> : <Outlet/>;
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const categories = [...new Set(toolList.map((tool) => tool.category))];
@@ -37,7 +36,7 @@ export default function DevToolBox() {
           {isMobile ? (
             <Menu
               isOpen={isOpen}
-              onStateChange={({ isOpen }) => setIsOpen(isOpen)}
+              onStateChange={({isOpen}) => setIsOpen(isOpen)}
             >
               <aside className="tool-list">
                 <li key="tool-list-title" className="tool-list-title">
@@ -45,7 +44,7 @@ export default function DevToolBox() {
                 </li>
                 <div className="searchContain">
                   <input
-                    className="search-bar"
+                    className="search-bar field"
                     type="search"
                     placeholder="Search ..."
                     value={searchTerm}
@@ -78,7 +77,7 @@ export default function DevToolBox() {
               </li>
               <div className="searchContain">
                 <input
-                  className="search-bar"
+                  className="search-bar field"
                   type="search"
                   placeholder="Search tools..."
                   value={searchTerm}
@@ -99,7 +98,7 @@ export default function DevToolBox() {
                         </li>
                       ))}
                   </ul>
-                  <br />
+                  <br/>
                 </details>
               ))}
             </aside>
