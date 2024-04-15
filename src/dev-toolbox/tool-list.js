@@ -21,7 +21,7 @@ export const toolList = [
         path: "pomodoro",
         name: "Pomodoro",
         element: <Pomodoro/>,
-        category: "Data"
+        category: "Misc"
     },
     {
         path: "levenshtein-distance",
@@ -100,13 +100,13 @@ export const toolList = [
         path: "ascii-reference-table",
         name: "ASCII Reference Table",
         element: <AsciiReferenceTable/>,
-        category: "Data"
+        category: "Misc"
     },
     {
         path: "help-me-stuck-in-vim",
         name: "Help me I'm stuck in Vim!",
         element: <HelpMeStuckInVim/>,
-        category: "Data"
+        category: "Misc"
     },
     {
         path: "network-ipv4-helper",
