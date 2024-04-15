@@ -102,6 +102,11 @@
   padding-left: max(1vw, 15px);
 }
 
+.search-bar {
+  font-size: medium;
+  border-radius: 25px;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   .tool-list-title {
     margin-left: 10px;
@@ -193,7 +198,7 @@
     margin-top: 10px;
     width: 100%;
     padding: 5px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 10px;
   }
@@ -271,7 +276,7 @@
     margin-top: 10px;
     width: 100%;
     padding: 10px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 15px;
   }
@@ -350,8 +355,8 @@
   .search-bar {
     margin-top: 10px;
     width: 100%;
-    padding: 12px;
-    border-radius: 20px;
+    padding: 7px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 20px;
   }
@@ -420,8 +425,8 @@
   .search-bar {
     margin-top: 10px;
     width: 100%;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 7px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 22px;
   }
@@ -484,8 +489,8 @@
   .search-bar {
     margin-top: 10px;
     width: 100%;
-    padding: 14px;
-    border-radius: 20px;
+    padding: 7px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 30px;
   }
@@ -521,8 +526,8 @@
   .search-bar {
     margin-top: 10px;
     width: 100%;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 7px;
+    /* border-radius: 20px; */
     border: 1px solid #ccc;
     margin-bottom: 30px;
   }
