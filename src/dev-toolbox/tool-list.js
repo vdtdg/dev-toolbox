@@ -27,56 +27,56 @@ export const toolList = [
         path: "levenshtein-distance",
         name: "Levenshtein Distance Calculator",
         element: <LevenshteinCalculator/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "uri-encoder-decoder",
         name: "Uri Encoder / Decoder",
         element: <UriEncoderDecoder/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "html-encoder-decoder",
         name: "HTML Encoder / Decoder",
         element: <HtmlEncoderDecoder/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "base64-encoder-decoder",
         name: "Base64 Encoder / Decoder",
         element: <Base64EncoderDecoder/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "md5-hasher",
         name: "MD5 Hasher",
         element: <MD5Hasher/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "sha1-hasher",
         name: "SHA1 Hasher",
         element: <SHA1Hasher/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "sha256-hasher",
         name: "SHA256 Hasher",
         element: <SHA256Hasher/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "sha512-hasher",
         name: "SHA512 Hasher",
         element: <SHA512Hasher/>,
-        category: "Cryptographie"
+        category: "Cryptography"
 
     },
     {
         path: "ripemd-160-hasher",
         name: "RIPEMD-160 Hasher",
         element: <RIPEMD160Hasher/>,
-        category: "Cryptographie"
+        category: "Cryptography"
     },
     {
         path: "timestamp-to-time",
