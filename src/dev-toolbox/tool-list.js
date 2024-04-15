@@ -21,80 +21,97 @@ export const toolList = [
         path: "pomodoro",
         name: "Pomodoro",
         element: <Pomodoro/>,
+        category: "Data"
     },
     {
         path: "levenshtein-distance",
         name: "Levenshtein Distance Calculator",
         element: <LevenshteinCalculator/>,
+        category: "Cryptographie"
     },
     {
         path: "uri-encoder-decoder",
         name: "Uri Encoder / Decoder",
         element: <UriEncoderDecoder/>,
+        category: "Cryptographie"
     },
     {
         path: "html-encoder-decoder",
         name: "HTML Encoder / Decoder",
         element: <HtmlEncoderDecoder/>,
+        category: "Cryptographie"
     },
     {
         path: "base64-encoder-decoder",
         name: "Base64 Encoder / Decoder",
         element: <Base64EncoderDecoder/>,
+        category: "Cryptographie"
     },
     {
         path: "md5-hasher",
         name: "MD5 Hasher",
         element: <MD5Hasher/>,
+        category: "Cryptographie"
     },
     {
         path: "sha1-hasher",
         name: "SHA1 Hasher",
         element: <SHA1Hasher/>,
+        category: "Cryptographie"
     },
     {
         path: "sha256-hasher",
         name: "SHA256 Hasher",
         element: <SHA256Hasher/>,
+        category: "Cryptographie"
     },
     {
         path: "sha512-hasher",
         name: "SHA512 Hasher",
         element: <SHA512Hasher/>,
+        category: "Cryptographie"
+
     },
     {
         path: "ripemd-160-hasher",
         name: "RIPEMD-160 Hasher",
         element: <RIPEMD160Hasher/>,
+        category: "Cryptographie"
     },
     {
         path: "timestamp-to-time",
         name: "Timestamp to time",
         element: <TimestampToTime/>,
+        category: "Time"
     },
     {
         path: "linkedin-post-date-parser",
         name: "LinkedIn Post Date Parser",
         element: <LinkedinTimestampParser/>,
+        category: "Time"
     },
     {
         path: "number-helper",
         name: "Number Helper",
         element: <NumberHelper/>,
+        category: "Number"
     },
     {
         path: "ascii-reference-table",
         name: "ASCII Reference Table",
         element: <AsciiReferenceTable/>,
+        category: "Data"
     },
     {
         path: "help-me-stuck-in-vim",
         name: "Help me I'm stuck in Vim!",
         element: <HelpMeStuckInVim/>,
+        category: "Data"
     },
     {
         path: "network-ipv4-helper",
         name: "IPv4 Helper",
         element: <Ipv4Helper/>,
+        category: "Number"
     }
 ]

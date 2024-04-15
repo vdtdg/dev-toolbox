@@ -177,3 +177,7 @@ td {
     padding-right: 3px;
     color: var(--secondary)
 }
+
+.searchContain {
+    padding: 0 7px;
+  }
