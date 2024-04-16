@@ -1,183 +1,169 @@
 :root {
-    --primary: #67cef6;
-    --primary-shade: #075978;
-    --primary-tint: #a2e1fa;
-    --secondary: #c5b36a;
-    --secondary-shade: #5c5124;
-    --secondary-tint: #dcd1a5;
-    --support: #84a578;
-    --support-shade: #536e49;
-    --support-tint: #a4bc9b;
-    --background: #101010;
-    --background-tint: #1a1a1a;
-    --foreground: #404040;
-    --foreground-tint: #666666;
-    --middleground: #313131;
-    --white-shadow: #b1b1b1;
-    --white: #ddd;
-    --white-clearer: #fff;
+  --primary: #67cef6;
+  --primary-shade: #075978;
+  --primary-tint: #a2e1fa;
+  --secondary: #c5b36a;
+  --secondary-shade: #5c5124;
+  --secondary-tint: #dcd1a5;
+  --support: #84a578;
+  --support-shade: #536e49;
+  --support-tint: #a4bc9b;
+  --background: #101010;
+  --background-tint: #1a1a1a;
+  --foreground: #404040;
+  --foreground-tint: #666666;
+  --middleground: #313131;
+  --white-shadow: #b1b1b1;
+  --white: #f1f1f1;
+  --white-clearer: #fff;
 }
 
 html {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    font-family: Lato, Arial, sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    color: var(--white-clearer);
+  font-family: Lato, Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--white-clearer);
 
-    background-size: cover;
-    background-color: var(--background);
+  background-size: cover;
+  background-color: var(--background);
 }
 
 a {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 h1 {
-    margin-top: 2%;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-bottom: 0;
-    font-weight: 200;
-    font-size: 9vh;
-    line-height: 13.5vh;
-    color: var(--primary);
+  margin-top: 2%;
+  margin-bottom: 0;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--primary);
 
-    overflow: visible;
+  overflow: visible;
 }
 
 h2 {
-    margin-top: 2%;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-bottom: 0;
-    font-weight: 200;
-    font-size: 5vh;
-    line-height: 7.5vh;
-    color: var(--primary);
+  margin-top: 2%;
+  margin-bottom: 0;
+  font-weight: 200;
+  font-size: 1.75rem;
+  line-height: 2.625rem;
+  color: var(--primary);
 
-    overflow: visible;
+  overflow: visible;
 }
 
 h3 {
-    margin-top: 2%;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-bottom: 0;
-    font-weight: 200;
-    font-size: 3.5vh;
-    line-height: 5.25vh;
-    color: var(--primary);
+  margin-top: 2%;
+  margin-bottom: 0;
+  font-weight: 200;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  color: var(--primary);
 
-    overflow: visible;
+  overflow: visible;
 }
 
 p {
-    margin-top: 1%;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-bottom: 0;
-    font-weight: 300;
-    font-size: 2.5vh;
-    line-height: 3.75vh;
-    color: var(--white);
-    text-align: left;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--white);
+  text-align: left;
 
-    overflow: visible;
-    overflow-wrap: break-word;
+  overflow: visible;
+  overflow-wrap: break-word;
 }
 
 table {
-    color: var(--white);
-    background-color: var(--middleground);
-    width: 80%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-collapse: collapse;
+  color: var(--white);
+  background-color: var(--middleground);
+  width: 80%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-collapse: collapse;
 }
 
 thead {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    color: var(--white-clearer);
-    background-color: var(--foreground);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--white-clearer);
+  background-color: var(--foreground);
 }
 
 td {
-    padding: 3px;
+  padding: 3px;
 }
 
 .error-text {
-    font-family: monospace;
-    color: var(--white-shadow);
+  font-family: monospace;
+  color: var(--white-shadow);
 }
 
 .button {
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    justify-content: center;
-    align-content: center;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  justify-content: center;
+  align-content: center;
 }
 
 .primary-button {
-    background-color: var(--primary);
-    color: var(--background)
+  background-color: var(--primary);
+  color: var(--background)
 }
 
 .primary-button:hover {
-    background-color: var(--primary-shade);
-    color: var(--white-clearer);
-    box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--primary-shade);
+  color: var(--white-clearer);
+  box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .support-button {
-    background-color: var(--support);
-    color: var(--background);
+  background-color: var(--support);
+  color: var(--background);
 }
 
 .secondary-button {
-    background-color: var(--secondary);
-    color: var(--background);
+  background-color: var(--secondary);
+  color: var(--background);
 }
 
 .secondary-button:hover {
-    background-color: var(--secondary-shade);
-    color: var(--white-clearer);
-    box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--secondary-shade);
+  color: var(--white-clearer);
+  box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .support-button:hover {
-    background-color: var(--support-shade);
-    color: var(--white-clearer);
-    box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--support-shade);
+  color: var(--white-clearer);
+  box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .tertiary-button {
-    background-color: var(--background-tint);
-    color: var(--white);
+  background-color: var(--background-tint);
+  color: var(--white);
 }
 
 .tertiary-button:hover {
-    background-color: var(--foreground);
-    color: var(--white-clearer);
-    box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--foreground);
+  color: var(--white-clearer);
+  box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .keyboard-stroke {
-    font-family: monospace;
-    border: 1px solid #404040;
-    border-radius: 0.5rem;
-    padding-left: 3px;
-    padding-right: 3px;
-    color: var(--secondary)
+  font-family: monospace;
+  border: 1px solid #404040;
+  border-radius: 0.5rem;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: var(--secondary)
 }
-
-.searchContain {
-    padding: 0 7px;
-  }

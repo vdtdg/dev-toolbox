@@ -31,19 +31,19 @@ export const toolList = [
     },
     {
         path: "uri-encoder-decoder",
-        name: "Uri Encoder / Decoder",
+        name: "Uri Encoder - Decoder",
         element: <UriEncoderDecoder/>,
         category: "Cryptography"
     },
     {
         path: "html-encoder-decoder",
-        name: "HTML Encoder / Decoder",
+        name: "HTML Encoder - Decoder",
         element: <HtmlEncoderDecoder/>,
         category: "Cryptography"
     },
     {
         path: "base64-encoder-decoder",
-        name: "Base64 Encoder / Decoder",
+        name: "Base64 Encoder - Decoder",
         element: <Base64EncoderDecoder/>,
         category: "Cryptography"
     },
