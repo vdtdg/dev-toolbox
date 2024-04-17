@@ -1,7 +1,7 @@
 import {useState} from "react";
 import "../tools-common.css"
 
-export default function NumberHelper() {
+export default function ChangeBaseHelper() {
     const [base2, setBase2] = useState(null);
     const [base8, setBase8] = useState(null);
     const [base10, setBase10] = useState(null);

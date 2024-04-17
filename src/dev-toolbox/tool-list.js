@@ -9,7 +9,7 @@ import SHA256Hasher from "./tools/hasher/sha256-hasher";
 import SHA512Hasher from "./tools/hasher/sha512-hasher";
 import RIPEMD160Hasher from "./tools/hasher/ripemd-160-hasher";
 import TimestampToTime from "./tools/time/timestamp-to-time";
-import NumberHelper from "./tools/number/number-helper";
+import ChangeBaseHelper from "./tools/number/change-base-helper";
 import AsciiReferenceTable from "./tools/ascii/ascii-reference-table";
 import HelpMeStuckInVim from "./tools/vim/help-me-stuck-in-vim";
 import Ipv4Helper from "./tools/network/ipv4-helper";
@@ -21,7 +21,7 @@ export const toolList = [
         path: "pomodoro",
         name: "Pomodoro",
         element: <Pomodoro/>,
-        category: "Misc"
+        category: "Productivity"
     },
     {
         path: "levenshtein-distance",
@@ -91,9 +91,9 @@ export const toolList = [
         category: "Time"
     },
     {
-        path: "number-helper",
-        name: "Number Helper",
-        element: <NumberHelper/>,
+        path: "change-base-helper",
+        name: "Change Base Helper",
+        element: <ChangeBaseHelper/>,
         category: "Number"
     },
     {
