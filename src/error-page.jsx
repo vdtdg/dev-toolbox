@@ -6,7 +6,7 @@ export default function ErrorPage() {
     console.error(error);
 
     return <>
-        <div>
+        <div className="main-container">
             <h2>
                 Sorry, an error happened: {error.statusText}
             </h2>
