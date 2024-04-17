@@ -109,7 +109,7 @@ td {
 
 .button {
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   justify-content: center;
   align-content: center;
