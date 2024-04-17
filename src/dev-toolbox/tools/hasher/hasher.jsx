@@ -28,7 +28,7 @@ export default function Hasher(props) {
         <label htmlFor="input" className="field-label">Input:</label>
         <textarea
             id="input"
-            className="field"
+            className="field resize-vertical-only"
             value={input}
             onChange={e => setInput(e.target.value)}
         ></textarea>
