@@ -52,9 +52,11 @@ Any contributions you make are greatly appreciated.
 - Add a work session visualization for the pomodoro tool.
 - New tools ideas:
   + crontab helper / generator
+  + image resizer
+  + Color picker 
+  + Color shades generator
   + Emoji picker
   + JSON prettier / reducer
-  + Color shades generator
   + Postman-like helper for basic http queries
   + a basic whiteboard tool ?
   + Regexp display / explainer
@@ -64,7 +66,6 @@ Any contributions you make are greatly appreciated.
   + nginx conf verifier
   + jwt helper
   + explain this shell command
-  + image resizer
   + SQL Polyglot tool.
   + SQL joins explanation
   + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
