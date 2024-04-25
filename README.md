@@ -3,14 +3,22 @@ Except this one is free, without ads, no cookies, fully client side and lightwei
 
 
 ## Introduction
-Welcome to *Dev Toolbox*, a unique developer's companion for all your coding needs. This toolbox is designed to be simple, efficient, and respectful of your privacy. It's fully client-side, meaning all processing is done in your browser without the need for server-side interaction.
+Welcome to *Dev Toolbox*, a simple, efficient, and respectful of your privacy toolbox for developers. 
+
+It's fully client-side, meaning all processing is done in your browser without the need for server-side interaction.
+
+Bookmark it, keep a tab open while you work and have access to its tool. No need to install countless plugins on your IDEs.
+
+You're working on a colleague's computer and need a tool a base64 conversion tool? No need to install plugins and mess with other people's environments, just [open the toolbox on their browser](https://valerian.dtdg.fr/dev-toolbox) and use the toolbox directly.
 
 
 ## Features
-- **Lightweight**: Optimized for speed and efficiency.
-- **No Ads or Cookies**: Enjoy an uninterrupted experience without tracking.
-- **Fully Client-Side**: Your code and data stay on your machine, ensuring privacy and security.
-- **Versatile Tools**: Includes a variety of tools useful for developers regardless of different languages and frameworks.
+-  **Free**: Totally free, forever.
+-  **Lightweight**: Optimized for speed and efficiency.
+-  **No Ads or cookies**: Enjoy an uninterrupted experience without tracking.
+-  **Mobile friendly**: The responsive interface accommodate both mobile and desktop users.
+-  **Fully client-side**: Your data stay on your machine, and is processed locally, ensuring privacy and security.
+-  **Versatile tools**: Includes a variety of tools useful for developers regardless of different languages and frameworks.
 
 
 ## Usage
