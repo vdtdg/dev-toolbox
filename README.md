@@ -43,32 +43,36 @@ Any contributions you make are greatly appreciated.
 5. Open a pull request
 
 
-### Next features to be developed
-- Search bar for tools
-- Maybe join similar tools into one (I'm thinking all the cryptography tools for example)
-- Dark and light theme with a switch
-- Assign categories to tools and add these categories into the tool list display as a collapsible list. 
-- Add a pause button in the Pomodoro Tool
-- Add a work session visualization for the pomodoro tool.
-- New tools ideas:
+### Next features to be developed ordered by priority
+- Join the cryptography tools together.
+- Dark and light theme with a switch.
+- Pomodoro:
+  + Add a pause button
+  + Add a volume control
+  + What about saving the state of the pomodoro in local storage so that user can use other tools?
+  + Add a work session visualization for the pomodoro tool at the place of the timer.
+- Develop new tools:
   + crontab helper / generator
+  + another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
   + image resizer
-  + Color picker 
+  + Color picker
   + Color shades generator
   + Emoji picker
   + JSON prettier / reducer
   + Postman-like helper for basic http queries
-  + a basic whiteboard tool ?
+  + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
   + Regexp display / explainer
-  + SQL explainer
-  + huffman encoder ?
   + File diff
   + nginx conf verifier
   + jwt helper
   + explain this shell command
+  + SQL explainer
   + SQL Polyglot tool.
   + SQL joins explanation
-  + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
+  + huffman encoder ?
+  + a basic whiteboard tool ?
+- SEO optimization: how to make sure this toolbox ranks in various Search engines?
+
 
 ## License
 Distributed under the GPU GPLv3 License. See LICENSE for more information.
