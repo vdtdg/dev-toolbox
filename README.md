@@ -76,6 +76,7 @@ Any contributions you make are greatly appreciated.
   + nginx conf verifier
   + jwt helper
   + explain this shell command
+  + SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   + SQL explainer
   + SQL Polyglot tool.
   + SQL joins explanation
