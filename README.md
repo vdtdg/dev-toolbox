@@ -66,7 +66,9 @@ Any contributions you make are greatly appreciated.
   + Color picker
   + Color shades generator
   + Emoji picker
+  + Lorem Ipsum generator
   + JSON prettier / reducer
+  + [JSON to Pydantic](https://jsontopydantic.com/)
   + Postman-like helper for basic http queries
   + [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
   + Regexp display / explainer
@@ -79,6 +81,8 @@ Any contributions you make are greatly appreciated.
   + SQL joins explanation
   + huffman encoder ?
   + a basic whiteboard tool ?
+  + Various guide list
+    *  [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
 
 
