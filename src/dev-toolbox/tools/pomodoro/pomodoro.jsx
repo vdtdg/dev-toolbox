@@ -26,13 +26,14 @@ export default function Pomodoro() {
 	const [isRunning, setIsRunning] = useState(false);
 	const [currentSession, setCurrentSession] = useState(1);
 	const [mode, setMode] = useState(modes.notStarted);
+	const [volume, setVolume] = useState(0.05);
 
 	const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 	function playNote({ frequency, duration }) {
 		const oscillator = audioCtx.createOscillator();
 		const gainNode = audioCtx.createGain();
-		gainNode.gain.value = 0.03;
+		gainNode.gain.value = volume;
 		oscillator.connect(gainNode);
 		gainNode.connect(audioCtx.destination);
 		oscillator.type = "triangle"; // can be sine, square, sawtooth, triangle
@@ -42,6 +43,9 @@ export default function Pomodoro() {
 	}
 
 	async function playMelody() {
+		if (audioCtx.state === "suspended") {
+			await audioCtx.resume();
+		}
 		for (const note of notes) {
 			playNote(note);
 			await sleep(note.duration);
@@ -174,6 +178,16 @@ export default function Pomodoro() {
 						onChange={updateFieldValue(setLongBreakLength, 15, 0)}
 					/>
 				</label>
+				<label className="field-label">Volume: {volume}</label>
+				<input
+					type="range"
+					min="0"
+					max="1"
+					step="0.01"
+					value={volume}
+					onChange={(e) => setVolume(parseFloat(e.target.value))}
+					className="field"
+				/>
 			</div>
 			<div className="action-button-group">
 				{isRunning && mode !== modes.paused ? (
