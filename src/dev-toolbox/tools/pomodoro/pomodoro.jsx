@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "../tools-common.css";
+import { usePomodoro } from "./pomodoroContext";
 
 const modes = {
 	session: "Working Time!",
@@ -18,19 +19,30 @@ const notes = [
 ];
 
 export default function Pomodoro() {
-	const [sessionCount, setSessionCount] = useState(4);
-	const [sessionLength, setSessionLength] = useState(25);
-	const [shortBreakLength, setShortBreakLength] = useState(5);
-	const [longBreakLength, setLongBreakLength] = useState(15);
-	const [currentTimer, setCurrentTimer] = useState(sessionLength * 60);
-	const [isRunning, setIsRunning] = useState(false);
-	const [currentSession, setCurrentSession] = useState(1);
-	const [mode, setMode] = useState(modes.notStarted);
-	const [volume, setVolume] = useState(0.05);
+	const {
+		sessionCount,
+		setSessionCount,
+		sessionLength,
+		setSessionLength,
+		shortBreakLength,
+		setShortBreakLength,
+		longBreakLength,
+		setLongBreakLength,
+		currentTimer,
+		setCurrentTimer,
+		isRunning,
+		setIsRunning,
+		currentSession,
+		setCurrentSession,
+		mode,
+		setMode,
+		volume,
+		setVolume,
+	} = usePomodoro();
 
 	const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-	function playNote({ frequency, duration }) {
+	function playNote({ frequency, duration, volume }) {
 		const oscillator = audioCtx.createOscillator();
 		const gainNode = audioCtx.createGain();
 		gainNode.gain.value = volume;
@@ -47,7 +59,7 @@ export default function Pomodoro() {
 			await audioCtx.resume();
 		}
 		for (const note of notes) {
-			playNote(note);
+			playNote({ ...note, volume });
 			await sleep(note.duration);
 		}
 	}
@@ -134,6 +146,13 @@ export default function Pomodoro() {
 		}
 	};
 
+	const updateVolume = async (newVolume) => {
+		setVolume(newVolume);
+		audioCtx.resume().then(() => {
+			playNote({ ...notes[0], volume: newVolume });
+		});
+	};
+
 	return (
 		<section className="tool-section">
 			<h3 className="tool-title">Pomodoro</h3>
@@ -185,7 +204,9 @@ export default function Pomodoro() {
 					max="1"
 					step="0.01"
 					value={volume}
-					onChange={(e) => setVolume(parseFloat(e.target.value))}
+					onChange={(e) => {
+						updateVolume(parseFloat(e.target.value));
+					}}
 					className="field"
 				/>
 			</div>
@@ -226,10 +247,6 @@ export default function Pomodoro() {
 					.toString()
 					.padStart(2, "0")}{" "}
 				: {(currentTimer % 60).toString().padStart(2, "0")}
-			</div>
-			<div className="bottom-warning">
-				⚠️ Switching to another tool will reset your timer. If you want to use another tool, select
-				it in the list and Right Click ➜ Open in another tab.
 			</div>
 		</section>
 	);
