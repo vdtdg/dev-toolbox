@@ -57,7 +57,6 @@ Any contributions you make are greatly appreciated.
 - Join the cryptography tools together.
 - Dark and light theme with a switch.
 - Pomodoro:
-  - Add a volume control
   - What about saving the state of the pomodoro in local storage so that user can use other tools?
   - Add a work session visualization for the pomodoro tool at the place of the timer.
 - Develop new tools:
