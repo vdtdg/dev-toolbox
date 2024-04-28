@@ -1,49 +1,49 @@
 .timeline-container {
-	margin-top: 20px;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .timeline {
-	display: flex;
-	height: 20px;
-	width: 100%;
-	background-color: var(--background);
-	position: relative;
-	overflow: hidden;
+  display: flex;
+  height: 20px;
+  width: 100%;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
 }
 
 .timeline-segment {
-	flex-grow: 1;
-	position: relative;
-	overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .timeline-segment.completed {
-	background-color: var(--secondary-tint);
+  background-color: var(--secondary-accent);
 }
 
 .progress-indicator {
-	position: absolute;
-	height: 20px;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 0%;
-	background-color: var(--secondary-tint);
-	transition: width 1s linear;
+  position: absolute;
+  height: 20px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background-color: var(--secondary-accent);
+  transition: width 1s linear;
 }
 
 .timeline-segment.session {
-	background-color: var(--support);
+  background-color: var(--support);
 }
 
 .timeline-segment.shortBreak {
-	background-color: var(--primary-tint);
+  background-color: var(--primary-accent);
 }
 
 .timeline-segment.longBreak {
-	background-color: var(--primary-shade);
+  background-color: var(--primary-accent);  /* TODO need a rework of colors here */
 }

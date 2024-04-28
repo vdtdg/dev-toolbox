@@ -1,22 +1,22 @@
 .levenshtein-table {
-    width: 100%;
+  width: 100%;
 }
 
 .column1 {
-    width: 20%;
-    padding: max(10px, 1%);
+  width: 20%;
+  padding: max(10px, 1%);
 }
 
 .column2 {
-    width: 50%;
+  width: 50%;
 }
 
 .column3 {
-    width: 30%;
-    text-align: center;
+  width: 30%;
+  text-align: center;
 }
 
 .target-field {
-    background-color: var(--bg-level-4);
-    border-color: #989898;
+  background-color: var(--bg-level-4);
+  border-color: #989898;
 }

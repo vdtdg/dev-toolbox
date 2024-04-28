@@ -8,9 +8,12 @@ Welcome to _Dev Toolbox_, a simple, efficient, and respectful of your privacy to
 
 It's fully client-side, meaning all processing is done in your browser without the need for server-side interaction.
 
-Bookmark it, keep a tab open while you work and have access to its tool. No need to install countless plugins on your IDEs.
+Bookmark it, keep a tab open while you work and have access to its tool. No need to install countless plugins on your
+IDEs.
 
-You're working on a colleague's computer and need a tool a base64 conversion tool? No need to install plugins and mess with other people's environments, just [open the toolbox on their browser](https://valerian.dtdg.fr/dev-toolbox) and use the toolbox directly.
+You're working on a colleague's computer and need a tool a base64 conversion tool? No need to install plugins and mess
+with other people's environments, just [open the toolbox on their browser](https://valerian.dtdg.fr/dev-toolbox) and use
+the toolbox directly.
 
 ## Features
 
@@ -19,7 +22,8 @@ You're working on a colleague's computer and need a tool a base64 conversion too
 - **No Ads or cookies**: Enjoy an uninterrupted experience without tracking.
 - **Mobile friendly**: The responsive interface accommodate both mobile and desktop users.
 - **Fully client-side**: Your data stay on your machine, and is processed locally, ensuring privacy and security.
-- **Versatile tools**: Includes a variety of tools useful for developers regardless of different languages and frameworks.
+- **Versatile tools**: Includes a variety of tools useful for developers regardless of different languages and
+  frameworks.
 
 ## Usage
 
@@ -56,30 +60,30 @@ Any contributions you make are greatly appreciated.
 
 - Join the cryptography tools together.
 - Develop new tools:
-  - crontab helper / generator
-  - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
-  - image resizer
-  - Color picker
-  - Color shades generator
-  - Emoji picker
-  - Lorem Ipsum generator
-  - JSON prettier / reducer
-  - [JSON to Pydantic](https://jsontopydantic.com/)
-  - Postman-like helper for basic http queries
-  - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
-  - Regexp display / explainer
-  - File diff
-  - nginx conf verifier
-  - jwt helper
-  - explain this shell command
-  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
-  - SQL explainer
-  - SQL Polyglot tool.
-  - SQL joins explanation
-  - huffman encoder ?
-  - a basic whiteboard tool ?
-  - Various guide list
-    - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
+    - crontab helper / generator
+    - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
+    - image resizer
+    - Color picker
+    - Color shades generator
+    - Emoji picker
+    - Lorem Ipsum generator
+    - JSON prettier / reducer
+    - [JSON to Pydantic](https://jsontopydantic.com/)
+    - Postman-like helper for basic http queries
+    - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
+    - Regexp display / explainer
+    - File diff
+    - nginx conf verifier
+    - jwt helper
+    - explain this shell command
+    - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
+    - SQL explainer
+    - SQL Polyglot tool.
+    - SQL joins explanation
+    - huffman encoder ?
+    - a basic whiteboard tool ?
+    - Various guide list
+        - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
 
 ## License
