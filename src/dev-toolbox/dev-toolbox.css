@@ -9,7 +9,7 @@
 }
 
 .box {
-  background-color: var(--background-tint);
+  background-color: var(--bg-level-1);
   border-radius: 0.5rem;
 }
 
@@ -26,7 +26,7 @@
   color: var(--font-color);
   font-family: monospace;
   font-style: normal;
-  background-color: var(--category-color);
+  background-color: var(--bg-level-2);
 }
 
 .tool-list ul {
@@ -44,14 +44,12 @@
 
 .tool-list-title {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 10px;
-  text-align: center;
+  align-items: center;
   color: var(--font-color);
   font-family: monospace;
-  padding-bottom: 10px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 10px 4px;
   font-size: 1rem;
 }
 
@@ -71,13 +69,13 @@
   font-family: monospace;
   color: var(--font-color);
   padding: 6px 9px;
-  background-color: var(--middleground);
+  background-color: var(--bg-level-3);
   transition: background-color 0.3s ease;
   min-height: fit-content;
 }
 
 .tool-link:hover {
-  background-color: var(--foreground);
+  background-color: var(--bg-level-4);
   color: var(--font-color-accent);
 }
 

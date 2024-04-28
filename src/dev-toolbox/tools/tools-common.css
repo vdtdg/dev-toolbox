@@ -34,17 +34,17 @@
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     padding-bottom: 0.25rem;
-    border: 1px solid rgb(152, 151, 151);
+    border: 1px solid var(--border);
     border-radius: 0.5rem;
-    background-color: var(--foreground);
-    color: var(--white);
+    background-color: var(--bg-level-4);
+    color: var(--font-color);
     box-sizing: border-box;
     font-size: 1rem;
     transition: border-color 0.25s;
 }
 
 .field:focus {
-    border-color: var(--white-clearer);
+    border-color: var(--font-color-accent);
     outline: none;
 }
 
@@ -52,7 +52,7 @@
     margin-right: 0.5rem;
     padding: 0.5rem 0.9rem;
     font-size: 1rem;
-    color: var(--background-tint)
+    color: var(--font-color-button)
 }
 
 .action-button-group {
@@ -89,7 +89,7 @@
 .mode-section {
     padding: 1rem;
     font-size: 2rem;
-    color: var(--white);
+    color: var(--font-color);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -114,8 +114,8 @@
 }
 
 .tooltip {
-    background-color: var(--foreground);
-    color: var(--white);
+    background-color: var(--bg-level-4);
+    color: var(--font-color);
     padding: 7px;
     border-radius: 0.3rem;
 }

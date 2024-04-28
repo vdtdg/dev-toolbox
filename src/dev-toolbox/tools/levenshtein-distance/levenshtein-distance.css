@@ -17,6 +17,6 @@
 }
 
 .target-field {
-    background-color: var(--foreground);
+    background-color: var(--bg-level-4);
     border-color: #989898;
 }

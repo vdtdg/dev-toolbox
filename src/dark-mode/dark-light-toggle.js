@@ -1,9 +1,9 @@
 import React from "react";
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
-import "./dark-mode.css";
+import "./dark-light-toggle.css";
 
-const DarkMode = () => {
+const DarkLightToggle = () => {
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("theme", "dark");
     localStorage.setItem("selectedTheme", "dark");
@@ -44,4 +44,4 @@ const DarkMode = () => {
   );
 };
 
-export default DarkMode;
+export default DarkLightToggle;
