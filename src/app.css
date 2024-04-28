@@ -7,6 +7,7 @@
 
   --border: #979797;
 
+  /* TODO Light theme colors needs to be reworked. At the moment they're just the inverse of dark mode */
   --font-color: #101010;
   --font-color-accent: #000000;
   --font-color-button: #DEDEDE;
