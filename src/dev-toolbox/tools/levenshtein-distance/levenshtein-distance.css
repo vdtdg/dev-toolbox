@@ -17,6 +17,6 @@
 }
 
 .target-field {
-    background-color: var(--foreground-tint);
+    background-color: var(--foreground);
     border-color: #989898;
 }

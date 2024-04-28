@@ -1,4 +1,12 @@
 :root {
+   --background : #94a3b8;
+   --background-tint : #f8fafc;
+   --foreground : #f8fafc;
+   --foreground-tint : #475569;
+   --middleground : #e2e8f0;
+   
+   --white : #1e3b27;
+   --white-clearer : #000;
   --primary: #67cef6;
   --primary-shade: #075978;
   --primary-tint: #a2e1fa;
@@ -7,16 +15,26 @@
   --secondary-tint: #dcd1a5;
   --support: #84a578;
   --support-shade: #536e49;
-  --support-tint: #a4bc9b;
-  --background: #101010;
-  --background-tint: #1a1a1a;
-  --foreground: #404040;
-  --foreground-tint: #666666;
-  --middleground: #313131;
+  --support-tint: #b8bc9b;
   --white-shadow: #b1b1b1;
-  --white: #f1f1f1;
-  --white-clearer: #fff;
+   
+
 }
+
+[theme = "dark"]{
+  --background: #101010;
+  --background-tint:#1a1a1a;
+  --foreground:#404040;
+  --foreground-tint:#666666;
+  --middleground:#313131;
+  --white:#f1f1f1;
+  --white-clearer:#fff;
+}
+  
+  *{
+    transition: all 0.1s ease-out;
+  }
+  
 
 html {
   min-height: 100vh;
@@ -74,7 +92,8 @@ p {
   font-weight: 300;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--white);
+  /* color: var(--white); */
+  color: var(--white-clearer);
   text-align: left;
 
   overflow: visible;
@@ -117,12 +136,12 @@ td {
 
 .primary-button {
   background-color: var(--primary);
-  color: var(--background)
+  color: var(----background)
 }
 
 .primary-button:hover {
   background-color: var(--primary-shade);
-  color: var(--white-clearer);
+  color: white;
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
@@ -138,13 +157,14 @@ td {
 
 .secondary-button:hover {
   background-color: var(--secondary-shade);
-  color: var(--white-clearer);
+  /* color: var(--white-clearer); */
+  color: white;
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .support-button:hover {
   background-color: var(--support-shade);
-  color: var(--white-clearer);
+  color: white;
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 

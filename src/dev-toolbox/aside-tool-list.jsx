@@ -1,3 +1,4 @@
+import DarkMode from "../DarkMode/DarkMode";
 import {NavLink} from "react-router-dom";
 import React, {useState} from "react";
 
@@ -15,6 +16,10 @@ export default function AsideToolList(props) {
   return (
     <>
       <aside className="box tool-list">
+        <span>
+            <DarkMode />
+
+        </span>
         <span key="tool-list-title" className="tool-list-title">
           Available tools ({filteredTools.length})
         </span>

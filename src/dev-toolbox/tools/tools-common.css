@@ -34,7 +34,7 @@
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     padding-bottom: 0.25rem;
-    border: 1px solid var(--foreground-tint);
+    border: 1px solid rgb(152, 151, 151);
     border-radius: 0.5rem;
     background-color: var(--foreground);
     color: var(--white);
@@ -44,7 +44,7 @@
 }
 
 .field:focus {
-    border-color: var(--white);
+    border-color: var(--white-clearer);
     outline: none;
 }
 
@@ -52,7 +52,7 @@
     margin-right: 0.5rem;
     padding: 0.5rem 0.9rem;
     font-size: 1rem;
-    color: var(--background)
+    color: var(--background-tint)
 }
 
 .action-button-group {
