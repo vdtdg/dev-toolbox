@@ -220,7 +220,9 @@ export default function Pomodoro() {
             onChange={updateFieldValue(setLongBreakLength, 15, 0)}
           />
         </label>
-        <label className="field-label">🔊 Volume: {volume * 100}%</label>
+        <label className="field-label">
+          🔊 Volume: {parseInt(volume * 100)}%
+        </label>
         <input
           type="range"
           min="0"
