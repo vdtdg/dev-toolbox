@@ -1,31 +1,31 @@
 .resize-vertical-only {
-    resize: vertical;
+	resize: vertical;
 }
 
 .tool-container {
-    width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+	width: 100%;
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .tool-section {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    justify-content: flex-start;
-    align-content: center;
-    gap: 10px;
-    margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	justify-content: flex-start;
+	align-content: center;
+	gap: 10px;
+	margin-bottom: 15px;
 }
 
 .tool-title {
-    font-size: 1.61rem;
-    text-align: center;
+	font-size: 1.61rem;
+	text-align: center;
 }
 
 .field {
@@ -56,34 +56,34 @@
 }
 
 .action-button-group {
-    margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	margin-right: 0.5rem;
+	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .action-button:last-child {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .fixed-bottom {
-    margin-bottom: 20px;
-    margin-top: auto;
+	margin-bottom: 20px;
+	margin-top: auto;
 }
 
 .field-label {
-    padding-top: 1rem;
-    width: 100%;
-    text-align: center;
+	padding-top: 1rem;
+	width: 100%;
+	text-align: center;
 }
 
 .centered-column-field-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-    margin-left: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 60%;
+	margin-left: 20%;
 }
 
 .mode-section {
@@ -96,21 +96,22 @@
 }
 
 .bottom-warning {
-    font-size: 0.8rem;
-    margin-top: auto;
-    padding: 0.8rem;
+	font-size: 0.8rem;
+	margin-top: auto;
+	padding: 0.8rem;
 }
 
 .timer-display {
-    font-size: 2em;
-    font-weight: bold;
-    border-radius: 1rem;
-    width: 100%;
-    height: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--primary);
+	font-size: 2em;
+	font-weight: bold;
+	border-radius: 1rem;
+	width: 100%;
+	height: 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--primary);
 }
 
 .tooltip {
