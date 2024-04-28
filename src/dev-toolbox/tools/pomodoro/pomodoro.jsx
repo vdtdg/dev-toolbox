@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../tools-common.css";
 import { usePomodoro } from "./pomodoroContext";
+import PomodoroTimeline from "./pomodoroTimeline";
 
 const modes = {
 	session: "Working Time!",
@@ -38,6 +39,8 @@ export default function Pomodoro() {
 		setMode,
 		volume,
 		setVolume,
+		currentSegment,
+		setCurrentSegment,
 	} = usePomodoro();
 
 	const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -72,6 +75,21 @@ export default function Pomodoro() {
 		setMode(mode);
 		playMelody();
 	}
+
+	useEffect(() => {
+		// calculate the total number of segments
+		const totalSegments = sessionCount * 2 - 1;
+
+		if (currentTimer <= 0) {
+			setTimeout(() => {
+				if (currentSegment === totalSegments) {
+					setCurrentSegment(0); // Reset to 0 after the last segment
+				} else {
+					setCurrentSegment((prev) => prev + 1); // Increment otherwise
+				}
+			}, 1000); // Delay of 1 second before the segment update
+		}
+	}, [currentTimer, mode]);
 
 	useEffect(() => {
 		let interval;
@@ -133,6 +151,7 @@ export default function Pomodoro() {
 	const reset = () => {
 		setIsRunning(false);
 		setCurrentSession(1);
+		setCurrentSegment(0);
 		setCurrentTimer(sessionLength * 60);
 		setMode(modes.notStarted);
 	};
@@ -247,6 +266,7 @@ export default function Pomodoro() {
 					.toString()
 					.padStart(2, "0")}{" "}
 				: {(currentTimer % 60).toString().padStart(2, "0")}
+				<PomodoroTimeline />
 			</div>
 		</section>
 	);

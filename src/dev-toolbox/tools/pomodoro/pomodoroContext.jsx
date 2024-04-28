@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const PomodoroContext = createContext();
 
@@ -16,6 +16,8 @@ export const PomodoroProvider = ({ children }) => {
 	const [currentSession, setCurrentSession] = useState(1);
 	const [mode, setMode] = useState("notStarted");
 	const [volume, setVolume] = useState(0.5);
+	const [currentSegment, setCurrentSegment] = useState(0);
+
 	const value = {
 		sessionCount,
 		setSessionCount,
@@ -35,6 +37,8 @@ export const PomodoroProvider = ({ children }) => {
 		setMode,
 		volume,
 		setVolume,
+		currentSegment,
+		setCurrentSegment,
 	};
 
 	return <PomodoroContext.Provider value={value}>{children}</PomodoroContext.Provider>;
