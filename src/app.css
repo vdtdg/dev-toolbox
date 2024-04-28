@@ -1,12 +1,12 @@
 :root {
-   --background : #94a3b8;
-   --background-tint : #f8fafc;
-   --foreground : #f8fafc;
-   --foreground-tint : #475569;
-   --middleground : #e2e8f0;
-   
-   --white : #1e3b27;
-   --white-clearer : #000;
+  --background: #94a3b8;
+  --background-tint: #f8fafc;
+  --foreground: #f8fafc;
+  --foreground-tint: #475569;
+  --middleground: #e2e8f0;
+
+  --white: #1e3b27;
+  --white-clearer: #000;
   --primary: #67cef6;
   --primary-shade: #075978;
   --primary-tint: #a2e1fa;
@@ -17,24 +17,22 @@
   --support-shade: #536e49;
   --support-tint: #b8bc9b;
   --white-shadow: #b1b1b1;
-   
-
 }
 
-[theme = "dark"]{
+[theme = "dark"] {
   --background: #101010;
-  --background-tint:#1a1a1a;
-  --foreground:#404040;
-  --foreground-tint:#666666;
-  --middleground:#313131;
-  --white:#f1f1f1;
-  --white-clearer:#fff;
+  --background-tint: #1a1a1a;
+  --foreground: #404040;
+  --foreground-tint: #666666;
+  --middleground: #313131;
+  --white: #f1f1f1;
+  --white-clearer: #fff;
 }
-  
-  *{
-    transition: all 0.1s ease-out;
-  }
-  
+
+* {
+  transition: all 0.1s ease-out;
+}
+
 
 html {
   min-height: 100vh;
@@ -136,7 +134,7 @@ td {
 
 .primary-button {
   background-color: var(--primary);
-  color: var(----background)
+  color: var(--background)
 }
 
 .primary-button:hover {
@@ -157,8 +155,7 @@ td {
 
 .secondary-button:hover {
   background-color: var(--secondary-shade);
-  /* color: var(--white-clearer); */
-  color: white;
+   color: var(--white-clearer);
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
