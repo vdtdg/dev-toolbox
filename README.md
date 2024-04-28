@@ -55,7 +55,6 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Join the cryptography tools together.
-- Dark and light theme with a switch.
 - Develop new tools:
   - crontab helper / generator
   - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4

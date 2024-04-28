@@ -1,22 +1,48 @@
 :root {
-  --primary: #67cef6;
-  --primary-shade: #075978;
-  --primary-tint: #a2e1fa;
-  --secondary: #c5b36a;
-  --secondary-shade: #5c5124;
-  --secondary-tint: #dcd1a5;
-  --support: #84a578;
-  --support-shade: #536e49;
-  --support-tint: #a4bc9b;
-  --background: #101010;
-  --background-tint: #1a1a1a;
-  --foreground: #404040;
-  --foreground-tint: #666666;
-  --middleground: #313131;
-  --white-shadow: #b1b1b1;
-  --white: #f1f1f1;
-  --white-clearer: #fff;
+  --background: #777;
+  --bg-level-1: #B8B8B8;
+  --bg-level-2: #CFCFCF;
+  --bg-level-3: #DEDEDE;
+  --bg-level-4: #F2F2F2;
+
+  --border: #979797;
+
+  /* TODO Light theme colors needs to be reworked. At the moment they're just the inverse of dark mode */
+  --font-color: #101010;
+  --font-color-accent: #000000;
+  --font-color-button: #DEDEDE;
+  --primary: #075978;
+  --primary-accent: #67cef6;
+  --secondary: #5c5124;
+  --secondary-accent: #c5b36a;
+  --support: #536e49;
+  --support-accent: #84a578;
 }
+
+[theme = "dark"] {
+  --background: #101010;
+  --bg-level-1: #1a1a1a;
+  --bg-level-2: #262626;
+  --bg-level-3: #363636;
+  --bg-level-4: #474747;
+
+  --border: #979797;
+
+  --font-color: #f1f1f1;
+  --font-color-accent: #ffffff;
+  --font-color-button: #262626;
+  --primary: #67cef6;
+  --primary-accent: #075978;
+  --secondary: #c5b36a;
+  --secondary-accent: #5c5124;
+  --support: #84a578;
+  --support-accent: #536e49;
+}
+
+* {
+  transition: all 0.1s ease-out;
+}
+
 
 html {
   min-height: 100vh;
@@ -27,7 +53,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  color: var(--white-clearer);
+  color: var(--font-color-accent);
 
   background-size: cover;
   background-color: var(--background);
@@ -40,7 +66,7 @@ a {
 h1 {
   margin-top: 2%;
   margin-bottom: 0;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
   color: var(--primary);
@@ -51,7 +77,7 @@ h1 {
 h2 {
   margin-top: 2%;
   margin-bottom: 0;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1.75rem;
   line-height: 2.625rem;
   color: var(--primary);
@@ -62,7 +88,7 @@ h2 {
 h3 {
   margin-top: 2%;
   margin-bottom: 0;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.25rem;
   color: var(--primary);
@@ -71,10 +97,10 @@ h3 {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--white);
+  color: var(--font-color-accent);
   text-align: left;
 
   overflow: visible;
@@ -82,8 +108,8 @@ p {
 }
 
 table {
-  color: var(--white);
-  background-color: var(--middleground);
+  color: var(--font-color);
+  background-color: var(--bg-level-3);
   width: 80%;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -94,8 +120,8 @@ thead {
   position: sticky;
   top: 0;
   z-index: 1;
-  color: var(--white-clearer);
-  background-color: var(--foreground);
+  color: var(--font-color-accent);
+  background-color: var(--bg-level-4);
 }
 
 td {
@@ -104,7 +130,7 @@ td {
 
 .error-text {
   font-family: monospace;
-  color: var(--white-shadow);
+  color: var(--font-color);
 }
 
 .button {
@@ -121,8 +147,8 @@ td {
 }
 
 .primary-button:hover {
-  background-color: var(--primary-shade);
-  color: var(--white-clearer);
+  background-color: var(--primary-accent);
+  color: white;
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
@@ -137,25 +163,25 @@ td {
 }
 
 .secondary-button:hover {
-  background-color: var(--secondary-shade);
-  color: var(--white-clearer);
+  background-color: var(--secondary-accent);
+  color: var(--font-color-accent);
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .support-button:hover {
-  background-color: var(--support-shade);
-  color: var(--white-clearer);
+  background-color: var(--support-accent);
+  color: white;
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 
 .tertiary-button {
-  background-color: var(--background-tint);
-  color: var(--white);
+  background-color: var(--bg-level-1);
+  color: var(--font-color);
 }
 
 .tertiary-button:hover {
-  background-color: var(--foreground);
-  color: var(--white-clearer);
+  background-color: var(--bg-level-4);
+  color: var(--font-color-accent);
   box-shadow: inset 0 0 0.2rem var(--background);
 }
 

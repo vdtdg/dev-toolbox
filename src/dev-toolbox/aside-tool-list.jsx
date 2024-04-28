@@ -1,23 +1,25 @@
-import {NavLink} from "react-router-dom";
-import React, {useState} from "react";
+import DarkLightToggle from "../dark-mode/dark-light-toggle";
+import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 
 import "./dev-toolbox.css";
-import {toolList} from "./tool-list";
+import { toolList } from "./tool-list";
 
 export default function AsideToolList(props) {
   const categories = [...new Set(toolList.map((tool) => tool.category))];
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTools = toolList.filter((tool) =>
-    tool.name.toLowerCase().includes(searchTerm.toLowerCase())
+    tool.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
     <>
       <aside className="box tool-list">
-        <span key="tool-list-title" className="tool-list-title">
-          Available tools ({filteredTools.length})
-        </span>
+        <div key="tool-list-title" className="tool-list-title">
+          <span>Available tools ({filteredTools.length})</span>
+          <DarkLightToggle />
+        </div>
         <input
           className="field search-bar"
           type="search"
@@ -28,7 +30,14 @@ export default function AsideToolList(props) {
         <hr />
         {categories.map((category) => (
           <details key={category}>
-            <summary className="category-title">{category} ({filteredTools.filter(tool => tool.category === category).length})</summary>
+            <summary className="category-title">
+              {category} (
+              {
+                filteredTools.filter((tool) => tool.category === category)
+                  .length
+              }
+              )
+            </summary>
             <ul>
               {filteredTools
                 .filter((tool) => tool.category === category)

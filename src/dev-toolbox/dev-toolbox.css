@@ -3,13 +3,13 @@
   flex-direction: column;
   gap: 3px;
 
-  padding: 11px;
-  height: calc(100vh - 30px);
-  min-width: 290px; /* 320 px - 2*15px of padding */
+  padding: 8px;
+  height: calc(100vh - 16px);
+  min-width: calc(320px - 16px);
 }
 
 .box {
-  background-color: var(--background-tint);
+  background-color: var(--bg-level-1);
   border-radius: 0.5rem;
 }
 
@@ -23,10 +23,10 @@
 
 .category-title {
   font-size: 1rem;
-  color: var(--white);
+  color: var(--font-color);
   font-family: monospace;
   font-style: normal;
-  background-color: #212121;
+  background-color: var(--bg-level-2);
 }
 
 .tool-list ul {
@@ -44,14 +44,12 @@
 
 .tool-list-title {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 10px;
-  text-align: center;
-  color: var(--white);
+  align-items: center;
+  color: var(--font-color);
   font-family: monospace;
-  padding-bottom: 10px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 10px 4px;
   font-size: 1rem;
 }
 
@@ -69,21 +67,21 @@
   text-decoration: none;
   font-size: 1rem;
   font-family: monospace;
-  color: var(--white);
+  color: var(--font-color);
   padding: 6px 9px;
-  background-color: var(--middleground);
+  background-color: var(--bg-level-3);
   transition: background-color 0.3s ease;
   min-height: fit-content;
 }
 
 .tool-link:hover {
-  background-color: var(--foreground);
-  color: var(--white-clearer);
+  background-color: var(--bg-level-4);
+  color: var(--font-color-accent);
 }
 
 .tool-link.active {
   background-color: var(--support);
-  color: var(--white-clearer);
+  color: var(--font-color-accent);
   font-weight: bold;
 }
 
@@ -94,7 +92,7 @@
 }
 
 .toolbox-footer-text {
-  color: var(--white);
+  color: var(--font-color);
   font-size: 1rem;
   font-family: monospace;
   margin-left: 15px;
@@ -138,6 +136,6 @@ summary {
   .bm-burger-bars {
     margin-right: 20px;
     width: 30px;
-    background: var(--white);
+    background: var(--font-color);
   }
 }
