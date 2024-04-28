@@ -53,7 +53,6 @@ Any contributions you make are greatly appreciated.
 
 ### Next features to be developed ordered by priority
 - Join the cryptography tools together.
-- Dark and light theme with a switch.
 - Pomodoro:
   + Add a pause button
   + Add a volume control
