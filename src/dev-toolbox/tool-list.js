@@ -1,4 +1,5 @@
 import Pomodoro from "./tools/pomodoro/pomodoro";
+import CronTab from "./tools/crontab/crontab";
 import LevenshteinCalculator from "./tools/levenshtein-distance/levenshtein-distance";
 import UriEncoderDecoder from "./tools/encoder-decoder/uri-encoder-decoder";
 import HtmlEncoderDecoder from "./tools/encoder-decoder/html-encoder-decoder";
@@ -21,6 +22,12 @@ export const toolList = [
     path: "pomodoro",
     name: "Pomodoro",
     element: <Pomodoro />,
+    category: "Productivity",
+  },
+    {
+    path: "crontab",
+    name: "Cron Tab Helper",
+    element: <CronTab />,
     category: "Productivity",
   },
   {
