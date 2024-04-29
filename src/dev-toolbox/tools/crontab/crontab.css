@@ -1,0 +1,21 @@
+.crontab-input-container {
+	display: flex;
+	margin-bottom: 20px;
+	gap: 5rem;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.crontab-input-container .action-button-group {
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.crontab-input-container .centered-column-field-container {
+	margin: 0;
+	flex: 1;
+}
+
+.margin-bottom {
+	margin-bottom: 20px;
+}
