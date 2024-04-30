@@ -60,30 +60,29 @@ Any contributions you make are greatly appreciated.
 
 - Join the cryptography tools together.
 - Develop new tools:
-    - crontab helper / generator
-    - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
-    - image resizer
-    - Color picker
-    - Color shades generator
-    - Emoji picker
-    - Lorem Ipsum generator
-    - JSON prettier / reducer
-    - [JSON to Pydantic](https://jsontopydantic.com/)
-    - Postman-like helper for basic http queries
-    - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
-    - Regexp display / explainer
-    - File diff
-    - nginx conf verifier
-    - jwt helper
-    - explain this shell command
-    - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
-    - SQL explainer
-    - SQL Polyglot tool.
-    - SQL joins explanation
-    - huffman encoder ?
-    - a basic whiteboard tool ?
-    - Various guide list
-        - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
+  - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
+  - image resizer
+  - Color picker
+  - Color shades generator
+  - Emoji picker
+  - Lorem Ipsum generator
+  - JSON prettier / reducer
+  - [JSON to Pydantic](https://jsontopydantic.com/)
+  - Postman-like helper for basic http queries
+  - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
+  - Regexp display / explainer
+  - File diff
+  - nginx conf verifier
+  - jwt helper
+  - explain this shell command
+  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
+  - SQL explainer
+  - SQL Polyglot tool.
+  - SQL joins explanation
+  - huffman encoder ?
+  - a basic whiteboard tool ?
+  - Various guide list
+    - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
 
 ## License
