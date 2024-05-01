@@ -44,10 +44,12 @@ const BinaryHelper = () => {
 
 				// Convert the array back to decimal after toggling the bit
 				const newDecimal = parseInt(newBits.join(""), 2);
+				const newResult = calculateResult(newBits, group.mask);
 				return {
 					...group,
 					bits: newBits,
 					decimal: newDecimal,
+					result: newResult,
 				};
 			}
 			return group;
@@ -65,10 +67,13 @@ const BinaryHelper = () => {
 
 		const newBinaryGroups = binaryGroups.map((group, index) => {
 			if (index === groupIndex) {
+				const newBits = decimalToBinaryArray(newDecimalValue, group.numBits);
+				const newResult = calculateResult(newBits, group.mask);
 				return {
 					...group,
 					decimal: newDecimalValue,
 					bits: decimalToBinaryArray(newDecimalValue, group.numBits),
+					result: newResult,
 				};
 			}
 			return group;
