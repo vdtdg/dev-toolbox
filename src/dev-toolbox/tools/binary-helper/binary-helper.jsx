@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import "./binary-helper.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus, faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons";
+import {
+	faPlus,
+	faMinus,
+	faToggleOn,
+	faToggleOff,
+	faArrowLeft,
+	faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const BinaryHelper = () => {
 	const [binaryGroups, setBinaryGroups] = useState([
@@ -85,17 +92,14 @@ const BinaryHelper = () => {
 	const toggleNumBits = (index) => {
 		const newBinaryGroups = binaryGroups.map((group, idx) => {
 			if (idx === index) {
-				const newNumBits = group.numBits === 8 ? 16 : 8;
-				const maxDecimalValue = Math.pow(2, newNumBits) - 1;
-				const newDecimal = group.decimal > maxDecimalValue ? maxDecimalValue : group.decimal;
-				const newBits = decimalToBinaryArray(newDecimal, newNumBits);
+				const newNumBits = group.numBits === 8 ? 16 : 8; // Toggle between 8 and 16 bits
 				return {
-					...group,
 					numBits: newNumBits,
-					decimal: newDecimal,
-					bits: newBits,
-					mask: Array(newNumBits).fill(1),
-					result: 0,
+					value: 0, // Reset value
+					bits: Array(newNumBits).fill(0), // Reset all bits to 0
+					decimal: 0, // Reset decimal to 0
+					mask: Array(newNumBits).fill(1), // Reset mask to all 1s
+					result: 0, // Reset result to 0
 				};
 			}
 			return group;
@@ -126,6 +130,20 @@ const BinaryHelper = () => {
 	const calculateResult = (bits, mask) => {
 		const resultBits = bits.map((bit, index) => bit & mask[index]); // Apply bitwise AND
 		return parseInt(resultBits.join(""), 2);
+	};
+
+	const handleBitShift = (groupIndex, direction) => {
+		if (direction === "left") {
+			// Shift all bits to the left
+			const decimalValue = binaryGroups[groupIndex].decimal;
+			const shiftedDecimal = decimalValue << 1;
+			handleDecimalChange(groupIndex, shiftedDecimal);
+		} else {
+			// Shift all bits to the right
+			const decimalValue = binaryGroups[groupIndex].decimal;
+			const shiftedDecimal = decimalValue >> 1;
+			handleDecimalChange(groupIndex, shiftedDecimal);
+		}
 	};
 
 	return (
@@ -211,24 +229,29 @@ const BinaryHelper = () => {
 							</div>
 							<div className="binary-group-right">
 								<div className="result-decimal-display">
-									Decimal Result: <strong>{group.result}</strong>
+									<div className="shift-buttons">
+										<button onClick={(e) => handleBitShift(index, "left")}>
+											<FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+										</button>
+										<button onClick={(e) => handleBitShift(index, "right")}>
+											<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+										</button>
+										<p>Bit Shift</p>
+									</div>
+									<div className="decimal-result">
+										<p>Decimal Result:</p>
+										<p>{group.result}</p>
+									</div>
 								</div>
 							</div>
 						</article>
 					</div>
 				))}
+
 				<div className="binary-button-group">
 					<button onClick={addBinaryGroup} className="circle-button">
 						<FontAwesomeIcon icon={faPlus} />
 					</button>
-					{binaryGroups.length > 1 && (
-						<button
-							onClick={() => removeBinaryGroup(binaryGroups.length - 1)}
-							className="circle-button"
-						>
-							<FontAwesomeIcon icon={faMinus} />
-						</button>
-					)}
 				</div>
 			</div>
 		</section>

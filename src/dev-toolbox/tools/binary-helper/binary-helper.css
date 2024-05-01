@@ -58,6 +58,8 @@
 	border: 3px solid var(--primary-accent);
 	border-radius: 10px;
 	margin-bottom: 1rem;
+	width: 100%;
+	padding: 1rem;
 }
 
 .binary-group-powers-of-two {
@@ -66,14 +68,31 @@
 	gap: 1rem;
 }
 
-.binary-helper-group {
-}
-
 .binary-helper-container article {
 	display: flex;
+	justify-content: center;
 	gap: 1rem;
 }
 
+.result-decimal-display {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-right: 1rem;
+}
+
+.result-decimal-display div {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.result-decimal-display p:last-child {
+	padding-left: 1rem;
+}
 .hidden {
 	color: transparent;
 }
@@ -120,11 +139,34 @@
 
 .binary-group-labels input {
 	width: 5rem;
+	margin-left: 1rem;
 }
 
 .binary-group-right {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	align-items: flex-start;
 	padding-bottom: 1rem;
+}
+
+.shift-buttons {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 2rem;
+}
+
+.decimal-result {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 1rem;
+	min-width: 12rem;
+}
+
+.decimal-result p {
+	padding: 0.5rem;
 }
