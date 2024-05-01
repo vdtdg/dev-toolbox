@@ -121,3 +121,10 @@
 .binary-group-labels input {
 	width: 5rem;
 }
+
+.binary-group-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: 1rem;
+}

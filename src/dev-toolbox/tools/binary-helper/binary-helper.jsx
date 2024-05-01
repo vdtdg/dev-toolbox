@@ -120,7 +120,7 @@ const BinaryHelper = () => {
 
 	const calculateResult = (bits, mask) => {
 		const resultBits = bits.map((bit, index) => bit & mask[index]); // Apply bitwise AND
-		return parseInt(resultBits.reverse().join(""), 2);
+		return parseInt(resultBits.join(""), 2);
 	};
 
 	return (
@@ -161,7 +161,6 @@ const BinaryHelper = () => {
 								<p>Mask</p>
 								<p>Result</p>
 							</div>
-
 							<div className="binary-group-main">
 								<div className="binary-group-powers-of-two">
 									{group.bits.map((_, idx) => (
@@ -203,6 +202,11 @@ const BinaryHelper = () => {
 												{resultBit}
 											</button>
 										))}
+								</div>
+							</div>
+							<div className="binary-group-right">
+								<div className="result-decimal-display">
+									Decimal Result: <strong>{group.result}</strong>
 								</div>
 							</div>
 						</article>
