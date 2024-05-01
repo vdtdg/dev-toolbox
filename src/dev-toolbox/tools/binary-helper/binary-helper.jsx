@@ -33,17 +33,21 @@ const BinaryHelper = () => {
 
 	function decimalToBinaryArray(decimal, bits) {
 		const binaryString = decimal.toString(2).padStart(bits, "0");
-		return binaryString.split("").map(Number).reverse(); // Store bits in reverse order for easy handling
+		return binaryString.split("").map(Number).reverse();
 	}
 
-	const handleBitChange = (groupIndex, bitIndex, newBitValue) => {
+	const handleBitChange = (groupIndex, bitIndex) => {
 		const newBinaryGroups = binaryGroups.map((group, index) => {
 			if (index === groupIndex) {
 				const newBits = [...group.bits];
-				newBits[bitIndex] = newBitValue;
-				const newDecimal = parseInt(newBits.reverse().join(""), 2);
-				newBits.reverse(); // Reverse back after converting to keep the original order
-				return { ...group, bits: newBits, decimal: newDecimal };
+				const correctIndex = group.numBits - 1 - bitIndex;
+				newBits[correctIndex] = newBits[correctIndex] === 0 ? 1 : 0;
+				const newDecimal = parseInt(newBits.slice().reverse().join(""), 2);
+				return {
+					...group,
+					bits: newBits,
+					decimal: newDecimal,
+				};
 			}
 			return group;
 		});
@@ -93,10 +97,40 @@ const BinaryHelper = () => {
 		setBinaryGroups(newBinaryGroups);
 	};
 
+	const handleMaskChange = (groupIndex, bitIndex, newBitValue) => {
+		if (newBitValue > 1) {
+			newBitValue = 0;
+		} else if (newBitValue < 0) {
+			newBitValue = 1;
+		}
+
+		const newBinaryGroups = binaryGroups.map((group, index) => {
+			if (index === groupIndex) {
+				const newMask = [...group.mask];
+				const correctIndex = group.numBits - 1 - bitIndex;
+				newMask[correctIndex] = newBitValue;
+				const newResult = calculateResult(group.bits, newMask);
+				return { ...group, mask: newMask, result: newResult };
+			}
+			return group;
+		});
+		setBinaryGroups(newBinaryGroups);
+	};
+
+	const calculateResult = (bits, mask) => {
+		const resultBits = bits.map((bit, index) => bit & mask[index]); // Apply bitwise AND
+		return parseInt(resultBits.reverse().join(""), 2);
+	};
+
 	return (
 		<section className="crontab-wrapper tool-section">
 			<h3>Binary Helper</h3>
-			<p>This tool is used to convert binary numbers to decimal numbers and vice versa.</p>
+			<p>
+				This tool facilitates the conversion between binary and decimal numbers. Additionally, it
+				computes the outcome of applying a mask to the binary representation, and shows the affect
+				of bit shifting.
+			</p>
+
 			<div className="binary-helper-container">
 				{binaryGroups.map((group, index) => (
 					<div className="binary-helper-group" key={index}>
@@ -135,19 +169,26 @@ const BinaryHelper = () => {
 										</p>
 									))}
 								</div>
-								<div className="decimal-group-container">
+								<div className="decimal-group-bits">
 									{[...group.bits].reverse().map((bit, idx) => (
-										<input
-											key={idx}
-											type="number"
-											min="0"
-											max="1"
-											value={bit}
-											onChange={(e) =>
-												handleBitChange(index, group.numBits - 1 - idx, parseInt(e.target.value))
+										<button
+											onClick={() => handleBitChange(index, group.numBits - 1 - idx)}
+											className="bit-button"
+										>
+											{bit}
+										</button>
+									))}
+								</div>
+								<div className="binary-group-mask">
+									{group.mask.map((maskBit, idx) => (
+										<button
+											className="bit-button"
+											onClick={() =>
+												handleMaskChange(index, group.numBits - 1 - idx, maskBit === 0 ? 1 : 0)
 											}
-											className="bit-input"
-										/>
+										>
+											{maskBit}
+										</button>
 									))}
 								</div>
 							</div>
