@@ -57,45 +57,56 @@
 .binary-helper-group {
 	border: 3px solid var(--primary-accent);
 	border-radius: 10px;
-	margin-bottom: 1rem;
-	padding-bottom: 1rem;
-	padding-right: 1rem;
 }
 
-.binary-group-column {
+.binary-group-powers-of-two {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	flex-wrap: nowrap;
+	gap: 1rem;
 }
 
-.binary-group-section-1 {
+.binary-helper-container article {
 	display: flex;
 	gap: 1rem;
 }
 
-.binary-group-article-left {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
+.hidden {
+	color: transparent;
 }
 
-.binary-group-article-left input {
-	width: 4rem;
-	padding: 0.25rem;
+.decimal-group-container {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0rem;
+}
+
+.decimal-number {
+	padding: 0.5rem;
+}
+
+.binary-group-powers-of-two {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 1.2rem;
+}
+
+.binary-groups-powers-of-two p {
+	width: 2rem;
+	padding: 1.5rem;
+}
+
+.decimal-group-container input,
+.binary-group-labels input {
+	width: 1.5rem;
+	padding: 0.5rem;
 	text-align: center;
 }
 
-.binary-group-article-centre {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
+.binary-group-labels {
+	margin-left: 1rem;
 }
 
-.binary-group-article-centre input {
-	width: 2rem;
+.binary-group-labels input {
+	width: 5rem;
 }
