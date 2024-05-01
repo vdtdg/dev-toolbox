@@ -31,7 +31,7 @@
 	width: 2rem;
 	height: 2rem;
 	display: flex;
-
+	margin-top: 1rem;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
@@ -57,12 +57,16 @@
 .binary-helper-group {
 	border: 3px solid var(--primary-accent);
 	border-radius: 10px;
+	margin-bottom: 1rem;
 }
 
 .binary-group-powers-of-two {
 	display: flex;
 	flex-wrap: nowrap;
 	gap: 1rem;
+}
+
+.binary-helper-group {
 }
 
 .binary-helper-container article {
@@ -87,7 +91,7 @@
 .binary-group-powers-of-two {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: flex-start;
+	justify-content: center;
 	gap: 1.2rem;
 }
 

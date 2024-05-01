@@ -17,11 +17,11 @@ const BinaryHelper = () => {
 
 	const addBinaryGroup = () => {
 		const newGroup = {
-			numBits: 8,
+			numBits: 16,
 			value: 0,
-			bits: decimalToBinaryArray(0, 8),
+			bits: decimalToBinaryArray(0, 16),
 			decimal: 0,
-			mask: Array(8).fill(1),
+			mask: Array(16).fill(1),
 			result: 0,
 		};
 		setBinaryGroups((prevGroups) => [...prevGroups, newGroup]);
@@ -72,6 +72,27 @@ const BinaryHelper = () => {
 		setBinaryGroups(newBinaryGroups);
 	};
 
+	const toggleNumBits = (index) => {
+		const newBinaryGroups = binaryGroups.map((group, idx) => {
+			if (idx === index) {
+				const newNumBits = group.numBits === 8 ? 16 : 8;
+				const maxDecimalValue = Math.pow(2, newNumBits) - 1;
+				const newDecimal = group.decimal > maxDecimalValue ? maxDecimalValue : group.decimal;
+				const newBits = decimalToBinaryArray(newDecimal, newNumBits);
+				return {
+					...group,
+					numBits: newNumBits,
+					decimal: newDecimal,
+					bits: newBits,
+					mask: Array(newNumBits).fill(1),
+					result: 0,
+				};
+			}
+			return group;
+		});
+		setBinaryGroups(newBinaryGroups);
+	};
+
 	return (
 		<section className="crontab-wrapper tool-section">
 			<h3>Binary Helper</h3>
@@ -81,7 +102,7 @@ const BinaryHelper = () => {
 					<div className="binary-helper-group" key={index}>
 						<header>
 							<p>Amount of bits to display:</p>
-							<button onClick={() => null} className="toggle-button">
+							<button onClick={() => toggleNumBits(index)} className="toggle-button">
 								<FontAwesomeIcon icon={group.numBits === 8 ? faToggleOff : faToggleOn} />
 								{group.numBits === 8 ? " 8 bits" : " 16 bits"}
 							</button>
