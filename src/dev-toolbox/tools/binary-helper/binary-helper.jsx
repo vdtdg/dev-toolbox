@@ -33,16 +33,17 @@ const BinaryHelper = () => {
 
 	function decimalToBinaryArray(decimal, bits) {
 		const binaryString = decimal.toString(2).padStart(bits, "0");
-		return binaryString.split("").map(Number).reverse();
+		return binaryString.split("").map(Number);
 	}
 
 	const handleBitChange = (groupIndex, bitIndex) => {
 		const newBinaryGroups = binaryGroups.map((group, index) => {
 			if (index === groupIndex) {
 				const newBits = [...group.bits];
-				const correctIndex = group.numBits - 1 - bitIndex;
-				newBits[correctIndex] = newBits[correctIndex] === 0 ? 1 : 0;
-				const newDecimal = parseInt(newBits.slice().reverse().join(""), 2);
+				newBits[bitIndex] = newBits[bitIndex] === 0 ? 1 : 0; // Toggle the bit directly
+
+				// Convert the array back to decimal after toggling the bit
+				const newDecimal = parseInt(newBits.join(""), 2);
 				return {
 					...group,
 					bits: newBits,
@@ -170,9 +171,10 @@ const BinaryHelper = () => {
 									))}
 								</div>
 								<div className="decimal-group-bits">
-									{[...group.bits].reverse().map((bit, idx) => (
+									{group.bits.map((bit, idx) => (
 										<button
-											onClick={() => handleBitChange(index, group.numBits - 1 - idx)}
+											key={idx}
+											onClick={() => handleBitChange(index, idx)} // idx corresponds directly to MSB to LSB
 											className="bit-button"
 										>
 											{bit}
@@ -190,6 +192,17 @@ const BinaryHelper = () => {
 											{maskBit}
 										</button>
 									))}
+								</div>
+								<div className="binary-group-result">
+									{group.result
+										.toString(2)
+										.padStart(group.numBits, "0")
+										.split("")
+										.map((resultBit, idx) => (
+											<button key={idx} className="bit-button">
+												{resultBit}
+											</button>
+										))}
 								</div>
 							</div>
 						</article>
