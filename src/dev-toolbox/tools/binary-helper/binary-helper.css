@@ -1,0 +1,55 @@
+.binary-helper-container input[type="number"]::-webkit-inner-spin-button,
+.binary-helper-container input[type="number"]::-webkit-outer-spin-button {
+	opacity: 1;
+}
+
+.binary-helper-container input[type="number"] {
+	-moz-appearance: textfield; /* Firefox */
+	appearance: textfield;
+}
+
+.binary-helper-container input[type="number"]:hover::-webkit-inner-spin-button,
+.binary-helper-container input[type="number"]:hover::-webkit-outer-spin-button {
+	opacity: 1;
+}
+
+.binary-helper-group header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+	gap: 1rem;
+}
+
+.binary-helper-group header input {
+	width: 2rem;
+	padding: 0.5rem;
+	text-align: center;
+}
+.circle-button {
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 3px solid var(--primary-accent);
+	color: var(--primary-accent);
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.circle-button:focus {
+	outline: none;
+}
+
+.circle-button:active {
+	background-color: var(--primary);
+}
+
+.binary-button-group {
+	display: flex;
+	gap: 1rem;
+}

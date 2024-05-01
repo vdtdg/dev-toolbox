@@ -60,7 +60,6 @@ Any contributions you make are greatly appreciated.
 
 - Join the cryptography tools together.
 - Develop new tools:
-  - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
   - image resizer
   - Color picker
   - Color shades generator
