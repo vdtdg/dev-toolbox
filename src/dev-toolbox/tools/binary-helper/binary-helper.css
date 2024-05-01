@@ -53,3 +53,49 @@
 	display: flex;
 	gap: 1rem;
 }
+
+.binary-helper-group {
+	border: 3px solid var(--primary-accent);
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	padding-right: 1rem;
+}
+
+.binary-group-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.binary-group-section-1 {
+	display: flex;
+	gap: 1rem;
+}
+
+.binary-group-article-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.binary-group-article-left input {
+	width: 4rem;
+	padding: 0.25rem;
+	text-align: center;
+}
+
+.binary-group-article-centre {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.binary-group-article-centre input {
+	width: 2rem;
+}

@@ -1,38 +1,51 @@
 import React, { useState, useEffect } from "react";
 import "./binary-helper.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus, faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons";
 
 const BinaryHelper = () => {
-	const [binaryGroups, setBinaryGroups] = useState([]);
-
-	// on view load, add a binary group
-	useEffect(() => {
-		if (binaryGroups.length === 0) {
-			addBinaryGroup();
-		}
-	}, []);
+	const [binaryGroups, setBinaryGroups] = useState([
+		{
+			value: 8,
+			bits: Array(8).fill(0),
+		},
+	]);
 
 	const addBinaryGroup = () => {
-		// Initialize new group with a default value of 8
-		setBinaryGroups([...binaryGroups, { value: 8 }]);
+		const newGroup = {
+			value: 8,
+			bits: Array(8).fill(0), // Initialize with zeros for 8 bits
+		};
+		setBinaryGroups((prevGroups) => [...prevGroups, newGroup]);
 	};
 
 	const removeBinaryGroup = (index) => {
-		const newBinaryGroups = [...binaryGroups];
-		newBinaryGroups.splice(index, 1);
-		setBinaryGroups(newBinaryGroups);
+		setBinaryGroups((prevGroups) => prevGroups.filter((_, idx) => idx !== index));
 	};
 
-	const handleChange = (index, newValue) => {
-		// Toggle between 8 and 16 based on the current group's value
-		const updatedGroups = binaryGroups.map((group, idx) => {
-			if (idx === index) {
-				return { ...group, value: group.value === 8 ? 16 : 8 };
-			}
-			return group;
-		});
-		setBinaryGroups(updatedGroups);
+	const handleBitChange = (groupIndex, bitIndex, newValue) => {
+		setBinaryGroups((prevGroups) =>
+			prevGroups.map((group, idx) => {
+				if (idx === groupIndex) {
+					const newBits = [...group.bits];
+					newBits[bitIndex] = newValue;
+					return { ...group, bits: newBits };
+				}
+				return group;
+			})
+		);
+	};
+
+	const toggleNumBits = (index) => {
+		setBinaryGroups((prevGroups) =>
+			prevGroups.map((group, idx) => {
+				if (idx === index) {
+					const newBitCount = group.value === 8 ? 16 : 8;
+					return { ...group, value: newBitCount, bits: Array(newBitCount).fill(0) };
+				}
+				return group;
+			})
+		);
 	};
 
 	return (
@@ -44,12 +57,46 @@ const BinaryHelper = () => {
 					<div className="binary-helper-group" key={index}>
 						<header>
 							<p>Amount of bits to display:</p>
-							<input
-								type="number"
-								value={group.value}
-								onChange={() => handleChange(index, group.value)}
-							/>
+							<button onClick={() => toggleNumBits(index)} className="toggle-button">
+								<FontAwesomeIcon icon={group.value === 8 ? faToggleOff : faToggleOn} />
+								{group.value === 8 ? " 8 bits" : " 16 bits"}
+							</button>
 						</header>
+						<section className="binary-group-section-1">
+							<article className="binary-group-article-left">
+								<p>Decimal Number:</p>
+								<input type="number" />
+							</article>
+							{group.bits
+								.slice()
+								.reverse()
+								.map((bit, bitIndex) => (
+									<div className="binary-group-article-centre" key={bitIndex}>
+										<p>2^{group.value - 1 - bitIndex}</p>
+										<input
+											type="number"
+											value={bit}
+											onChange={(e) =>
+												handleBitChange(index, group.value - 1 - bitIndex, parseInt(e.target.value))
+											}
+										/>
+										<input
+											type="number"
+											value={bit}
+											onChange={(e) =>
+												handleBitChange(index, group.value - 1 - bitIndex, parseInt(e.target.value))
+											}
+										/>
+										<input
+											type="number"
+											value={bit}
+											onChange={(e) =>
+												handleBitChange(index, group.value - 1 - bitIndex, parseInt(e.target.value))
+											}
+										/>
+									</div>
+								))}
+						</section>
 					</div>
 				))}
 				<div className="binary-button-group">
