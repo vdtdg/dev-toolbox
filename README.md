@@ -79,6 +79,7 @@ Any contributions you make are greatly appreciated.
     - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
     - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
+- OpenGraph (og) tags to do.
 
 ## License
 
