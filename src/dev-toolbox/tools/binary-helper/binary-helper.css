@@ -35,8 +35,8 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0;
-	border: 3px solid var(--primary-accent);
-	color: var(--primary-accent);
+	border: 3px solid var(--primary);
+	color: var(--primary);
 	background-color: transparent;
 	cursor: pointer;
 }
@@ -58,12 +58,12 @@
 	padding: 1rem;
 	border-radius: 10px;
 	background: transparent;
-	color: var(--secondary-color);
+	color: var(--font-color);
 	font-size: 1rem;
 }
 
 .binary-helper-group {
-	border: 3px solid var(--primary-accent);
+	border: 3px solid var(--primary);
 	border-radius: 10px;
 	margin-bottom: 1rem;
 	padding: 1rem;
