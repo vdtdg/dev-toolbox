@@ -252,6 +252,14 @@ const BinaryHelper = () => {
 					<button onClick={addBinaryGroup} className="circle-button">
 						<FontAwesomeIcon icon={faPlus} />
 					</button>
+					{binaryGroups.length > 1 && (
+						<button
+							onClick={() => removeBinaryGroup(binaryGroups.length - 1)}
+							className="circle-button"
+						>
+							<FontAwesomeIcon icon={faMinus} />
+						</button>
+					)}
 				</div>
 			</div>
 		</section>
