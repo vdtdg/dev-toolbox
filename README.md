@@ -59,7 +59,6 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Develop new tools:
-  - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
   - File diff
   - image resizer
   - jwt helper (https://jwt.io/)
