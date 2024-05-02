@@ -59,13 +59,13 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Develop new tools:
-  - File diff
-  - image resizer
-  - jwt helper (https://jwt.io/)
-  - Simple color picker (click on a spectrum, get the color values in different formats)
-  - Color shades generator
-  - Emoji picker
-  - Lorem Ipsum generator
+  - (in progress) File diff
+  - (in progress) image resizer and extension changer. 
+  - (in progress) jwt helper (https://jwt.io/)
+  - (in progress) Simple color picker (click on a spectrum, get the color values in different formats)
+  - (in progress) Color shades generator
+  - (in progress) Emoji picker
+  - (in progress) Lorem Ipsum generator
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - [JSON to Pydantic](https://jsontopydantic.com/)
