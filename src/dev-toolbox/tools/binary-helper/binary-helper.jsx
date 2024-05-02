@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./binary-helper.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,16 +11,39 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const BinaryHelper = () => {
+	const breakWidth = 920;
+
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 	const [binaryGroups, setBinaryGroups] = useState([
 		{
 			numBits: 16,
 			value: 0,
-			bits: decimalToBinaryArray(0, 16),
+			bits: decimalToBinaryArray(0, screenWidth < breakWidth ? 8 : 16),
 			decimal: 0,
 			mask: Array(16).fill(1),
 			result: 0,
 		},
 	]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setScreenWidth(window.innerWidth);
+
+			setBinaryGroups((groups) =>
+				groups.map((group) => ({
+					...group,
+					numBits: window.innerWidth < breakWidth ? 8 : 16,
+					bits: decimalToBinaryArray(group.decimal, window.innerWidth < breakWidth ? 8 : 16),
+					mask: Array(window.innerWidth < breakWidth ? 8 : 16).fill(1),
+				}))
+			);
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	const addBinaryGroup = () => {
 		const newGroup = {
@@ -228,16 +251,16 @@ const BinaryHelper = () => {
 								</div>
 							</div>
 							<div className="binary-group-right">
+								<div className="shift-buttons">
+									<button onClick={(e) => handleBitShift(index, "left")}>
+										<FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+									</button>
+									<button onClick={(e) => handleBitShift(index, "right")}>
+										<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+									</button>
+									<p>Bit Shift</p>
+								</div>
 								<div className="result-decimal-display">
-									<div className="shift-buttons">
-										<button onClick={(e) => handleBitShift(index, "left")}>
-											<FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
-										</button>
-										<button onClick={(e) => handleBitShift(index, "right")}>
-											<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-										</button>
-										<p>Bit Shift</p>
-									</div>
 									<div className="decimal-result">
 										<p>Decimal Result:</p>
 										<p>{group.result}</p>
