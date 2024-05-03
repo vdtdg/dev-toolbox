@@ -16,108 +16,115 @@ import HelpMeStuckInVim from "./tools/vim/help-me-stuck-in-vim";
 import Ipv4Helper from "./tools/network/ipv4-helper";
 import React from "react";
 import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-timestamp-parser";
+import FileDiff from "./tools/file-diff/file-diff";
 
 export const toolList = [
-  {
-    path: "pomodoro",
-    name: "Pomodoro",
-    element: <Pomodoro />,
-    category: "Productivity",
-  },
-    {
-    path: "crontab",
-    name: "Cron Tab Helper",
-    element: <CronTab />,
-    category: "Productivity",
-  },
-  {
-    path: "levenshtein-distance",
-    name: "Levenshtein Distance Calculator",
-    element: <LevenshteinCalculator />,
-    category: "Cryptography",
-  },
-  {
-    path: "uri-encoder-decoder",
-    name: "Uri Encoder - Decoder",
-    element: <UriEncoderDecoder />,
-    category: "Cryptography",
-  },
-  {
-    path: "html-encoder-decoder",
-    name: "HTML Encoder - Decoder",
-    element: <HtmlEncoderDecoder />,
-    category: "Cryptography",
-  },
-  {
-    path: "base64-encoder-decoder",
-    name: "Base64 Encoder - Decoder",
-    element: <Base64EncoderDecoder />,
-    category: "Cryptography",
-  },
-  {
-    path: "md5-hasher",
-    name: "MD5 Hasher",
-    element: <MD5Hasher />,
-    category: "Cryptography",
-  },
-  {
-    path: "sha1-hasher",
-    name: "SHA1 Hasher",
-    element: <SHA1Hasher />,
-    category: "Cryptography",
-  },
-  {
-    path: "sha256-hasher",
-    name: "SHA256 Hasher",
-    element: <SHA256Hasher />,
-    category: "Cryptography",
-  },
-  {
-    path: "sha512-hasher",
-    name: "SHA512 Hasher",
-    element: <SHA512Hasher />,
-    category: "Cryptography",
-  },
-  {
-    path: "ripemd-160-hasher",
-    name: "RIPEMD-160 Hasher",
-    element: <RIPEMD160Hasher />,
-    category: "Cryptography",
-  },
-  {
-    path: "timestamp-to-time",
-    name: "Timestamp to time",
-    element: <TimestampToTime />,
-    category: "Time",
-  },
-  {
-    path: "linkedin-post-date-parser",
-    name: "LinkedIn Post Date Parser",
-    element: <LinkedinTimestampParser />,
-    category: "Time",
-  },
-  {
-    path: "change-base-helper",
-    name: "Change Base Helper",
-    element: <ChangeBaseHelper />,
-    category: "Number",
-  },
-  {
-    path: "ascii-reference-table",
-    name: "ASCII Reference Table",
-    element: <AsciiReferenceTable />,
-    category: "Misc",
-  },
-  {
-    path: "help-me-stuck-in-vim",
-    name: "Help me I'm stuck in Vim!",
-    element: <HelpMeStuckInVim />,
-    category: "Misc",
-  },
-  {
-    path: "network-ipv4-helper",
-    name: "IPv4 Helper",
-    element: <Ipv4Helper />,
-    category: "Number",
-  },
+	{
+		path: "pomodoro",
+		name: "Pomodoro",
+		element: <Pomodoro />,
+		category: "Productivity",
+	},
+	{
+		path: "crontab",
+		name: "Cron Tab Helper",
+		element: <CronTab />,
+		category: "Productivity",
+	},
+	{
+		path: "levenshtein-distance",
+		name: "Levenshtein Distance Calculator",
+		element: <LevenshteinCalculator />,
+		category: "Cryptography",
+	},
+	{
+		path: "uri-encoder-decoder",
+		name: "Uri Encoder - Decoder",
+		element: <UriEncoderDecoder />,
+		category: "Cryptography",
+	},
+	{
+		path: "html-encoder-decoder",
+		name: "HTML Encoder - Decoder",
+		element: <HtmlEncoderDecoder />,
+		category: "Cryptography",
+	},
+	{
+		path: "base64-encoder-decoder",
+		name: "Base64 Encoder - Decoder",
+		element: <Base64EncoderDecoder />,
+		category: "Cryptography",
+	},
+	{
+		path: "md5-hasher",
+		name: "MD5 Hasher",
+		element: <MD5Hasher />,
+		category: "Cryptography",
+	},
+	{
+		path: "sha1-hasher",
+		name: "SHA1 Hasher",
+		element: <SHA1Hasher />,
+		category: "Cryptography",
+	},
+	{
+		path: "sha256-hasher",
+		name: "SHA256 Hasher",
+		element: <SHA256Hasher />,
+		category: "Cryptography",
+	},
+	{
+		path: "sha512-hasher",
+		name: "SHA512 Hasher",
+		element: <SHA512Hasher />,
+		category: "Cryptography",
+	},
+	{
+		path: "ripemd-160-hasher",
+		name: "RIPEMD-160 Hasher",
+		element: <RIPEMD160Hasher />,
+		category: "Cryptography",
+	},
+	{
+		path: "timestamp-to-time",
+		name: "Timestamp to time",
+		element: <TimestampToTime />,
+		category: "Time",
+	},
+	{
+		path: "linkedin-post-date-parser",
+		name: "LinkedIn Post Date Parser",
+		element: <LinkedinTimestampParser />,
+		category: "Time",
+	},
+	{
+		path: "change-base-helper",
+		name: "Change Base Helper",
+		element: <ChangeBaseHelper />,
+		category: "Number",
+	},
+	{
+		path: "ascii-reference-table",
+		name: "ASCII Reference Table",
+		element: <AsciiReferenceTable />,
+		category: "Misc",
+	},
+	{
+		path: "help-me-stuck-in-vim",
+		name: "Help me I'm stuck in Vim!",
+		element: <HelpMeStuckInVim />,
+		category: "Misc",
+	},
+	{
+		path: "network-ipv4-helper",
+		name: "IPv4 Helper",
+		element: <Ipv4Helper />,
+		category: "Number",
+	},
+	{
+		path: "file-diff",
+		name: "File Diff",
+		element: <FileDiff />,
+		category: "Misc",
+	},
 ];
