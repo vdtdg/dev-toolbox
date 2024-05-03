@@ -1,0 +1,23 @@
+.file-diff-wrapper {
+	justify-content: center;
+	align-items: center;
+	max-width: 80%;
+}
+
+.file-upload-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid var(--primary-accent);
+	padding: 2rem;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	max-width: 100%;
+}
+
+.diffviewer-container {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+	box-sizing: border-box;
+}
