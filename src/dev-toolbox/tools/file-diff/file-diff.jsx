@@ -10,6 +10,9 @@ const FileDiff = () => {
 	const [file2, setFile2] = useState(null);
 
 	const handleFileChange = (file, setter) => {
+		if (file === null) {
+			return;
+		}
 		const reader = new FileReader();
 		reader.onload = (e) => {
 			setter(e.target.result);
@@ -51,7 +54,7 @@ const FileDiff = () => {
 					<DiffViewer
 						oldValue={file1Content}
 						newValue={file2Content}
-						splitView={true}
+						splitView={false}
 						showDiffOnly={false}
 					/>
 				</div>

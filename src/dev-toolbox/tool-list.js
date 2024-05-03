@@ -17,6 +17,7 @@ import Ipv4Helper from "./tools/network/ipv4-helper";
 import React from "react";
 import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-timestamp-parser";
 import FileDiff from "./tools/file-diff/file-diff";
+import BinaryHelper from "./tools/binary-helper/binary-helper";
 
 export const toolList = [
 	{
@@ -119,6 +120,12 @@ export const toolList = [
 		path: "network-ipv4-helper",
 		name: "IPv4 Helper",
 		element: <Ipv4Helper />,
+		category: "Number",
+	},
+	{
+		path: "binary-helper",
+		name: "Binary Helper",
+		element: <BinaryHelper />,
 		category: "Number",
 	},
 	{

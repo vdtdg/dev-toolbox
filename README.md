@@ -58,32 +58,28 @@ Any contributions you make are greatly appreciated.
 
 ### Next features to be developed ordered by priority
 
-- Join the cryptography tools together.
 - Develop new tools:
-  - another number helper focused on powers of 2. Binary to decimal, with standard operations x2 x4 /2 /4
+  - File diff
   - image resizer
-  - Color picker
+  - jwt helper (https://jwt.io/)
+  - Simple color picker (click on a spectrum, get the color values in different formats)
   - Color shades generator
   - Emoji picker
   - Lorem Ipsum generator
-  - JSON prettier / reducer
+  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
+  - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - [JSON to Pydantic](https://jsontopydantic.com/)
   - Postman-like helper for basic http queries
-  - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
   - Regexp display / explainer
-  - File diff
-  - nginx conf verifier
-  - jwt helper
-  - explain this shell command
-  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
-  - SQL explainer
   - SQL Polyglot tool.
-  - SQL joins explanation
+  - SQL explainer ?
   - huffman encoder ?
   - a basic whiteboard tool ?
   - Various guide list
     - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
+    - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
+- OpenGraph (og) tags to do.
 
 ## License
 
