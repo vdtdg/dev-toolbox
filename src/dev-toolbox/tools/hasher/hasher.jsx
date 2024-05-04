@@ -35,11 +35,8 @@ export default function Hasher(props) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       ></textarea>
-      <div className="action-button-group">
-        <button
-          onClick={hashInput}
-          className="button primary-button action-button"
-        >
+      <div className="button-group">
+        <button onClick={hashInput} className="button primary-button">
           Hash
         </button>
       </div>

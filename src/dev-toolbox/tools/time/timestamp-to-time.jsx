@@ -113,11 +113,8 @@ export default function TimestampToTime() {
           <IoCopyOutline />
         </button>
       </div>
-      <div className="action-button-group">
-        <button
-          onClick={inputNow}
-          className="button support-button action-button"
-        >
+      <div className="button-group">
+        <button onClick={inputNow} className="button support-button">
           Input now
         </button>
       </div>

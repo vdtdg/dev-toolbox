@@ -92,17 +92,11 @@ export default function LevenshteinCalculator() {
         </tbody>
       </table>
 
-      <div className="action-button-group fixed-bottom">
-        <button
-          className="button action-button support-button"
-          onClick={addNewInput}
-        >
+      <div className="button-group fixed-bottom">
+        <button className="button support-button" onClick={addNewInput}>
           Add New Input
         </button>
-        <button
-          className="button action-button primary-button"
-          onClick={calculateDistances}
-        >
+        <button className="button primary-button" onClick={calculateDistances}>
           Calculate Distances
         </button>
       </div>

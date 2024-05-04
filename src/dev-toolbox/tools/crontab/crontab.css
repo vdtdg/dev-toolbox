@@ -40,7 +40,7 @@
 	padding-right: 1rem;
 }
 
-.crontab-input-container .action-button-group {
+.crontab-input-container .button-group {
 	flex-direction: column;
 	gap: 2rem;
 }

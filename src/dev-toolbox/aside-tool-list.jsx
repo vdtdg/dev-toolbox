@@ -29,7 +29,7 @@ export default function AsideToolList(props) {
         />
         <hr />
         {categories.map((category) => (
-          <details key={category}>
+          <details key={category} open>
             <summary className="category-title">
               {category} (
               {

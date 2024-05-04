@@ -1,5 +1,5 @@
 .timeline-container {
-  margin-top: 20px;
+  margin-top: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,42 +8,46 @@
 
 .timeline {
   display: flex;
-  height: 20px;
+  height: 30px;
+  border-radius: 1rem;
   width: 100%;
   background-color: var(--background);
   position: relative;
   overflow: hidden;
 }
 
+.progress-indicator {
+  position: absolute;
+  height: 30px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #00000077;
+  transition: width 1s linear;
+}
+
 .timeline-segment {
+  color: var(--font-color);
+  text-align: center;
   flex-grow: 1;
   position: relative;
   overflow: hidden;
 }
 
 .timeline-segment.completed {
-  background-color: var(--secondary-accent);
-}
-
-.progress-indicator {
-  position: absolute;
-  height: 20px;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  background-color: var(--secondary-accent);
-  transition: width 1s linear;
+  background-color: var(--background);
+  color: var(--background);
 }
 
 .timeline-segment.session {
-  background-color: var(--support);
+  background-color: var(--primary-600);
 }
 
 .timeline-segment.shortBreak {
-  background-color: var(--primary-accent);
+  background-color: var(--primary-300);
 }
 
 .timeline-segment.longBreak {
-  background-color: var(--primary-accent);  /* TODO need a rework of colors here */
+  background-color: var(--primary-200);
 }

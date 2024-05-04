@@ -64,10 +64,10 @@ export default function LinkedinTimestampParser() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       ></input>
-      <div className="action-button-group">
+      <div className="button-group">
         <button
           onClick={linkedinTimestampToTime}
-          className="button primary-button action-button"
+          className="button primary-button"
         >
           Find Date
         </button>
