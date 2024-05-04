@@ -46,6 +46,13 @@ Finally, to run locally the toolbox, execute `npm start`.
 
 Go to http://localhost:3000/ to access your local version of the toolbox.
 
+Run with docker:
+```bash
+docker-compose build
+docker-compose up -d
+```
+Go to http://localhost/dev-toolbox/ to access your docker version of the toolbox.
+
 ### How to contribute
 
 Any contributions you make are greatly appreciated.
