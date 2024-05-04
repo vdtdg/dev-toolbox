@@ -29,7 +29,7 @@ the toolbox directly.
 
 Visit [valerian.dtdg.fr/dev-toolbox](https://valerian.dtdg.fr/dev-toolbox) to use the toolbox.
 
-## Contributing
+## Run it yourself
 
 To get started with _Dev Toolbox_, simply clone the repository:
 
@@ -38,20 +38,23 @@ git clone https://github.com/vdtdg/dev-toolbox.git
 cd dev-toolbox
 ```
 
+### Run with Node:
 You need Node.js and npm. At least version 20.
 
 Then, at the root level of the project, execute `npm install` to install dependencies.
 
 Finally, to run locally the toolbox, execute `npm start`.
 
-Go to http://localhost:3000/ to access your local version of the toolbox.
+Go to http://localhost:3000/dev-toolbox/ to access your local version of the toolbox.
 
-Run with docker:
+### Run with docker:
 ```bash
 docker-compose build
 docker-compose up -d
 ```
 Go to http://localhost/dev-toolbox/ to access your docker version of the toolbox.
+
+## Contributing
 
 ### How to contribute
 
