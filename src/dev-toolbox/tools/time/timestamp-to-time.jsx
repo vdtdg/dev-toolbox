@@ -1,33 +1,48 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../tools-common.css";
+import { IoCopyOutline } from "react-icons/io5";
 
 export default function TimestampToTime() {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [timestampMilli, setTimestampMilli] = useState(0);
+  const [timestampSec, setTimestampSec] = useState(0);
+  const [isoDate, setIsoDate] = useState(new Date().toISOString());
+
+  useEffect(() => {
+    console.log({ timestampMilli });
+    updateDates(new Date(timestampMilli));
+  }, [timestampMilli]);
+
+  useEffect(() => {
+    updateDates(new Date(timestampSec * 1000));
+  }, [timestampSec]);
+
+  useEffect(() => {
+    updateDates(new Date(isoDate));
+  }, [isoDate]);
+
+  const updateDates = (date) => {
+    if (!isNaN(date)) {
+      setTimestampMilli(date.getTime());
+      setTimestampSec(Math.floor(date.getTime() / 1000));
+      setIsoDate(date.toISOString());
+    }
+  };
 
   const inputNow = () => {
-    const now = new Date();
-    setInput(now.getTime());
+    updateDates(new Date());
   };
 
-  const timestampToTime = () => {
-    const date = new Date(parseInt(input));
-    setOutput(date.toISOString());
-  };
-
-  const timeToTimestamp = () => {
-    const date = new Date(input);
-    setOutput(date.getTime());
-  };
-
-  const handleCopyClick = () => {
+  const handleCopyClick = (event, value) => {
+    console.log({ event });
     try {
-      navigator.clipboard.writeText(output);
-      setTooltipVisible(true);
+      navigator.clipboard.writeText(value);
+      const $tooltip = document.querySelector(".tooltip");
+      $tooltip.style.display = `block`;
+      $tooltip.style.left = `${event.pageX}px`;
+      $tooltip.style.top = `${event.pageY}px`;
 
       setTimeout(() => {
-        setTooltipVisible(false);
+        $tooltip.style.display = `none`;
       }, 1450);
     } catch (error) {
       console.error("Failed to copy:", error);
@@ -37,28 +52,68 @@ export default function TimestampToTime() {
   return (
     <section className="tool-section">
       <h3 className="tool-title">Timestamp to ISO Time</h3>
-      <label htmlFor="input" className="field-label">
-        Timestamp (in milliseconds) or ISO Time:
+
+      <div className="tooltip" style={{ display: "none" }}>
+        Copied!
+      </div>
+
+      <label htmlFor="timestampmilli" className="field-label">
+        Timestamp (in milliseconds):
       </label>
-      <input
-        id="input"
-        className="field"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      ></input>
+      <div className="field-with-copy-container">
+        <input
+          id="timestampmilli"
+          style={{ width: "220px" }}
+          className="field"
+          value={timestampMilli}
+          onChange={(e) => setTimestampMilli(parseInt(e.target.value))}
+        ></input>
+        <button
+          className="field copy-button"
+          onClick={(event) => handleCopyClick(event, timestampMilli)}
+        >
+          <IoCopyOutline />
+        </button>
+      </div>
+
+      <label htmlFor="timestamp" className="field-label">
+        Timestamp (in seconds):
+      </label>
+      <div className="field-with-copy-container">
+        <input
+          id="timestamp"
+          className="field"
+          style={{ width: "220px" }}
+          value={timestampSec}
+          onChange={(e) => setTimestampSec(parseInt(e.target.value))}
+        ></input>
+        <button
+          className="field copy-button"
+          onClick={(event) => handleCopyClick(event, timestampSec)}
+        >
+          <IoCopyOutline />
+        </button>
+      </div>
+
+      <label htmlFor="isodate" className="field-label">
+        ISO Date:
+      </label>
+      <div className="field-with-copy-container">
+        <input
+          id="isodate"
+          className="field"
+          style={{ width: "220px" }}
+          value={isoDate}
+          onChange={(e) => setIsoDate(e.target.value)}
+        ></input>
+        <button
+          className="field copy-button"
+          onClick={(event) => handleCopyClick(event, isoDate)}
+        >
+          <IoCopyOutline />
+        </button>
+      </div>
       <div className="action-button-group">
-        <button
-          onClick={timestampToTime}
-          className="button primary-button action-button"
-        >
-          To ISO Time
-        </button>
-        <button
-          onClick={timeToTimestamp}
-          className="button secondary-button action-button"
-        >
-          To timestamp
-        </button>
         <button
           onClick={inputNow}
           className="button support-button action-button"
@@ -66,17 +121,6 @@ export default function TimestampToTime() {
           Input now
         </button>
       </div>
-      <label htmlFor="output" className="field-label">
-        Output:
-      </label>
-      <input
-        id="output"
-        className="field"
-        value={output}
-        readOnly
-        onClick={handleCopyClick}
-      ></input>
-      {tooltipVisible && <div className="tooltip">Copied!</div>}
     </section>
   );
 }

@@ -29,7 +29,6 @@
 }
 
 .field {
-  width: 100%;
   padding-top: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
@@ -46,6 +45,17 @@
 .field:focus {
   border-color: var(--font-color-accent);
   outline: none;
+}
+
+.copy-button {
+  width: fit-content;
+}
+
+.field-with-copy-container {
+  width: 260px;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .action-button {
@@ -115,6 +125,9 @@
 }
 
 .tooltip {
+  position: absolute;
+  width: 3.5rem;
+  align-self: center;
   background-color: var(--bg-level-4);
   color: var(--font-color);
   padding: 7px;
