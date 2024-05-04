@@ -18,6 +18,7 @@ import React from "react";
 import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-timestamp-parser";
 import FileDiff from "./tools/file-diff/file-diff";
 import BinaryHelper from "./tools/binary-helper/binary-helper";
+import HttpRequest from "./tools/http-request/http-request";
 
 export const toolList = [
 	{
@@ -134,4 +135,10 @@ export const toolList = [
 		element: <FileDiff />,
 		category: "Misc",
 	},
+	{
+		path: "http-request",
+		name: "HTTP Request",
+		element: <HttpRequest />,
+		category: "Network",
+	}
 ];
