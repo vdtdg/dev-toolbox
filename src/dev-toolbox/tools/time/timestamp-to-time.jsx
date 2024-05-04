@@ -11,12 +11,12 @@ export default function TimestampToTime() {
     setInput(now.getTime());
   };
 
-  const timeStampToTime = () => {
-    const date = new Date(input);
+  const timestampToTime = () => {
+    const date = new Date(parseInt(input));
     setOutput(date.toISOString());
   };
 
-  const timeToTimeStamp = () => {
+  const timeToTimestamp = () => {
     const date = new Date(input);
     setOutput(date.getTime());
   };
@@ -48,13 +48,13 @@ export default function TimestampToTime() {
       ></input>
       <div className="action-button-group">
         <button
-          onClick={timeStampToTime}
+          onClick={timestampToTime}
           className="button primary-button action-button"
         >
           To ISO Time
         </button>
         <button
-          onClick={timeToTimeStamp}
+          onClick={timeToTimestamp}
           className="button secondary-button action-button"
         >
           To timestamp
