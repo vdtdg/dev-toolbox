@@ -16,6 +16,7 @@ import HelpMeStuckInVim from "./tools/vim/help-me-stuck-in-vim";
 import Ipv4Helper from "./tools/network/ipv4-helper";
 import React from "react";
 import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-timestamp-parser";
+import FileDiff from "./tools/file-diff/file-diff";
 import BinaryHelper from "./tools/binary-helper/binary-helper";
 
 export const toolList = [
@@ -126,5 +127,11 @@ export const toolList = [
 		name: "Binary Helper",
 		element: <BinaryHelper />,
 		category: "Number",
+	},
+	{
+		path: "file-diff",
+		name: "File Diff",
+		element: <FileDiff />,
+		category: "Misc",
 	},
 ];
