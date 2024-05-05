@@ -4,3 +4,18 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.image-resizer-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.image-controls-container {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	padding: 2rem;
+	gap: 1rem;
+}
