@@ -124,6 +124,10 @@ p {
   overflow-wrap: break-word;
 }
 
+ul {
+  font-size: 1.2rem;
+}
+
 table {
   color: var(--font-color);
   background-color: var(--tint-2);
