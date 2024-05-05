@@ -232,31 +232,24 @@ export default function Pomodoro() {
           onChange={(e) => {
             updateVolume(parseFloat(e.target.value));
           }}
-          className="field"
         />
       </div>
-      <div className="action-button-group">
+      <div className="button-group">
         {isRunning && mode !== modes.paused ? (
-          <button
-            className="button secondary-button action-button"
-            onClick={togglePause}
-          >
+          <button className="button support-button" onClick={togglePause}>
             Pause
           </button>
         ) : null}
 
         {!isRunning && mode === modes.paused ? (
-          <button
-            className="button secondary-button action-button"
-            onClick={togglePause}
-          >
+          <button className="button support-button" onClick={togglePause}>
             Resume
           </button>
         ) : null}
 
         {!isRunning && mode !== modes.paused ? (
           <button
-            className="button primary-button action-button"
+            className="button primary-button"
             onClick={() => {
               setIsRunning(true);
               if (mode === modes.notStarted || mode === modes.paused) {
@@ -268,10 +261,7 @@ export default function Pomodoro() {
           </button>
         ) : null}
 
-        <button
-          className="button secondary-button action-button"
-          onClick={reset}
-        >
+        <button className="button secondary-button" onClick={reset}>
           Reset
         </button>
       </div>
@@ -281,8 +271,8 @@ export default function Pomodoro() {
           .toString()
           .padStart(2, "0")}{" "}
         : {(currentTimer % 60).toString().padStart(2, "0")}
-        <PomodoroTimeline />
       </div>
+      <PomodoroTimeline />
     </section>
   );
 }

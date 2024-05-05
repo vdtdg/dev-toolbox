@@ -1,66 +1,83 @@
 :root {
-  --background: #777;
-  --bg-level-1: #B8B8B8;
-  --bg-level-2: #CFCFCF;
-  --bg-level-3: #DEDEDE;
-  --bg-level-4: #F2F2F2;
-
+  --primary-50: #f0faff;
+  --primary-100: #e1f3fd;
+  --primary-200: #bce7fb;
+  --primary-300: #67cef7;   /* Original primary */
+  --primary-400: #3ec2f2;
+  --primary-500: #14abe3;
+  --primary-600: #0889c1;
+  --primary-700: #086e9c;
+  --primary-800: #0b5c81;
+  --primary-900: #0f4d6b;
+  --primary-950: #0a3147;
+  --secondary-50: #f8f7ee;
+  --secondary-100: #eeebd3;
+  --secondary-200: #ded6aa;
+  --secondary-300: #c5b36a;  /* Original secondary */
+  --secondary-400: #bba254;
+  --secondary-500: #ac8f46;
+  --secondary-600: #93743b;
+  --secondary-700: #775731;
+  --secondary-800: #64492f;
+  --secondary-900: #573e2c;
+  --secondary-950: #312117;
+  --support-50: #f4f7f2;
+  --support-100: #e5ecdf;
+  --support-200: #cad9c1;
+  --support-300: #a3bd98;
+  --support-400: #84a578;  /* Original support */
+  --support-500: #577f4a;
+  --support-600: #416437;
+  --support-700: #32502c;
+  --support-800: #294025;
+  --support-900: #23351f;
+  --support-950: #131e10;
   --border: #979797;
 
-  /* TODO Light theme colors needs to be reworked. At the moment they're just the inverse of dark mode */
+  /* Light theme specific */
+  --background: #d0d0d0;
+  --bg-level-1: white;
+  --tint-1: #cfcfcf;
+  --tint-2: #eaeaea;
+  --btn-disabled: var(--primary-100);
+  --btn-disabled-text: var(--primary-400);
   --font-color: #101010;
-  --font-color-accent: #000000;
-  --font-color-button: #DEDEDE;
-  --primary: #075978;
-  --primary-accent: #67cef6;
-  --secondary: #5c5124;
-  --secondary-accent: #c5b36a;
-  --support: #536e49;
-  --support-accent: #84a578;
+  --title-color: #101010;
+  --link-color: var(--primary-600);
 }
 
 [theme = "dark"] {
   --background: #101010;
-  --bg-level-1: #1a1a1a;
-  --bg-level-2: #262626;
-  --bg-level-3: #363636;
-  --bg-level-4: #474747;
-
-  --border: #979797;
-
-  --font-color: #f1f1f1;
-  --font-color-accent: #ffffff;
-  --font-color-button: #262626;
-  --primary: #67cef6;
-  --primary-accent: #075978;
-  --secondary: #c5b36a;
-  --secondary-accent: #5c5124;
-  --support: #84a578;
-  --support-accent: #536e49;
+  --bg-level-1: #2a2a2a;
+  --tint-1: #3c3c3c;
+  --tint-2: #525252;
+  --btn-disabled: var(--primary-950);
+  --btn-disabled-text: var(--primary-700);
+  --font-color: white;
+  --title-color: var(--primary-300);
+  --link-color: white;
 }
 
 * {
   transition: all 0.1s ease-out;
 }
 
-
 html {
   min-height: 100vh;
 }
 
 body {
-  font-family: Lato, Arial, sans-serif;
+  font-family: Inter, sans-serif;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  color: var(--font-color-accent);
-
+  color: var(--font-color);
   background-size: cover;
   background-color: var(--background);
 }
 
 a {
-  color: var(--primary);
+  color: var(--link-color);
 }
 
 h1 {
@@ -69,7 +86,7 @@ h1 {
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
-  color: var(--primary);
+  color: var(--title-color);
 
   overflow: visible;
 }
@@ -80,7 +97,7 @@ h2 {
   font-weight: 400;
   font-size: 1.75rem;
   line-height: 2.625rem;
-  color: var(--primary);
+  color: var(--title-color);
 
   overflow: visible;
 }
@@ -91,7 +108,7 @@ h3 {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.25rem;
-  color: var(--primary);
+  color: var(--title-color);
 
   overflow: visible;
 }
@@ -100,28 +117,33 @@ p {
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--font-color-accent);
+  color: var(--font-color);
   text-align: left;
 
   overflow: visible;
   overflow-wrap: break-word;
 }
 
+ul {
+  font-size: 1.2rem;
+}
+
 table {
   color: var(--font-color);
-  background-color: var(--bg-level-3);
+  background-color: var(--tint-2);
   width: 80%;
   margin-top: 5px;
   margin-bottom: 5px;
   border-collapse: collapse;
+  border-radius: 1rem;
 }
 
 thead {
   position: sticky;
   top: 0;
   z-index: 1;
-  color: var(--font-color-accent);
-  background-color: var(--bg-level-4);
+  color: var(--font-color);
+  background-color: var(--tint-1);
 }
 
 td {
@@ -133,63 +155,63 @@ td {
   color: var(--font-color);
 }
 
+.button-group {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-group:last-child {
+  margin-right: 0;
+}
+
 .button {
+  cursor: pointer;
   border: none;
   border-radius: 0.5rem;
-  cursor: pointer;
-  justify-content: center;
-  align-content: center;
+  margin-right: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
 }
 
 .primary-button {
-  background-color: var(--primary);
-  color: var(--background)
-}
-
-.primary-button:hover {
-  background-color: var(--primary-accent);
-  color: white;
-  box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--primary-500);
+  &:hover {
+    background-color: var(--primary-600);
+  }
+  &:active {
+    background-color: var(--primary-700);
+  }
 }
 
 .support-button {
-  background-color: var(--support);
-  color: var(--background);
+  background-color: var(--support-500);
+  &:hover {
+    background-color: var(--support-600);
+  }
+  &:active {
+    background-color: var(--support-700);
+  }
 }
 
 .secondary-button {
-  background-color: var(--secondary);
-  color: var(--background);
-}
-
-.secondary-button:hover {
-  background-color: var(--secondary-accent);
-  color: var(--font-color-accent);
-  box-shadow: inset 0 0 0.2rem var(--background);
-}
-
-.support-button:hover {
-  background-color: var(--support-accent);
-  color: white;
-  box-shadow: inset 0 0 0.2rem var(--background);
-}
-
-.tertiary-button {
-  background-color: var(--bg-level-1);
-  color: var(--font-color);
-}
-
-.tertiary-button:hover {
-  background-color: var(--bg-level-4);
-  color: var(--font-color-accent);
-  box-shadow: inset 0 0 0.2rem var(--background);
+  background-color: var(--secondary-500);
+  &:hover {
+    background-color: var(--secondary-600);
+  }
+  &:active {
+    background-color: var(--secondary-700);
+  }
 }
 
 .keyboard-stroke {
   font-family: monospace;
-  border: 1px solid #404040;
+  border: 1px solid var(--secondary-600);
   border-radius: 0.5rem;
   padding-left: 3px;
   padding-right: 3px;
-  color: var(--secondary)
+  color: var(--secondary-600);
 }

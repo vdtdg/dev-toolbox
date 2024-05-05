@@ -37,14 +37,10 @@
 
 .cron-expression div {
 	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
-.copy-button {
-	width: fit-content;
-	margin-left: 2rem;
-}
-
-.crontab-input-container .action-button-group {
+.crontab-input-container .button-group {
 	flex-direction: column;
 	gap: 2rem;
 }

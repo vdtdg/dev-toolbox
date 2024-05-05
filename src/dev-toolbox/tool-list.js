@@ -19,6 +19,7 @@ import LinkedinTimestampParser from "./tools/linkedin-timestamp-parser/linkedin-
 import FileDiff from "./tools/file-diff/file-diff";
 import BinaryHelper from "./tools/binary-helper/binary-helper";
 import ImageHelper from "./tools/image-helper/image-helper";
+import HttpRequest from "./tools/http-request/http-request";
 
 export const toolList = [
 	{
@@ -128,12 +129,6 @@ export const toolList = [
 		name: "Binary Helper",
 		element: <BinaryHelper />,
 		category: "Number",
-	},
-	{
-		path: "file-diff",
-		name: "File Diff",
-		element: <FileDiff />,
-		category: "Misc",
 	},
 	{
 		path: "image-helper",

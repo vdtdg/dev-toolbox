@@ -39,17 +39,11 @@ export default function EncoderDecoder(props) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       ></input>
-      <div className="action-button-group">
-        <button
-          onClick={encode}
-          className="button primary-button action-button"
-        >
+      <div className="button-group">
+        <button onClick={encode} className="button primary-button">
           Encode
         </button>
-        <button
-          onClick={decode}
-          className="button support-button action-button"
-        >
+        <button onClick={decode} className="button support-button">
           Decode
         </button>
       </div>

@@ -26,7 +26,7 @@
   color: var(--font-color);
   font-family: monospace;
   font-style: normal;
-  background-color: var(--bg-level-2);
+  background-color: var(--tint-1);
 }
 
 .tool-list ul {
@@ -69,19 +69,19 @@
   font-family: monospace;
   color: var(--font-color);
   padding: 6px 9px;
-  background-color: var(--bg-level-3);
+  background-color: var(--tint-2);
   transition: background-color 0.3s ease;
   min-height: fit-content;
 }
 
 .tool-link:hover {
-  background-color: var(--bg-level-4);
-  color: var(--font-color-accent);
+  background-color: var(--primary-600);
+  color: white;
 }
 
 .tool-link.active {
-  background-color: var(--support);
-  color: var(--font-color-accent);
+  background-color: var(--primary-700);
+  color: white;
   font-weight: bold;
 }
 
@@ -101,8 +101,8 @@
 
 summary {
   cursor: pointer;
-  padding: 0.5em;
-  margin: -0.5em 0 0;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 1px;
 }
 
 .search-bar {

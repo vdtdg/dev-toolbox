@@ -29,14 +29,13 @@
 }
 
 .field {
-  width: 100%;
   padding-top: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   padding-bottom: 0.25rem;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
-  background-color: var(--bg-level-4);
+  background-color: var(--bg-level-1);
   color: var(--font-color);
   box-sizing: border-box;
   font-size: 1rem;
@@ -44,27 +43,19 @@
 }
 
 .field:focus {
-  border-color: var(--font-color-accent);
+  border-color: var(--border);
   outline: none;
 }
 
-.action-button {
-  margin-right: 0.5rem;
-  padding: 0.5rem 0.9rem;
-  font-size: 1rem;
-  color: var(--font-color-button)
+.copy-button {
+  width: fit-content;
 }
 
-.action-button-group {
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
+.field-with-copy-container {
+  width: 260px;
+  align-self: center;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.action-button:last-child {
-  margin-right: 0;
+  justify-content: space-between;
 }
 
 .fixed-bottom {
@@ -73,8 +64,6 @@
 }
 
 .field-label {
-  padding-top: 1rem;
-  width: 100%;
   text-align: center;
 }
 
@@ -105,17 +94,21 @@
   font-size: 2em;
   font-weight: bold;
   border-radius: 1rem;
-  width: 100%;
-  height: 4em;
+  width: 10rem;
+  height: 4rem;
   display: flex;
+  align-self: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary-600);
 }
 
 .tooltip {
-  background-color: var(--bg-level-4);
+  position: absolute;
+  width: 3.5rem;
+  align-self: center;
+  background-color: var(--tint-2);
   color: var(--font-color);
   padding: 7px;
   border-radius: 0.3rem;

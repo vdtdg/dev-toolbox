@@ -33,7 +33,7 @@ function PomodoroTimeline() {
         {segments.map((segment, index) => {
           return (
             <div
-              key={`segfment-${index}`}
+              key={`segment-${index}`}
               className={
                 index < currentSegment
                   ? "timeline-segment completed"
@@ -42,6 +42,7 @@ function PomodoroTimeline() {
               style={{ flex: `${(segment.length * 100) / sessionLength}%` }}
               title={`${segment.type} - ${segment.length} minutes`}
             >
+              {segment.type}
               {index === currentSegment && (
                 <div
                   className="progress-indicator"
