@@ -28,9 +28,28 @@ function ExtensionChanger({ image, dimensions }) {
 
 	return (
 		<div>
-			<button onClick={() => handleChangeExtension("png")}>Convert to PNG</button>
-			<button onClick={() => handleChangeExtension("jpeg")}>Convert to JPEG</button>
-			<button onClick={() => handleChangeExtension("webp")}>Convert to WEBP</button>
+			{image && (
+				<>
+					<button
+						className="button support-button action-button"
+						onClick={() => handleChangeExtension("png")}
+					>
+						Convert to PNG
+					</button>
+					<button
+						className="button support-button action-button"
+						onClick={() => handleChangeExtension("jpeg")}
+					>
+						Convert to JPEG
+					</button>
+					<button
+						className="button support-button action-button"
+						onClick={() => handleChangeExtension("webp")}
+					>
+						Convert to WEBP
+					</button>
+				</>
+			)}
 		</div>
 	);
 }

@@ -19,3 +19,10 @@
 	padding: 2rem;
 	gap: 1rem;
 }
+
+.image-resizer-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

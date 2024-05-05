@@ -84,8 +84,13 @@ function ImageResizer({ setImage, setDimensions }) {
 	};
 
 	return (
-		<div>
-			<input type="file" accept="image/*" onChange={handleImageUpload} />
+		<div className="image-resizer-wrapper">
+			<input
+				className="button primary-button action-button"
+				type="file"
+				accept="image/*"
+				onChange={handleImageUpload}
+			/>
 			{previewUrl && (
 				<div className="image-resizer-container">
 					<img src={previewUrl} alt="Preview" style={{ maxWidth: "100%", maxHeight: "500px" }} />
@@ -99,9 +104,13 @@ function ImageResizer({ setImage, setDimensions }) {
 							Height:
 							<input type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
 						</label>
-						<button onClick={handleRevert}>Revert to Original</button>
+						<button className="button secondary-button action-button" onClick={handleRevert}>
+							Revert to Original
+						</button>
 					</div>
-					<button onClick={handleExportImage}>Export Image</button>
+					<button className="button primary-button action-button" onClick={handleExportImage}>
+						Export Image
+					</button>
 				</div>
 			)}
 		</div>
