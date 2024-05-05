@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function ImageResizer() {
-	const [imageFile, setImageFile] = useState(null);
+function ImageResizer({ setImage, setDimensions }) {
 	const [originalUrl, setOriginalUrl] = useState("");
 	const [previewUrl, setPreviewUrl] = useState("");
 	const [width, setWidth] = useState(500);
@@ -43,13 +42,14 @@ function ImageResizer() {
 
 	useEffect(() => {
 		if (originalUrl && worker) {
+			setDimensions({ width, height });
 			worker.postMessage({ imageData: originalUrl, width, height });
 		}
 	}, [width, height, originalUrl, worker]); // Update preview when width, height, or originalUrl changes
 
 	const handleImageUpload = async (event) => {
 		const file = event.target.files[0];
-		setImageFile(file);
+		setImage(file);
 		const fileUrl = URL.createObjectURL(file);
 		setOriginalUrl(fileUrl);
 
