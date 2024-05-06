@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./jwt-helper.css";
-import { KJUR, b64utoutf8 } from "jsrsasign";
+import { KJUR } from "jsrsasign";
 
 const JwtHelper = () => {
 	const defaultPayload = JSON.stringify(
@@ -9,7 +9,6 @@ const JwtHelper = () => {
 		2
 	);
 	const defaultSecret = "your-256-bit-secret";
-
 	const [payload, setPayload] = useState(defaultPayload);
 	const [secret, setSecret] = useState(defaultSecret);
 	const [algorithm, setAlgorithm] = useState("HS256");
@@ -20,14 +19,6 @@ const JwtHelper = () => {
 	const [error, setError] = useState("");
 
 	useEffect(() => {
-		encodeJWT();
-	}, [payload, secret, algorithm]); // Encode JWT whenever these dependencies change
-
-	useEffect(() => {
-		if (encoded) decodeJWT(); // Decode JWT whenever the encoded value changes
-	}, [encoded]);
-
-	const encodeJWT = () => {
 		try {
 			const header = { alg: algorithm, typ: "JWT" };
 			const token = KJUR.jws.JWS.sign(null, JSON.stringify(header), payload, secret);
@@ -36,13 +27,17 @@ const JwtHelper = () => {
 		} catch (err) {
 			setError("Encoding failed: " + err.message);
 		}
-	};
+	}, [payload, secret, algorithm]);
 
-	const decodeJWT = () => {
+	useEffect(() => {
+		decodeJWT(encoded);
+	}, [encoded]);
+
+	const decodeJWT = (token) => {
 		try {
-			const isValid = KJUR.jws.JWS.verify(encoded, secret, { alg: [algorithm] });
+			const isValid = KJUR.jws.JWS.verify(token, secret, { alg: [algorithm] });
 			if (isValid) {
-				const decodedToken = KJUR.jws.JWS.parse(encoded);
+				const decodedToken = KJUR.jws.JWS.parse(token);
 				setDecodedHeader(JSON.stringify(decodedToken.headerObj, null, 2));
 				setDecodedPayload(JSON.stringify(decodedToken.payloadObj, null, 2));
 				setDecodedSignature(decodedToken.sigHex);
@@ -55,6 +50,10 @@ const JwtHelper = () => {
 		}
 	};
 
+	const handleEncodedChange = (e) => {
+		setEncoded(e.target.value);
+	};
+
 	const handlePayloadChange = (e) => {
 		setPayload(e.target.value);
 	};
@@ -65,6 +64,10 @@ const JwtHelper = () => {
 
 	const handleAlgorithmChange = (e) => {
 		setAlgorithm(e.target.value);
+	};
+
+	const handleHeaderChange = (e) => {
+		setDecodedHeader(e.target.value);
 	};
 
 	return (
@@ -89,7 +92,7 @@ const JwtHelper = () => {
 				<article className="jwt-helper-encoded">
 					<h4>Encoded</h4>
 					<div className="jwt-helper-encoded-content">
-						<textarea value={encoded} readOnly />
+						<textarea value={encoded} onChange={handleEncodedChange} />
 					</div>
 				</article>
 				<article className="jwt-helper-decoded">
@@ -97,20 +100,22 @@ const JwtHelper = () => {
 					<div className="jwt-helper-decoded-content">
 						<div className="jwt-helper-decoded-header">
 							<h5>HEADER</h5>
-							<textarea value={decodedHeader} readOnly />
+							<textarea value={decodedHeader} onChange={handleHeaderChange} />
 						</div>
 						<div className="jwt-helper-decoded-payload">
 							<h5>PAYLOAD</h5>
-							<textarea value={decodedPayload} readOnly />
+							<textarea value={decodedPayload} onChange={handlePayloadChange} />
 						</div>
 						<div className="jwt-helper-decoded-verify-signature">
 							<h5>VERIFY SIGNATURE</h5>
-							<textarea value={decodedSignature} readOnly />
+							<textarea value={secret} onChange={handleSecretChange} />
 						</div>
 					</div>
 				</article>
 			</div>
-			<div className="jwt-helper-footer">{error && <p className="error">{error}</p>}</div>
+			<div className="jwt-helper-footer">
+				{error ? <p className="error">{error}</p> : <p className="Signature Verified">Success!</p>}
+			</div>
 		</section>
 	);
 };
