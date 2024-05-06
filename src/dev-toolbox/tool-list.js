@@ -20,6 +20,7 @@ import FileDiff from "./tools/file-diff/file-diff";
 import BinaryHelper from "./tools/binary-helper/binary-helper";
 import ImageHelper from "./tools/image-helper/image-helper";
 import HttpRequest from "./tools/http-request/http-request";
+import JwtHelper from "./tools/jwt-helper/jwt-helper";
 
 export const toolList = [
 	{
@@ -147,5 +148,11 @@ export const toolList = [
 		name: "HTTP Request",
 		element: <HttpRequest />,
 		category: "Network",
+	},
+	{
+		path: "jwt-helper",
+		name: "JWT Helper",
+		element: <JwtHelper />,
+		category: "Cryptography",
 	},
 ];
