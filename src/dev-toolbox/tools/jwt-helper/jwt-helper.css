@@ -45,6 +45,7 @@
 	resize: none;
 	min-height: 200px;
 	overflow-y: "hidden";
+	width: 80%;
 }
 
 .jwt-helper-footer {

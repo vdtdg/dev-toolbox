@@ -17,6 +17,7 @@ const JwtHelper = () => {
 	const [decodedPayload, setDecodedPayload] = useState("");
 	const [decodedSignature, setDecodedSignature] = useState("");
 	const [error, setError] = useState("");
+	const [copied, setCopied] = useState(false);
 
 	useEffect(() => {
 		try {
@@ -32,6 +33,15 @@ const JwtHelper = () => {
 	useEffect(() => {
 		decodeJWT(encoded);
 	}, [encoded]);
+
+	useEffect(() => {
+		try {
+			const newPayload = JSON.parse(decodedPayload);
+			setPayload(JSON.stringify(newPayload, null, 2));
+		} catch (err) {
+			setError("Invalid JSON format in decoded payload.");
+		}
+	}, [decodedPayload]);
 
 	const decodeJWT = (token) => {
 		try {
@@ -51,11 +61,31 @@ const JwtHelper = () => {
 	};
 
 	const handleEncodedChange = (e) => {
-		setEncoded(e.target.value);
+		const newEncoded = e.target.value;
+		setEncoded(newEncoded);
+
+		try {
+			decodeJWT(newEncoded);
+			setError("");
+		} catch (err) {
+			setError("Decoding failed: " + err.message);
+		}
+	};
+
+	const handlePaste = (e) => {
+		const pastedText = e.clipboardData.getData("text");
+		setEncoded(pastedText);
+
+		try {
+			decodeJWT(pastedText);
+			setError("");
+		} catch (err) {
+			setError("Decoding failed: " + err.message);
+		}
 	};
 
 	const handlePayloadChange = (e) => {
-		setPayload(e.target.value);
+		setDecodedPayload(e.target.value);
 	};
 
 	const handleSecretChange = (e) => {
@@ -68,6 +98,18 @@ const JwtHelper = () => {
 
 	const handleHeaderChange = (e) => {
 		setDecodedHeader(e.target.value);
+	};
+
+	const handleShareClick = () => {
+		navigator.clipboard
+			.writeText(encoded)
+			.then(() => {
+				setCopied(true);
+				setTimeout(() => {
+					setCopied(false);
+				}, 2000); // Revert back to SHARE JWT after 2 seconds
+			})
+			.catch((err) => setError("Copy to clipboard failed: " + err.message));
 	};
 
 	return (
@@ -92,7 +134,7 @@ const JwtHelper = () => {
 				<article className="jwt-helper-encoded">
 					<h4>Encoded</h4>
 					<div className="jwt-helper-encoded-content">
-						<textarea value={encoded} onChange={handleEncodedChange} />
+						<textarea value={encoded} onChange={handleEncodedChange} onPaste={handlePaste} />
 					</div>
 				</article>
 				<article className="jwt-helper-decoded">
@@ -115,6 +157,7 @@ const JwtHelper = () => {
 			</div>
 			<div className="jwt-helper-footer">
 				{error ? <p className="error">{error}</p> : <p className="Signature Verified">Success!</p>}
+				<button onClick={handleShareClick}>{copied ? "COPIED" : "SHARE JWT"}</button>
 			</div>
 		</section>
 	);
