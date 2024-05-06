@@ -21,6 +21,10 @@
 	width: 100%;
 }
 
+.jwt-container * {
+	color: var(--text-color);
+}
+
 .jwt-helper-encoded,
 .jwt-helper-decoded {
 	flex: 1;
@@ -38,7 +42,9 @@
 	resize: none;
 	background-color: transparent;
 	border: none;
-	height: 100%;
+	resize: none;
+	min-height: 200px;
+	overflow-y: "hidden";
 }
 
 .jwt-helper-footer {
