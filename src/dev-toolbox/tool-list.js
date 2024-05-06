@@ -155,4 +155,10 @@ export const toolList = [
 		element: <JwtHelper />,
 		category: "Cryptography",
 	},
+	{
+		path: "jwt-helper",
+		name: "JWT Helper",
+		element: <JwtHelper />,
+		category: "Visual",
+	},
 ];
