@@ -4,6 +4,10 @@
 	align-items: center;
 }
 
+.jwt-helper-wrapper p {
+	text-align: left;
+}
+
 .jwt-helper-algorithm-selector {
 	display: flex;
 	gap: 1rem;

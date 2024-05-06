@@ -5,7 +5,13 @@ const JwtHelper = () => {
 	return (
 		<section className="tool-section jwt-helper-wrapper">
 			<h3>JWT Helper</h3>
-			<p>JWT Helper content goes here</p>
+			<p>
+				The JWT Helper is a convenient tool designed to facilitate the encoding and decoding of JSON
+				Web Tokens (JWTs). You can easily generate a JWT by providing a payload and a secret key, or
+				decode an existing JWT to verify its contents and signature. This tool is intended to assist
+				developers in testing and debugging JWTs during the development of secure applications.
+			</p>
+
 			<div className="jwt-helper-algorithm-selector">
 				<label>Algorithm</label>
 				<select>
