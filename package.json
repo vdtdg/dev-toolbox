@@ -17,6 +17,7 @@
     "cronstrue": "^2.49.0",
     "crypto-js": "^4.2.0",
     "file-saver": "^2.0.5",
+    "jsrsasign": "^11.1.0",
     "netmask": "^2.0.2",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
