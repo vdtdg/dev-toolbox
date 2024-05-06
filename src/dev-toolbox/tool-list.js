@@ -136,4 +136,16 @@ export const toolList = [
 		element: <ImageHelper />,
 		category: "Misc",
 	},
+	{
+		path: "file-diff",
+		name: "File Diff",
+		element: <FileDiff />,
+		category: "Misc",
+	},
+	{
+		path: "http-request",
+		name: "HTTP Request",
+		element: <HttpRequest />,
+		category: "Network",
+	},
 ];
