@@ -19,6 +19,8 @@ const JwtHelper = () => {
 	const [error, setError] = useState("");
 	const [copied, setCopied] = useState(false);
 
+	const supportedAlgorithms = ["HS256", "HS384", "HS512"];
+
 	useEffect(() => {
 		try {
 			const header = { alg: algorithm, typ: "JWT" };
@@ -125,9 +127,11 @@ const JwtHelper = () => {
 			<div className="jwt-helper-algorithm-selector">
 				<label>Algorithm</label>
 				<select value={algorithm} onChange={handleAlgorithmChange}>
-					<option value="HS256">HS256</option>
-					<option value="HS384">HS384</option>
-					<option value="HS512">HS512</option>
+					{supportedAlgorithms.map((alg) => (
+						<option key={alg} value={alg}>
+							{alg}
+						</option>
+					))}
 				</select>
 			</div>
 			<div className="jwt-container">
