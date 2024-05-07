@@ -23,6 +23,7 @@ import HttpRequest from "./tools/http-request/http-request";
 import JwtHelper from "./tools/jwt-helper/jwt-helper";
 import ColorPicker from "./tools/color-picker/color-picker";
 import ColorShadesGenerator from "./tools/color-shades-generator/color-shades-generator";
+import EmojiPickerTool from "./tools/emoji-picker/emoji-picker";
 
 export const toolList = [
 	{
@@ -167,6 +168,12 @@ export const toolList = [
 		path: "color-shades-generator",
 		name: "Color Shades Generator",
 		element: <ColorShadesGenerator />,
+		category: "Graphics",
+	},
+	{
+		path: "emoji-picker",
+		name: "Emoji Picker",
+		element: <EmojiPickerTool />,
 		category: "Graphics",
 	},
 ];
