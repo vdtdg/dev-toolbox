@@ -24,6 +24,7 @@ import JwtHelper from "./tools/jwt-helper/jwt-helper";
 import ColorPicker from "./tools/color-picker/color-picker";
 import ColorShadesGenerator from "./tools/color-shades-generator/color-shades-generator";
 import EmojiPickerTool from "./tools/emoji-picker/emoji-picker";
+import LoremIpsumGenerator from "./tools/lorem-ipsum-generator/lorem-ipsum-generator";
 
 export const toolList = [
 	{
@@ -175,5 +176,11 @@ export const toolList = [
 		name: "Emoji Picker",
 		element: <EmojiPickerTool />,
 		category: "Graphics",
+	},
+	{
+		path: "lorem-ipsum-generator",
+		name: "Lorem Ipsum Generator",
+		element: <LoremIpsumGenerator />,
+		category: "Misc",
 	},
 ];

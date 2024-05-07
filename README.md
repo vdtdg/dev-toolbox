@@ -72,7 +72,6 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Develop new tools:
-  - (in progress) Lorem Ipsum generator
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - [JSON to Pydantic](https://jsontopydantic.com/)
