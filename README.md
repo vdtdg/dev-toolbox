@@ -39,6 +39,7 @@ cd dev-toolbox
 ```
 
 ### Run with Node:
+
 You need Node.js and npm. At least version 20.
 
 Then, at the root level of the project, execute `npm install` to install dependencies.
@@ -48,10 +49,12 @@ Finally, to run locally the toolbox, execute `npm start`.
 Go to http://localhost:3000/dev-toolbox/ to access your local version of the toolbox.
 
 ### Run with docker:
+
 ```bash
 docker-compose build
 docker-compose up -d
 ```
+
 Go to http://localhost/dev-toolbox/ to access your docker version of the toolbox.
 
 ## Contributing
@@ -69,13 +72,6 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Develop new tools:
-  - (in progress) File diff
-  - (in progress) image resizer and extension changer. 
-  - (in progress) jwt helper (https://jwt.io/)
-  - (in progress) Simple color picker (click on a spectrum, get the color values in different formats)
-  - (in progress) Color shades generator
-  - (in progress) Emoji picker
-  - (in progress) Lorem Ipsum generator
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - [JSON to Pydantic](https://jsontopydantic.com/)

@@ -1,0 +1,23 @@
+.select-color-container {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.color-shades-wrapper p {
+	text-align: center;
+}
+
+.select-color-container label {
+	flex: 1;
+}
+
+.select-color-container input {
+	width: 95%;
+	flex: 1;
+}
