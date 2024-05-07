@@ -138,7 +138,7 @@ export const toolList = [
 		path: "image-helper",
 		name: "Image Helper",
 		element: <ImageHelper />,
-		category: "Misc",
+		category: "Graphics",
 	},
 	{
 		path: "file-diff",
