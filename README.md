@@ -75,7 +75,6 @@ Any contributions you make are greatly appreciated.
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - [JSON to Pydantic](https://jsontopydantic.com/)
-  - Postman-like helper for basic http queries
   - Regexp display / explainer
   - SQL Polyglot tool.
   - SQL explainer ?
@@ -86,6 +85,9 @@ Any contributions you make are greatly appreciated.
     - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
 - OpenGraph (og) tags to do.
+- Extend the HTTP Helper to do more than query with JSON bodies, and display the response headers.
+- Rework all components to give them a homogeneous design.
+
 
 ## License
 
