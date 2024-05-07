@@ -17,6 +17,8 @@
     "cron-parser": "^4.9.0",
     "cronstrue": "^2.49.0",
     "crypto-js": "^4.2.0",
+    "emoji-mart": "^5.6.0",
+    "emoji-picker-react": "^4.9.2",
     "file-saver": "^2.0.5",
     "jsrsasign": "^11.1.0",
     "netmask": "^2.0.2",
