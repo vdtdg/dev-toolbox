@@ -72,8 +72,8 @@ Any contributions you make are greatly appreciated.
 ### Next features to be developed ordered by priority
 
 - Develop new tools:
-  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
+  - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - [JSON to Pydantic](https://jsontopydantic.com/)
   - Regexp display / explainer
   - SQL Polyglot tool.
