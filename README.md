@@ -79,7 +79,7 @@ Any contributions you make are greatly appreciated.
 - Review all build warning and refactor.
 - Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 - Develop new tools:
-  - JSON prettier / reducer (Something like https://plantuml.com/json ?)
+  - JSON prettier / reducer (or minify) (Something like https://plantuml.com/json ?)
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - [JSON to Pydantic](https://jsontopydantic.com/)
   - Regexp display / explainer
