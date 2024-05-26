@@ -71,6 +71,8 @@ Any contributions you make are greatly appreciated.
 
 ### Next features to be developed ordered by priority
 
+- SEO optimization: how to make sure this toolbox ranks in various Search engines?
+- OpenGraph (og) tags to do.
 - Rework all components to give them a homogeneous design. Also make sure they all run well on mobile.
 - When mobile view is on, the footer shouldn't stay at the bottom
 - Use crypto-js dependency for the JWT helper instead of jsrsasign
@@ -88,8 +90,6 @@ Any contributions you make are greatly appreciated.
   - Various guide list
     - [API security Checklist](https://github.com/shieldfy/API-Security-Checklist/blob/master/README.md?source=post_page-----78fd25dac4df--------------------------------)
     - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.php)
-- SEO optimization: how to make sure this toolbox ranks in various Search engines?
-- OpenGraph (og) tags to do.
 - Extend the HTTP Helper to do more than query with JSON bodies, and display the response headers.
 
 
