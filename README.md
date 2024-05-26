@@ -78,6 +78,7 @@ Any contributions you make are greatly appreciated.
 - Use crypto-js dependency for the JWT helper instead of jsrsasign
 - Review all build warning and refactor.
 - Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
+- Rename the PomodoroProvider component as a more generic StorageProvider component
 - Develop new tools:
   - JSON prettier / reducer (or minify) (Something like https://plantuml.com/json ?)
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
