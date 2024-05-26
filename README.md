@@ -71,6 +71,8 @@ Any contributions you make are greatly appreciated.
 
 ### Next features to be developed ordered by priority
 
+- Rework all components to give them a homogeneous design. Also make sure they all run well on mobile.
+- When mobile view is on, the footer shouldn't stay at the bottom
 - Develop new tools:
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
@@ -86,7 +88,6 @@ Any contributions you make are greatly appreciated.
 - SEO optimization: how to make sure this toolbox ranks in various Search engines?
 - OpenGraph (og) tags to do.
 - Extend the HTTP Helper to do more than query with JSON bodies, and display the response headers.
-- Rework all components to give them a homogeneous design.
 
 
 ## License
