@@ -75,6 +75,7 @@ Any contributions you make are greatly appreciated.
 - When mobile view is on, the footer shouldn't stay at the bottom
 - Use crypto-js dependency for the JWT helper instead of jsrsasign
 - Review all build warning and refactor.
+- Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 - Develop new tools:
   - JSON prettier / reducer (Something like https://plantuml.com/json ?)
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
