@@ -7,12 +7,22 @@ import DevToolBox from "./dev-toolbox/dev-toolbox";
 import { toolList } from "./dev-toolbox/tool-list";
 import ErrorPage from "./error-page";
 import { PomodoroProvider } from "./dev-toolbox/tools/pomodoro/pomodoroContext";
+import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <DevToolBox />,
+      element: (
+        <>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>My Title</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+          </Helmet>
+          <DevToolBox />
+        </>
+      ),
       errorElement: <ErrorPage />,
       children: toolList,
     },
