@@ -8,10 +8,7 @@ import { toolList } from "./dev-toolbox/tool-list";
 import ErrorPage from "./error-page";
 import { PomodoroProvider } from "./dev-toolbox/tools/pomodoro/pomodoroContext";
 import { Helmet } from "react-helmet";
-
-// TODO add those to a .env. Need webpack?
-const host = "https://valerian.dtdg.fr";
-const basePath = "/dev-toolbox";
+import { consts } from "./consts";
 
 const router = createBrowserRouter(
   [
@@ -31,25 +28,25 @@ const router = createBrowserRouter(
               name="description"
               content="Welcome to Dev Toolbox, a developer's companion for all your coding needs. Lightweight, without ads, free, fully client-side, open-sourced."
             />
-            <link rel="canonical" href={host + basePath} />
+            <link rel="canonical" href={consts.host + consts.basePath} />
             <link
-              href={basePath + "/apple-touch-icon.png"}
+              href={consts.basePath + "/apple-touch-icon.png"}
               rel="apple-touch-icon"
               sizes="180x180"
             />
             <link
-              href={basePath + "/favicon-32x32.png"}
+              href={consts.basePath + "/favicon-32x32.png"}
               rel="icon"
               sizes="32x32"
               type="image/png"
             />
             <link
-              href={basePath + "/favicon-16x16.png"}
+              href={consts.basePath + "/favicon-16x16.png"}
               rel="icon"
               sizes="16x16"
               type="image/png"
             />
-            <link href={basePath + "/site.webmanifest"} rel="manifest" />
+            <link href={consts.basePath + "/site.webmanifest"} rel="manifest" />
           </Helmet>
           <DevToolBox />
         </>
@@ -59,7 +56,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: basePath,
+    basename: consts.basePath,
   },
 );
 
