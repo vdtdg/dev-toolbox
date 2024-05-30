@@ -52,7 +52,7 @@ export default function LevenshteinCalculator() {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">Levenshtein Distance Calculator</h3>
+      <h1 className="tool-title">Levenshtein Distance Calculator</h1>
       <table className="levenshtein-table">
         <thead className="levenshtein-table-head">
           <tr>

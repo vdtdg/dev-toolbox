@@ -37,7 +37,7 @@ export default function Ipv4Helper() {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">Network IPv4 Helper</h3>
+      <h1 className="tool-title">Network IPv4 Helper</h1>
       <label htmlFor="input" className="field-label">
         IPv4 / netmask:
       </label>

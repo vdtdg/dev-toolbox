@@ -178,7 +178,7 @@ export default function Pomodoro() {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">Pomodoro</h3>
+      <h1 className="tool-title">Pomodoro</h1>
       <div className="centered-column-field-container">
         <label className="field-label">
           Number of work sessions between long breaks:

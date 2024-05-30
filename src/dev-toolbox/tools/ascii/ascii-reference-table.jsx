@@ -4,7 +4,7 @@ import { ASCII_REF } from "./ascii-ref";
 export default function AsciiReferenceTable() {
   return (
     <>
-      <h3>ASCII Reference Table</h3>
+      <h1 className="tool-title">ASCII Reference Table</h1>
       <table>
         <thead>
           <tr>

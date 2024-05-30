@@ -252,7 +252,7 @@ const CronTab = () => {
 
   return (
     <section className="crontab-wrapper tool-section">
-      <h3 className="tool-title">Cron Tab Helper</h3>
+      <h1 className="tool-title">Cron Tab Helper</h1>
       <p>
         This tool helps you create cron expressions for scheduling tasks. Fill
         out the fields or use the preset buttons below.

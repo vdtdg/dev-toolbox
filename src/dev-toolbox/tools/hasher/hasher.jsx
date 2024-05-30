@@ -25,7 +25,7 @@ export default function Hasher(props) {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">{props.title} Hasher</h3>
+      <h1 className="tool-title">{props.title} Hasher</h1>
       <label htmlFor="input" className="field-label">
         Input:
       </label>

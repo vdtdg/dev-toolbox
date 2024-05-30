@@ -3,7 +3,7 @@ import "../tools-common.css";
 export default function HelpMeStuckInVim() {
   return (
     <>
-      <h3 className="tool-title">Help me I'm stuck in VIM !</h3>
+      <h1 className="tool-title">Help me I'm stuck in VIM !</h1>
       <p>
         Don't panic.
         <br />

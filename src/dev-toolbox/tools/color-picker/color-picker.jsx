@@ -54,7 +54,7 @@ function ColorPicker() {
 
   return (
     <section className="tool-section color-picker-wrapper">
-      <h3 className="tool-title">Color Picker</h3>
+      <h1 className="tool-title">Color Picker</h1>
       <p>
         This tool allows you to pick a color and get its HEX, RGBA, and HSLA
         values. You can also copy these values to your clipboard by clicking the

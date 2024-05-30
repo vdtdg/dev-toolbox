@@ -51,7 +51,7 @@ export default function TimestampToTime() {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">Timestamp to ISO Time</h3>
+      <h1 className="tool-title">Timestamp to ISO Time</h1>
 
       <div className="tooltip" style={{ display: "none" }}>
         Copied!

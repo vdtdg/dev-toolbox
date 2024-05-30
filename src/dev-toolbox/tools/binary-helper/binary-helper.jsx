@@ -169,7 +169,7 @@ const BinaryHelper = () => {
 
   return (
     <section className="crontab-wrapper tool-section">
-      <h3>Binary Helper</h3>
+      <h1 className="tool-title">Binary Helper</h1>
       <p>
         This tool facilitates the conversion between binary and decimal numbers.
         Additionally, it computes the outcome of applying a mask to the binary

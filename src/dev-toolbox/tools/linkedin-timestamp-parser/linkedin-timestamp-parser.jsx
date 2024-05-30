@@ -42,7 +42,7 @@ export default function LinkedinTimestampParser() {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">LinkedIn Post Date Parser</h3>
+      <h1 className="tool-title">LinkedIn Post Date Parser</h1>
       <p>
         On LinkedIn, posts are displayed with time relative to the current day.
         This can lead to very vague dates: "1 year ago" can mean a huge range of

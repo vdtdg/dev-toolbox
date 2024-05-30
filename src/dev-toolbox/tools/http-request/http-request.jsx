@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import '../tools-common.css';
+import React, { useState, useEffect } from "react";
+import "../tools-common.css";
 
 const HttpRequest = () => {
-  const [url, setUrl] = useState('');
-  const [method, setMethod] = useState('GET');
-  const [headers, setHeaders] = useState('');
-  const [body, setBody] = useState('');
-  const [response, setResponse] = useState('');
+  const [url, setUrl] = useState("");
+  const [method, setMethod] = useState("GET");
+  const [headers, setHeaders] = useState("");
+  const [body, setBody] = useState("");
+  const [response, setResponse] = useState("");
   const [jsonError, setJsonError] = useState(false);
 
   // Effect to clear the body and jsonError when method is GET
   useEffect(() => {
-    if (method === 'GET') {
-      setBody('');
+    if (method === "GET") {
+      setBody("");
       setJsonError(false);
     }
   }, [method]);
   const parseHeaders = (headerString) => {
-    const headerLines = headerString.split('\n');
+    const headerLines = headerString.split("\n");
     return headerLines.reduce((headers, line) => {
-      const separatorIndex = line.indexOf(':');
+      const separatorIndex = line.indexOf(":");
       if (separatorIndex !== -1) {
         const key = line.substring(0, separatorIndex).trim();
         const value = line.substring(separatorIndex + 1).trim();
@@ -33,7 +33,7 @@ const HttpRequest = () => {
   const sendRequest = async () => {
     try {
       const headerObj = parseHeaders(headers);
-      const parsedBody = method !== 'GET' && body ? JSON.parse(body) : null;
+      const parsedBody = method !== "GET" && body ? JSON.parse(body) : null;
 
       const res = await fetch(url, {
         method,
@@ -51,7 +51,7 @@ const HttpRequest = () => {
     } catch (error) {
       if (error instanceof SyntaxError) {
         setJsonError(true);
-        setResponse('JSON Format Error: Please check your JSON syntax');
+        setResponse("JSON Format Error: Please check your JSON syntax");
       } else {
         setResponse(`Error: ${error.message}`);
       }
@@ -61,7 +61,7 @@ const HttpRequest = () => {
   return (
     <div className="tool-container">
       <div className="tool-section">
-        <h2 className="tool-title">HTTP Request Tool</h2>
+        <h1 className="tool-title">HTTP Request - Test your API</h1>
         <div className="centered-column-field-container">
           <input
             type="text"
@@ -70,7 +70,11 @@ const HttpRequest = () => {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
-          <select className="field" value={method} onChange={(e) => setMethod(e.target.value)}>
+          <select
+            className="field"
+            value={method}
+            onChange={(e) => setMethod(e.target.value)}
+          >
             <option value="GET">GET</option>
             <option value="POST">POST</option>
             <option value="PUT">PUT</option>
@@ -90,10 +94,15 @@ const HttpRequest = () => {
             value={body}
             onChange={(e) => setBody(e.target.value)}
             rows={4}
-            disabled={method === 'GET'}
+            disabled={method === "GET"}
           />
           {jsonError && <p className="error-message">Invalid JSON format.</p>}
-          <button className="button primary-button action-button" onClick={sendRequest}>Send Request</button>
+          <button
+            className="button primary-button action-button"
+            onClick={sendRequest}
+          >
+            Send Request
+          </button>
         </div>
         <textarea
           className="field resize-vertical-only"

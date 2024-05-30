@@ -29,7 +29,7 @@ export default function EncoderDecoder(props) {
 
   return (
     <section className="tool-section">
-      <h3 className="tool-title">{props.title} Decoder/Encoder</h3>
+      <h1 className="tool-title">{props.title} Decoder/Encoder</h1>
       <label htmlFor="input" className="field-label">
         Input:
       </label>

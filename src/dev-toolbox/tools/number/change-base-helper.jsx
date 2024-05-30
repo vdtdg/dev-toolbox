@@ -21,7 +21,7 @@ export default function ChangeBaseHelper() {
 
   return (
     <>
-      <h3 className="tool-title">Number Helper</h3>
+      <h1 className="tool-title">Number Helper</h1>
       <InputField
         id="inputBase2"
         fieldLabel={"Number in base 2 (binary):"}
