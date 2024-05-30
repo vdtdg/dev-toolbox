@@ -13,7 +13,7 @@ export default function SeoWrapper({ children, name, path }) {
       <>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{name}</title>
+          <title>{name} - Access Top Developer Tools Online</title>
           <link
             rel="canonical"
             href={consts.host + consts.basePath + "/" + path}
