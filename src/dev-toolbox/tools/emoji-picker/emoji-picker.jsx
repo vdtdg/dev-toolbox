@@ -7,7 +7,6 @@ const EmojiPickerTool = () => {
 
   const onEmojiClick = (emojiObject) => {
     navigator.clipboard.writeText(emojiObject.emoji);
-    console.log(emojiObject.emoji);
     setChosenEmoji(emojiObject);
   };
 

@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 import { consts } from "../consts.js";
 
 export default function SeoWrapper({ children, name, path }) {
-  console.log(name);
   const data = seoData[name];
   return (
     <>

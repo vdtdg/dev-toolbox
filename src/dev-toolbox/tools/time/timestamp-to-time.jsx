@@ -8,7 +8,6 @@ export default function TimestampToTime() {
   const [isoDate, setIsoDate] = useState(new Date().toISOString());
 
   useEffect(() => {
-    console.log({ timestampMilli });
     updateDates(new Date(timestampMilli));
   }, [timestampMilli]);
 
@@ -33,7 +32,6 @@ export default function TimestampToTime() {
   };
 
   const handleCopyClick = (event, value) => {
-    console.log({ event });
     try {
       navigator.clipboard.writeText(value);
       const $tooltip = document.querySelector(".tooltip");
