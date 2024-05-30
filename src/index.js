@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       element: (
         <>
           <Helmet>
-            <title>Dev Toolbox</title>
+            <title>Dev Toolbox - Access Top Developer Free Tools Online</title>
             <meta charSet="utf-8" />
             <meta
               content="width=device-width, initial-scale=1"
