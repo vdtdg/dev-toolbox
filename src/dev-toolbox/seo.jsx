@@ -14,7 +14,10 @@ export default function SeoWrapper({ children, name, path }) {
         <Helmet>
           <meta charSet="utf-8" />
           <title>{name}</title>
-          <link rel="canonical" href={consts.host + consts.basePath + path} />
+          <link
+            rel="canonical"
+            href={consts.host + consts.basePath + "/" + path}
+          />
           {data.metaTags.map((tag) => (
             <meta name={tag.name} content={tag.content} />
           ))}
