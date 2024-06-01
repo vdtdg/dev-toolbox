@@ -30,7 +30,7 @@ export default function AsideToolList(props) {
         <hr />
         {categories.map((category) => (
           <details key={category} open>
-            <summary className="category-title">
+            <summary className="tool-category-title">
               {category} (
               {
                 filteredTools.filter((tool) => tool.category === category)
