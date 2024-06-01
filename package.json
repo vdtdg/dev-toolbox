@@ -26,13 +26,14 @@
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "7.22.11",
     "prettier": "^3.2.5",
-    "source-map-explorer": "^2.5.3"
+    "source-map-explorer": "^2.5.3",
+    "dotenv": "^16.4.5"
   },
   "scripts": {
-    "generate-sitemap": " generate-sitemap.js",
+    "generate-sitemap": "node src/generate-sitemap.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "npm run generate-sitemap && GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test"
   },
   "eslintConfig": {
