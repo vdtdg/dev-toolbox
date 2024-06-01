@@ -281,7 +281,7 @@ export const toolList = [
         <EmojiPickerTool />
       </SeoWrapper>
     ),
-    category: "Graphics",
+    category: "Misc",
   },
   {
     path: "lorem-ipsum-generator",
