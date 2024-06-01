@@ -33,7 +33,7 @@
     "generate-sitemap": "node src/generate-sitemap.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
-    "build": "npm run generate-sitemap && GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test"
   },
   "eslintConfig": {
