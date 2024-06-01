@@ -1,6 +1,7 @@
 # Project specific
 .idea
 .env
+public/sitemap.xml
 
 # dependencies
 /node_modules
