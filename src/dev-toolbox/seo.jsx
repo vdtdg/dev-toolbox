@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./dev-toolbox.css";
-import { seoData } from "./seo-data";
+import seoData from "./seo-data";
 import { Helmet } from "react-helmet";
 import { consts } from "../consts.js";
 
