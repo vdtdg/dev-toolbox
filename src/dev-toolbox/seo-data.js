@@ -1,5 +1,6 @@
-export const seoData = {
+const seoData = {
   Pomodoro: {
+    path: "pomodoro",
     metaTags: [
       {
         name: "description",
@@ -19,6 +20,7 @@ export const seoData = {
     ],
   },
   "Cron Tab Helper": {
+    path: "crontab",
     metaTags: [
       {
         name: "description",
@@ -38,6 +40,7 @@ export const seoData = {
     ],
   },
   "Levenshtein Distance Calculator": {
+    path: "levenshtein-distance",
     metaTags: [
       {
         name: "description",
@@ -60,6 +63,7 @@ export const seoData = {
     ],
   },
   "Uri Encoder - Decoder": {
+    path: "uri-encoder-decoder",
     metaTags: [
       {
         name: "description",
@@ -79,6 +83,7 @@ export const seoData = {
     ],
   },
   "HTML Encoder - Decoder": {
+    path: "html-encoder-decoder",
     metaTags: [
       {
         name: "description",
@@ -98,6 +103,7 @@ export const seoData = {
     ],
   },
   "Base64 Encoder - Decoder": {
+    path: "base64-encoder-decoder",
     metaTags: [
       {
         name: "description",
@@ -120,6 +126,7 @@ export const seoData = {
     ],
   },
   "MD5 Hasher": {
+    path: "md5-hasher",
     metaTags: [
       {
         name: "description",
@@ -139,6 +146,7 @@ export const seoData = {
     ],
   },
   "SHA1 Hasher": {
+    path: "sha1-hasher",
     metaTags: [
       {
         name: "description",
@@ -161,6 +169,7 @@ export const seoData = {
     ],
   },
   "SHA256 Hasher": {
+    path: "sha256-hasher",
     metaTags: [
       {
         name: "description",
@@ -183,6 +192,7 @@ export const seoData = {
     ],
   },
   "SHA512 Hasher": {
+    path: "sha512-hasher",
     metaTags: [
       {
         name: "description",
@@ -205,6 +215,7 @@ export const seoData = {
     ],
   },
   "RIPEMD-160 Hasher": {
+    path: "ripemd-160-hasher",
     metaTags: [
       {
         name: "description",
@@ -227,6 +238,7 @@ export const seoData = {
     ],
   },
   "Timestamp to time": {
+    path: "timestamp-to-time",
     metaTags: [
       {
         name: "description",
@@ -249,6 +261,7 @@ export const seoData = {
     ],
   },
   "LinkedIn Post Date Parser": {
+    path: "linkedin-post-date-parser",
     metaTags: [
       {
         name: "description",
@@ -272,6 +285,7 @@ export const seoData = {
     ],
   },
   "Change Base Helper": {
+    path: "change-base-helper",
     metaTags: [
       {
         name: "description",
@@ -294,6 +308,7 @@ export const seoData = {
     ],
   },
   "ASCII Reference Table": {
+    path: "ascii-reference-table",
     metaTags: [
       {
         name: "description",
@@ -316,6 +331,7 @@ export const seoData = {
     ],
   },
   "Help me I'm stuck in Vim!": {
+    path: "help-me-stuck-in-vim",
     metaTags: [
       {
         name: "description",
@@ -333,6 +349,7 @@ export const seoData = {
     ],
   },
   "IPv4 Helper": {
+    path: "network-ipv4-helper",
     metaTags: [
       {
         name: "description",
@@ -353,6 +370,7 @@ export const seoData = {
     ],
   },
   "Binary Helper": {
+    path: "binary-helper",
     metaTags: [
       {
         name: "description",
@@ -375,6 +393,7 @@ export const seoData = {
     ],
   },
   "Image Helper": {
+    path: "image-helper",
     metaTags: [
       {
         name: "description",
@@ -395,6 +414,7 @@ export const seoData = {
     ],
   },
   "File Diff": {
+    path: "file-diff",
     metaTags: [
       {
         name: "description",
@@ -414,6 +434,7 @@ export const seoData = {
     ],
   },
   "HTTP Request": {
+    path: "http-request",
     metaTags: [
       {
         name: "description",
@@ -431,6 +452,7 @@ export const seoData = {
     ],
   },
   "JWT Helper": {
+    path: "jwt-helper",
     metaTags: [
       {
         name: "description",
@@ -453,6 +475,7 @@ export const seoData = {
     ],
   },
   "Color Picker": {
+    path: "color-picker",
     metaTags: [
       {
         name: "description",
@@ -473,6 +496,7 @@ export const seoData = {
     ],
   },
   "Color Shades Generator": {
+    path: "color-shades-generator",
     metaTags: [
       {
         name: "description",
@@ -495,6 +519,7 @@ export const seoData = {
     ],
   },
   "Emoji Picker": {
+    path: "emoji-picker",
     metaTags: [
       {
         name: "description",
@@ -515,6 +540,7 @@ export const seoData = {
     ],
   },
   "Lorem Ipsum Generator": {
+    path: "lorem-ipsum-generator",
     metaTags: [
       {
         name: "description",
@@ -537,3 +563,5 @@ export const seoData = {
     ],
   },
 };
+
+module.exports = seoData;
