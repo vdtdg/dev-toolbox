@@ -3,7 +3,7 @@ const path = require("path");
 const seoData = require("./dev-toolbox/seo-data");
 require("dotenv").config();
 
-const baseUrl = new URL(process.env.BASE_PATH, process.env.PUBLIC_URL).href;
+const baseUrl = new URL(process.env.BASE_PATH, process.env.HOST_URL).href;
 
 function generateSitemap(toolList, baseUrl) {
   const urls = Object.entries(toolList).map(([toolName, toolData]) => {
