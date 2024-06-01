@@ -38,6 +38,8 @@ git clone https://github.com/vdtdg/dev-toolbox.git
 cd dev-toolbox
 ```
 
+Set up your own `.env` file by copying it from the `.env.template` file. Fill the values with your local environment configuration.
+
 ### Run with Node:
 
 You need Node.js and npm. At least version 20.
