@@ -4,11 +4,6 @@
   "private": true,
   "homepage": "/dev-toolbox",
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "browser-image-compression": "^2.0.2",
     "cron-parser": "^4.9.0",
     "cronstrue": "^2.49.0",
@@ -34,6 +29,7 @@
     "source-map-explorer": "^2.5.3"
   },
   "scripts": {
+    "generate-sitemap": " generate-sitemap.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
