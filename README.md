@@ -83,6 +83,7 @@ Any contributions you make are greatly appreciated.
 - Rename the PomodoroProvider component as a more generic StorageProvider component
 - Develop new tools:
   - JSON prettier / reducer (or minify) (Something like https://plantuml.com/json ?)
+  - Uptime calculator (99, 99.9, 99.99...)
   - SQL auto-Formatter: drop unindented SQL query, get it formatted properly
   - [JSON to Pydantic](https://jsontopydantic.com/)
   - Regexp display / explainer
