@@ -73,7 +73,6 @@ Any contributions you make are greatly appreciated.
 
 ### Next features to be developed ordered by priority
 
-- New favicon showcasing a blue wrench
 - Menu doesn't go away on mobile when clicking on a tool in the menu.
 - Rework all components to give them a homogeneous design. Also make sure they all run well on mobile.
 - When mobile view is on, the footer shouldn't stay at the bottom
