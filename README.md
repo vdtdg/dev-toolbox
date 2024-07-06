@@ -78,7 +78,10 @@ Any contributions you make are greatly appreciated.
 - When mobile view is on, the footer shouldn't stay at the bottom
 - Use crypto-js dependency for the JWT helper instead of jsrsasign
 - Review all build warning and refactor.
-- Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
+- Optimize load time:
+  - Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
+  - Lazy loading?
+- Add a image crop helper function to the image helper?
 - Rename the PomodoroProvider component as a more generic StorageProvider component
 - Develop new tools:
   - JSON prettier / reducer (or minify) (Something like https://plantuml.com/json ?)
