@@ -15,40 +15,37 @@ export default function AsideToolList(props) {
 
   return (
     <>
-      <aside className="box tool-list">
-        <div key="tool-list-title" className="tool-list-title">
-          <span>Available tools ({filteredTools.length})</span>
-          <DarkLightToggle />
-        </div>
-        <input
-          className="field search-bar"
-          type="search"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <hr />
-        {categories.map((category) => (
-          <details key={category} open>
-            <summary className="tool-category-title">
-              {category} (
-              {
-                filteredTools.filter((tool) => tool.category === category)
-                  .length
-              }
-              )
-            </summary>
-            <ul>
-              {filteredTools
-                .filter((tool) => tool.category === category)
-                .map((tool) => (
-                  <li key={tool.path} onClick={props.closeMenu}>
-                    <NavLink to={`/${tool.path}`} className="tool-link">
-                      {tool.name}
-                    </NavLink>
-                  </li>
-                ))}
-            </ul>
+        <aside className="box tool-list">
+            <div key="tool-list-header" className="tool-list-header">
+                <div key="tool-list-title" className="tool-list-title">
+                    <span>Available tools ({filteredTools.length})</span>
+                       <DarkLightToggle />
+                </div>
+                <input className="field search-bar"
+                        type="search"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                 />
+
+            </div>
+            {categories.map((category) => (
+                <details key={category} open>
+                    <summary className="tool-category-title">
+                        {category} (
+                            {filteredTools.filter((tool) => tool.category === category).length
+                      })
+                    </summary>
+                    <ul>
+                        {filteredTools
+                            .filter((tool) => tool.category === category).map((tool) => (
+                                <li key={tool.path} onClick={props.closeMenu}>
+                                    <NavLink to={`/${tool.path}`} className="tool-link">
+                                    {tool.name}
+                                    </NavLink>
+                                </li>
+                            ))}
+                    </ul>
           </details>
         ))}
       </aside>

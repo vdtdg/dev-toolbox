@@ -23,11 +23,17 @@
 }
 
 .tool-list {
-  width: 20%;
-  min-width: 186px;
-  max-width: 300px;
+  min-width: 320px;
   height: 100%;
   overflow-y: auto;
+}
+
+.tool-list-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-level-1);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
 }
 
 .tool-category-title {
@@ -107,9 +113,9 @@ summary {
   width: calc(100% - 20px) !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .tool-list {
-    min-width: 100%;
+    min-width: 10%;
   }
 
   .tool-list ul {
