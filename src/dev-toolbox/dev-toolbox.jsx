@@ -28,6 +28,8 @@ export default function DevToolBox() {
       <div className="main-container">
         <div className="core-container">
           {isMobile ? (
+              <>
+            <div className="bm-border"></div>
             <Menu
               width={ 'calc(100% - 16px)' }
               noOverlay
@@ -36,6 +38,7 @@ export default function DevToolBox() {
             >
               <AsideToolList closeMenu={closeMenu} />
             </Menu>
+            </>
           ) : (
             <AsideToolList closeMenu={() => {}} />
           )}

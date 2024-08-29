@@ -130,6 +130,17 @@ summary {
     line-height: 0.9rem;
   }
 
+  .bm-border{
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    position: fixed;
+    width: 42px;
+    height: 42px;
+    left: 18px;
+    top: 16px;
+  }
+
+
   .bm-burger-button {
     position: fixed;
     width: 30px;
