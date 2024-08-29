@@ -113,7 +113,7 @@ summary {
 }
 
 @media only screen and (max-width: 800px) {
-.core-container {
+  .core-container {
     gap: 0px;
   }
 
@@ -153,7 +153,7 @@ summary {
     background: var(--font-color);
   }
 
-  footer {
+  .toolbox-footer {
     display: none;
   }
 }
