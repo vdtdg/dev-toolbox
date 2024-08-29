@@ -39,7 +39,7 @@ export default function AsideToolList(props) {
                     <ul>
                         {filteredTools
                             .filter((tool) => tool.category === category).map((tool) => (
-                                <li key={tool.path} onClick={props.closeMenu}>
+                                <li key={tool.path} onClick={props.closeMenu} onTouchEnd={props.closeMenu}>
                                     <NavLink to={`/${tool.path}`} className="tool-link">
                                     {tool.name}
                                     </NavLink>

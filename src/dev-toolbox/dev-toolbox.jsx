@@ -11,11 +11,11 @@ export default function DevToolBox() {
   const noToolLoaded = currentLocation === "/";
   const tool = noToolLoaded ? <NoTool /> : <Outlet />;
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setIsMobile(window.innerWidth <= 600);
+      setIsMobile(window.innerWidth <= 800);
     });
   }, []);
 
@@ -29,6 +29,8 @@ export default function DevToolBox() {
         <div className="core-container">
           {isMobile ? (
             <Menu
+              width={ 'calc(100% - 16px)' }
+              noOverlay
               isOpen={isOpen}
               onStateChange={({ isOpen }) => setIsOpen(isOpen)}
             >

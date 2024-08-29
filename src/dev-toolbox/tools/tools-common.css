@@ -4,6 +4,7 @@
 
 .tool-container {
   width: 100%;
+  min-width: calc(320px - 16px);
   min-height: 350px;
   display: flex;
   flex-direction: column;

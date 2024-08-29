@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
-
   padding: 8px;
   height: calc(100vh - 16px);
   min-width: calc(320px - 16px);
@@ -114,8 +113,12 @@ summary {
 }
 
 @media only screen and (max-width: 800px) {
+.core-container {
+    gap: 0px;
+  }
+
   .tool-list {
-    min-width: 10%;
+    width: 100%;
   }
 
   .tool-list ul {
@@ -131,13 +134,26 @@ summary {
     position: fixed;
     width: 30px;
     height: 30px;
-    right: 25px;
-    top: 36px;
+    left: 25px;
+    top: 23px;
   }
 
   .bm-burger-bars {
     margin-right: 20px;
     width: 30px;
     background: var(--font-color);
+  }
+
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  .bm-cross {
+    background: var(--font-color);
+  }
+
+  footer {
+    display: none;
   }
 }
