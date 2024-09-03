@@ -76,6 +76,7 @@ Any contributions you make are greatly appreciated.
 - Rework all components to give them a homogeneous design. Also make sure they all run well on mobile.
 - Use crypto-js dependency for the JWT helper instead of jsrsasign
 - Review all build warning and refactor.
+- Every tool should have its own description, in a hidden by default info box. (better SEO + nice UX)
 - Optimize load time:
   - Reduce bundle size (See https://create-react-app.dev/docs/analyzing-the-bundle-size/)
   - Lazy loading?
