@@ -1,0 +1,67 @@
+.tool-title {
+  font-weight: bold;
+}
+
+.tool-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.field-group {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+
+}
+
+.field-label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.field-encoder-decoder {
+  height: 60vh;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--tint-2);
+  color: var(--font-color);
+  padding: 1rem;
+  resize: none;
+
+
+}
+
+.button-group {
+  display: flex;
+
+}
+
+.tooltip {
+  margin-top: 0.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field-group {
+    width: 100%;
+  }
+}

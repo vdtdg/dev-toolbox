@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../tools-common.css";
+import "./encoder-decoder.css";
 
 export default function EncoderDecoder(props) {
   const [input, setInput] = useState("");
@@ -27,18 +27,34 @@ export default function EncoderDecoder(props) {
     }
   };
 
-  return (
+  return (<>
+    <h1 className="tool-title">{props.title} Decoder/Encoder</h1>
     <section className="tool-section">
-      <h1 className="tool-title">{props.title} Decoder/Encoder</h1>
-      <label htmlFor="input" className="field-label">
-        Input:
-      </label>
-      <input
-        id="input"
-        className="field"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      ></input>
+      <div className="field-container">
+        <div className="field-group">
+          <label htmlFor="input" className="field-label">
+            Input
+          </label>
+          <textarea 
+            id="input"
+            className="field-encoder-decoder"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </div>
+        <div className="field-group">
+          <label htmlFor="output" className="field-label">
+            Output
+          </label>
+          <textarea 
+            id="output"
+            className="field-encoder-decoder"
+            value={output}
+            readOnly
+            onClick={handleCopyClick}
+          />
+        </div>
+      </div>
       <div className="button-group">
         <button onClick={encode} className="button primary-button">
           Encode
@@ -47,17 +63,7 @@ export default function EncoderDecoder(props) {
           Decode
         </button>
       </div>
-      <label htmlFor="output" className="field-label">
-        Output:
-      </label>
-      <input
-        id="output"
-        className="field"
-        value={output}
-        readOnly
-        onClick={handleCopyClick}
-      ></input>
       {tooltipVisible && <div className="tooltip">Copied!</div>}
     </section>
-  );
+    </>);
 }
