@@ -35,10 +35,12 @@
   --border: #979797;
 
   /* Light theme specific */
-  --background: #d0d0d0;
-  --bg-level-1: white;
+  --background: white;
+  --bg-level-1: #f3f3f3;
+  --bg-level-2: #f0f0f0;
   --tint-1: #cfcfcf;
   --tint-2: #eaeaea;
+  --tint-3: white;
   --btn-disabled: var(--primary-100);
   --btn-disabled-text: var(--primary-400);
   --font-color: #101010;
@@ -49,8 +51,10 @@
 [theme = "dark"] {
   --background: #101010;
   --bg-level-1: #2a2a2a;
-  --tint-1: #3c3c3c;
-  --tint-2: #525252;
+  --bg-level-2: #222222;
+  --tint-1: #202020;
+  --tint-2: #232323;
+  --tint-3: #333333;
   --btn-disabled: var(--primary-950);
   --btn-disabled-text: var(--primary-700);
   --font-color: white;

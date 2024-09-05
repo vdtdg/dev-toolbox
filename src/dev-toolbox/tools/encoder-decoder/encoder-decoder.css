@@ -1,5 +1,8 @@
 .tool-title {
   font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
 }
 
 .tool-section {
@@ -16,38 +19,42 @@
   flex-direction: row;
   margin: 1rem;
   justify-content: center;
+  gap: 1rem;
 }
 
 .field-group {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-
 }
 
 .field-label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .field-encoder-decoder {
-  height: 60vh;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background-color: var(--tint-2);
+  height: 70vh;
+  border: 1px solid var(--tint-2);
+  border-radius: 0.5em;
+  background-color: var(--bg-level-1);
   color: var(--font-color);
-  padding: 1rem;
   resize: none;
-
-
 }
 
-.button-group {
-  display: flex;
+.field-encoder-decoder:focus {
+  outline: none;
+}
 
+.shadow-border-input {
+  border: 1px solid var(--tint-3);
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.625em var(--tint-1);
+  background-color: var(--tint-3);
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
 }
 
 .tooltip {
@@ -63,5 +70,13 @@
 
   .field-group {
     width: 100%;
+  }
+
+  .tool-title {
+    width: 70%;
+  }
+
+  .field-encoder-decoder {
+    height: 20vh;
   }
 }

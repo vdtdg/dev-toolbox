@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./encoder-decoder.css";
 
 export default function EncoderDecoder(props) {
@@ -6,13 +6,9 @@ export default function EncoderDecoder(props) {
   const [output, setOutput] = useState("");
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
-  const encode = () => {
+  useEffect(() => {
     setOutput(props.encodeFunc(input));
-  };
-
-  const decode = () => {
-    setOutput(props.decodeFunc(input));
-  };
+  }, [input, props]);
 
   const handleCopyClick = () => {
     try {
@@ -35,35 +31,31 @@ export default function EncoderDecoder(props) {
           <label htmlFor="input" className="field-label">
             Input
           </label>
-          <textarea 
-            id="input"
-            className="field-encoder-decoder"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
+          <div className="shadow-border-input">
+            <textarea
+              id="input"
+              className="field-encoder-decoder"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </div>
         </div>
         <div className="field-group">
           <label htmlFor="output" className="field-label">
             Output
           </label>
-          <textarea 
-            id="output"
-            className="field-encoder-decoder"
-            value={output}
-            readOnly
-            onClick={handleCopyClick}
-          />
+          <div className="shadow-border-input">
+            <textarea
+              id="output"
+              className="field-encoder-decoder"
+              value={output}
+              readOnly
+              onClick={handleCopyClick}
+            />
+          </div>
         </div>
-      </div>
-      <div className="button-group">
-        <button onClick={encode} className="button primary-button">
-          Encode
-        </button>
-        <button onClick={decode} className="button support-button">
-          Decode
-        </button>
       </div>
       {tooltipVisible && <div className="tooltip">Copied!</div>}
     </section>
-    </>);
+  </>);
 }
