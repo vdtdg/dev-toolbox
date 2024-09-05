@@ -36,7 +36,7 @@
 
 .field-encoder-decoder {
   height: 70vh;
-  border: 1px solid var(--tint-2);
+  border: 1px solid var(--tint-3);
   border-radius: 0.5em;
   background-color: var(--bg-level-1);
   color: var(--font-color);
