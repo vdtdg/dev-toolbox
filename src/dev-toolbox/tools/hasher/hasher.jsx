@@ -7,7 +7,11 @@ export default function Hasher(props) {
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
   useEffect(() => {
-    setOutput(props.hashFunc(input));
+    if (input === "") {
+      setOutput("");
+    } else {
+      setOutput(props.hashFunc(input));
+    }
   }, [input, props]);
 
   const handleCopyClick = () => {
