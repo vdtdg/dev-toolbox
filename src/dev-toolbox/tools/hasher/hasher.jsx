@@ -1,14 +1,14 @@
-import { useState } from "react";
-import "../tools-common.css";
+import { useState, useEffect } from "react";
+import "./hasher.css";
 
 export default function Hasher(props) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
-  const hashInput = () => {
+  useEffect(() => {
     setOutput(props.hashFunc(input));
-  };
+  }, [input, props]);
 
   const handleCopyClick = () => {
     try {
@@ -23,34 +23,39 @@ export default function Hasher(props) {
     }
   };
 
-  return (
+  return (<>
+    <h1 className="tool-title">{props.title} Hasher</h1>
     <section className="tool-section">
-      <h1 className="tool-title">{props.title} Hasher</h1>
-      <label htmlFor="input" className="field-label">
-        Input:
-      </label>
-      <textarea
-        id="input"
-        className="field resize-vertical-only"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      ></textarea>
-      <div className="button-group">
-        <button onClick={hashInput} className="button primary-button">
-          Hash
-        </button>
+      <div className="field-container">
+        <div className="field-group">
+          <label htmlFor="input" className="field-label">
+            Input
+          </label>
+          <div className="shadow-border-input">
+            <textarea
+              id="input"
+              className="field-encoder-decoder"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="field-group">
+          <label htmlFor="output" className="field-label">
+            Output
+          </label>
+          <div className="shadow-border-input">
+            <textarea
+              id="output"
+              className="field-encoder-decoder"
+              value={output}
+              readOnly
+              onClick={handleCopyClick}
+            />
+          </div>
+        </div>
       </div>
-      <label htmlFor="output" className="field-label">
-        Output:
-      </label>
-      <input
-        id="output"
-        className="field"
-        value={output}
-        readOnly
-        onClick={handleCopyClick}
-      ></input>
-      {tooltipVisible && <span className="tooltip">Copied!</span>}
+      {tooltipVisible && <div className="tooltip">Copied!</div>}
     </section>
-  );
+  </>);
 }
