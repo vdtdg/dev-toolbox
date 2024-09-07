@@ -105,11 +105,9 @@
 }
 
 .tooltip {
-  position: absolute;
-  width: 3.5rem;
   align-self: center;
   background-color: var(--tint-3);
   color: var(--font-color);
-  padding: 7px;
+  padding: 8px;
   border-radius: 0.3rem;
 }

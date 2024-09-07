@@ -7,11 +7,17 @@ const DarkLightToggle = () => {
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("theme", "dark");
     localStorage.setItem("selectedTheme", "dark");
+
+    const event = new CustomEvent("themeChange");
+    document.dispatchEvent(event);
   };
 
   const setLightMode = () => {
     document.querySelector("body").setAttribute("theme", "light");
     localStorage.setItem("selectedTheme", "light");
+
+    const event = new CustomEvent("themeChange");
+    document.dispatchEvent(event);
   };
 
   const selectedTheme = localStorage.getItem("selectedTheme");

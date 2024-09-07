@@ -28,7 +28,7 @@
 }
 
 .field-label {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -54,10 +54,6 @@
   padding: 1.25em;
   display: flex;
   flex-direction: column;
-}
-
-.tooltip {
-  margin-top: 0.5rem;
 }
 
 @media only screen and (max-width: 800px) {

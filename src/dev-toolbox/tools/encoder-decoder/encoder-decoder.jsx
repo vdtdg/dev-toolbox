@@ -1,61 +1,83 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./encoder-decoder.css";
+import MonacoEditor from "@monaco-editor/react";
+import { setEditorTheme } from "../../../dark-mode/monaco-theme";
 
 export default function EncoderDecoder(props) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState(localStorage.getItem("selectedTheme"));
+
+  document.addEventListener("themeChange", (event) => {
+    setSelectedTheme(localStorage.getItem("selectedTheme"));
+  });
 
   useEffect(() => {
     setOutput(props.encodeFunc(input));
   }, [input, props]);
-
-  const handleCopyClick = () => {
-    try {
-      navigator.clipboard.writeText(output);
-      setTooltipVisible(true);
-
-      setTimeout(() => {
-        setTooltipVisible(false);
-      }, 1450);
-    } catch (error) {
-      console.error("Failed to copy:", error);
-    }
-  };
 
   return (<>
     <h1 className="tool-title">{props.title} Decoder/Encoder</h1>
     <section className="tool-section">
       <div className="field-container">
         <div className="field-group">
-          <label htmlFor="input" className="field-label">
-            Input
-          </label>
           <div className="shadow-border-input">
-            <textarea
-              id="input"
-              className="field-encoder-decoder"
+            <label htmlFor="input" className="field-label">
+              <span>Raw value</span>
+            </label>
+            <MonacoEditor
+              height="72vh"
+              language="text"
+              theme={selectedTheme === "dark" ? "custom-dark" : "custom-light"}
+              options={{
+                lineNumbers: "off",
+                minimap: { enabled: false },
+                overviewRulerBorder: false,
+                automaticLayout: true,
+                scrollbar: {
+                  useShadows: false,
+                  verticalScrollbarSize: 8,
+                  horizontalScrollbarSize: 8
+                },
+                renderLineHighlight: "none",
+                wordWrap: "on"
+              }}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(value) => setInput(value)}
+              beforeMount={setEditorTheme}
             />
           </div>
         </div>
-        <div className="field-group">
-          <label htmlFor="output" className="field-label">
-            Output
-          </label>
+        <output className="field-group">
           <div className="shadow-border-input">
-            <textarea
-              id="output"
-              className="field-encoder-decoder"
-              value={output}
-              readOnly
-              onClick={handleCopyClick}
-            />
+            <label htmlFor="output" className="field-label">
+              <div style={{ display: "inline-flex", alignItems: "center" }}>
+                <span>Encoded value</span>
+              </div>
+            </label>
+              <MonacoEditor
+                height="72vh"
+                language="text"
+                theme={selectedTheme === "dark" ? "custom-dark" : "custom-light"}
+                options={{
+                  lineNumbers: "off",
+                  minimap: { enabled: false },
+                  overviewRulerBorder: false,
+                  automaticLayout: true,
+                  scrollbar: {
+                    useShadows: false,
+                    verticalScrollbarSize: 8,
+                    horizontalScrollbarSize: 8
+                  },
+                  renderLineHighlight: "none",
+                  wordWrap: "on"
+                }}
+                value={output}
+                beforeMount={setEditorTheme}
+              />
           </div>
-        </div>
+        </output>
       </div>
-      {tooltipVisible && <div className="tooltip">Copied!</div>}
     </section>
   </>);
 }

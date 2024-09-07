@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/dev-toolbox",
   "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
     "browser-image-compression": "^2.0.2",
     "cron-parser": "^4.9.0",
     "cronstrue": "^2.49.0",
