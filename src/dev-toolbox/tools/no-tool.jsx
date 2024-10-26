@@ -4,7 +4,7 @@ export default function NoTool() {
   return (
     <>
       <h1>Welcome to the dev toolbox ! 👋</h1>
-      <div style={{ textAlign: "left" }}>
+      <div style={{textAlign: "left"}}>
         <p>
           Welcome to Dev Toolbox, a developer's companion for all your coding
           needs. This toolbox is designed to be simple, efficient, and
@@ -14,6 +14,9 @@ export default function NoTool() {
         </p>
         <h3>Features:</h3>
         <ul>
+          <li>
+            <b>Free</b>: Totally free, forever.
+          </li>
           <li>
             <b>Lightweight</b>: Optimized for speed and efficiency.
           </li>
