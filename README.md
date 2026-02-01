@@ -1,42 +1,118 @@
-# sv
+# Dev Toolbox
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Open-source, airgapped-friendly developer toolbox with a fast, lightweight UI.
+All tools run fully client-side for privacy and offline usability.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Free and open-source
+- No ads, no tracking, no cookies
+- Fully client-side processing
+- Mobile friendly
+- Easy Docker deployment
+- Can run air-gapped
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Tech Stack
 
-To recreate this project with the same configuration:
+- SvelteKit + Svelte
+- Vite
+- JavaScript (no TypeScript)
+- Tailwind CSS
+- Node.js (build tooling)
+- Docker and Docker Compose
 
-```sh
-# recreate this project
-pnpm dlx sv create --template minimal --no-types --add prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:static" --install pnpm .
-```
+## Toolbox Tools
 
-## Developing
+### Productivity
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Pomodoro
+- Cron Tab Helper + Visualizer (next runs)
 
-```sh
+### Cryptography
+
+- Levenshtein Distance Calculator
+- URI Encoder / Decoder
+- HTML Encoder / Decoder
+- Base64 Encoder / Decoder
+- MD5 Hasher
+- SHA1 Hasher
+- SHA256 Hasher
+- SHA512 Hasher
+- RIPEMD-160 Hasher
+- JWT Helper (validate, JWK import, clock skew)
+- Hash Verifier
+- HMAC Generator (SHA256/SHA512)
+- SSH Key Fingerprint (MD5/SHA256)
+- TLS Certificate Decoder (PEM)
+
+### Time
+
+- Timestamp to Time
+- LinkedIn Post Date Parser
+- Timezone Converter
+- Relative Time Calculator
+
+### Number
+
+- Change Base Helper
+- IPv4 Helper
+- Binary Helper
+- Unix Permission Calculator
+
+### Graphics
+
+- Image Helper
+- Color Picker
+- Color Shades Generator
+- QR Code Generator + Reader
+- Color Contrast Checker (WCAG)
+- Image Metadata Viewer (EXIF/IPTC)
+
+### Network
+
+- HTTP Request
+- URL Parser
+- OpenAPI/Swagger Viewer
+
+### Misc
+
+- ASCII Reference Table
+- Help me I'm stuck in Vim!
+- File Diff + Patch Viewer (apply preview)
+- Emoji Picker
+- Lorem Ipsum Generator
+- JSON Formatter/Minifier + JSONPath
+- YAML ↔ JSON Converter
+- CSV ↔ JSON Converter
+- XML Formatter + XPath Tester
+- UUID/ULID/KSUID Generator
+- Regex Tester + Explainer
+- Text Case Converter + Slugify
+- Base-N Encoders (Base32/Base58/Base85)
+
+## Run Locally
+
+### Node
+
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open http://localhost:5173 to access the toolbox.
 
-To create a production version of your app:
+### Docker
 
-```sh
-npm run build
+```bash
+docker-compose build
+docker-compose up -d
 ```
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Contributions are welcome. Please open an issue or pull request with your
+proposal.
+
+## License
+
+Distributed under the GPU GPLv3 License. See `LICENSE` for details.
