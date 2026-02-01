@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	const algorithms = [
 		{
 			id: 'md5',
@@ -37,13 +38,25 @@
 	let inputValue = '';
 	let outputValue = '';
 	let errorMessage = '';
+	let lastAlgoParam = null;
+	let lastSelectedAlgorithm = selectedAlgorithm;
 
 	$: algoParam = $page.url.searchParams.get('algo');
 	$: {
 		const validIds = new Set(algorithms.map((algo) => algo.id));
-		if (algoParam && validIds.has(algoParam) && algoParam !== selectedAlgorithm) {
-			selectedAlgorithm = algoParam;
+		if (algoParam && algoParam !== lastAlgoParam) {
+			lastAlgoParam = algoParam;
+			if (validIds.has(algoParam)) {
+				selectedAlgorithm = algoParam;
+			}
 		}
+	}
+
+	$: if (selectedAlgorithm !== lastSelectedAlgorithm) {
+		lastSelectedAlgorithm = selectedAlgorithm;
+		const url = new URL($page.url);
+		url.searchParams.set('algo', selectedAlgorithm);
+		goto(url, { replaceState: true, keepfocus: true, noscroll: true });
 	}
 
 	const toHex = (bytes) =>
