@@ -49,7 +49,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Focus timer with configurable work and break cycles.',
 		format: 'Output: timers',
-		tags: ['focus', 'timer', 'productivity']
+		tags: ['focus', 'timer', 'productivity'],
+		route: '/tools/pomodoro'
 	},
 	{
 		id: 'cron-visualizer',
@@ -58,7 +59,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Build cron expressions and preview upcoming runs.',
 		format: 'Input: cron | Output: schedule',
-		tags: ['cron', 'schedule', 'planner']
+		tags: ['cron', 'schedule', 'planner'],
+		route: '/tools/cron'
 	},
 	{
 		id: 'levenshtein',
@@ -67,7 +69,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compare strings and compute edit distance.',
 		format: 'Input: text pair | Output: distance',
-		tags: ['string', 'distance', 'compare']
+		tags: ['string', 'distance', 'compare'],
+		route: '/tools/levenshtein'
 	},
 	{
 		id: 'uri-encoder',
