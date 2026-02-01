@@ -24,3 +24,5 @@ public/sitemap.xml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+AGENTS.md
