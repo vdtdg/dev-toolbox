@@ -87,11 +87,9 @@
 			<div class="panel space-y-4 p-6">
 				<h2 class="text-lg font-semibold">Results</h2>
 				<div class="panel panel-muted space-y-4 p-5">
-					<div class="flex items-baseline justify-between">
-						<span class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
-							Distance
-						</span>
-						<span class="text-3xl font-semibold">{distance}</span>
+					<div>
+						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Distance</p>
+						<p class="mt-2 text-3xl font-semibold">{distance}</p>
 					</div>
 					<div>
 						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Similarity</p>
