@@ -85,9 +85,6 @@
 					<span class="tag"
 						>Category: {categories.find((category) => category.id === activeCategory)?.label}</span
 					>
-					{#if normalizedQuery}
-						<span class="tag">Query: {normalizedQuery}</span>
-					{/if}
 				</div>
 			</section>
 
