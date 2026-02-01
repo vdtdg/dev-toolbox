@@ -28,7 +28,9 @@ All tools run fully client-side for privacy and offline usability.
   - Amber: warning or investigative
   - Red: danger, use sparingly
 - Dense information layout
-- Subtle grid systems
+- Striped down UI. No fluff, no useless thing.
+- Utilitarian.
+- Widescreen.
 
 ## Repository Structure
 
