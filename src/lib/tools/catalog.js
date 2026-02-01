@@ -109,7 +109,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Generate MD5 hashes for strings or files.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['md5', 'hash']
+		tags: ['md5', 'hash'],
+		route: '/tools/hashers?algo=md5'
 	},
 	{
 		id: 'sha1-hasher',
@@ -118,7 +119,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compute SHA-1 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha1', 'hash']
+		tags: ['sha1', 'hash'],
+		route: '/tools/hashers?algo=sha1'
 	},
 	{
 		id: 'sha256-hasher',
@@ -127,7 +129,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compute SHA-256 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha256', 'hash']
+		tags: ['sha256', 'hash'],
+		route: '/tools/hashers?algo=sha256'
 	},
 	{
 		id: 'sha512-hasher',
@@ -136,7 +139,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compute SHA-512 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha512', 'hash']
+		tags: ['sha512', 'hash'],
+		route: '/tools/hashers?algo=sha512'
 	},
 	{
 		id: 'ripemd160-hasher',
@@ -145,7 +149,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compute RIPEMD-160 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['ripemd160', 'hash']
+		tags: ['ripemd160', 'hash'],
+		route: '/tools/hashers?algo=ripemd160'
 	},
 	{
 		id: 'jwt-helper',
