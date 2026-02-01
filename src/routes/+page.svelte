@@ -108,6 +108,24 @@
 					No tools match this filter yet. Clear the query or switch categories.
 				</section>
 			{/if}
+
+			<footer class="panel panel-muted px-5 py-4 text-xs text-[var(--color-muted)]">
+				<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+					<span>All tools run locally in your browser. No data is sent to a server.</span>
+					<span>
+						Made by
+						<a class="text-[var(--color-accent)] hover:underline" href="https://dtdg.fr">
+							Valérian de Thézan de Gaussan
+						</a>. Code is open-sourced on
+						<a
+							class="text-[var(--color-accent)] hover:underline"
+							href="https://github.com/vdtdg/dev-toolbox"
+						>
+							GitHub
+						</a>; contributions welcome.
+					</span>
+				</div>
+			</footer>
 		</main>
 	</div>
 </div>
