@@ -16,6 +16,20 @@ All tools run fully client-side for privacy and offline usability.
 - Node.js (for build tooling)
 - Docker and Docker Compose
 
+## Design Theme
+
+- Dark, utilitarian developer dashboard theme
+- Dark mode, high-contrast: charcoal/near-black background with light gray text; easy on the eyes
+- Muted accent colors: soft cyan/blue for headings and highlights
+- Flat UI, system-ish typography
+- Thin, high-contrast borders (1px to 1.5px)
+- Monochrome base plus one accent color
+  - Cyan/electric blue: default
+  - Amber: warning or investigative
+  - Red: danger, use sparingly
+- Dense information layout
+- Subtle grid systems
+
 ## Repository Structure
 
 - `src/routes/` - SvelteKit routes and pages
