@@ -204,16 +204,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Convert Unix timestamps to readable dates.',
 		format: 'Input: timestamp | Output: date',
-		tags: ['timestamp', 'unix', 'date']
-	},
-	{
-		id: 'linkedin-post-parser',
-		name: 'LinkedIn Post Date Parser',
-		category: 'time',
-		status: 'planned',
-		description: 'Parse LinkedIn post times to absolute dates.',
-		format: 'Input: LinkedIn timestamp | Output: date',
-		tags: ['linkedin', 'date', 'parser']
+		tags: ['timestamp', 'unix', 'date'],
+		route: '/tools/timestamp'
 	},
 	{
 		id: 'timezone-converter',
@@ -222,7 +214,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Convert times across timezones.',
 		format: 'Input: date/time | Output: converted time',
-		tags: ['timezone', 'convert']
+		tags: ['timezone', 'convert'],
+		route: '/tools/timezone'
 	},
 	{
 		id: 'relative-time',
@@ -231,7 +224,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Compute relative durations and offsets.',
 		format: 'Input: date/time | Output: relative time',
-		tags: ['relative', 'duration']
+		tags: ['relative', 'duration'],
+		route: '/tools/relative-time'
 	},
 	{
 		id: 'base-converter',
