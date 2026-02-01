@@ -49,3 +49,7 @@ All tools run fully client-side for privacy and offline usability.
 ## Toolbox Tools
 
 Find the full toolbox tool in the README.md file.
+
+## External dependencies
+
+External libraries can be used, the goal is not to reimplement tools, but they should be installed and shipped with the project, which is meant to be run in airgapped environments.
