@@ -93,13 +93,23 @@
 
 			<section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 				{#each filteredTools as tool}
-					<article class="tool-card">
-						<div>
-							<h3 class="text-lg font-semibold">{tool.name}</h3>
-							<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
-						</div>
-						<p class="mt-4 text-xs text-[var(--color-muted)]">{tool.format}</p>
-					</article>
+					{#if tool.route}
+						<a class="tool-card block" href={tool.route} aria-label={`Open ${tool.name}`}>
+							<div>
+								<h3 class="text-lg font-semibold">{tool.name}</h3>
+								<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
+							</div>
+							<p class="mt-4 text-xs text-[var(--color-muted)]">{tool.format}</p>
+						</a>
+					{:else}
+						<article class="tool-card">
+							<div>
+								<h3 class="text-lg font-semibold">{tool.name}</h3>
+								<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
+							</div>
+							<p class="mt-4 text-xs text-[var(--color-muted)]">{tool.format}</p>
+						</article>
+					{/if}
 				{/each}
 			</section>
 
