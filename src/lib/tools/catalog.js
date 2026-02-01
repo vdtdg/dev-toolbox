@@ -79,7 +79,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Encode or decode URI components safely.',
 		format: 'Input: text | Output: URI',
-		tags: ['uri', 'encode', 'decode']
+		tags: ['uri', 'encode', 'decode'],
+		route: '/tools/uri'
 	},
 	{
 		id: 'html-encoder',
@@ -88,7 +89,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Escape or decode HTML entities.',
 		format: 'Input: text | Output: encoded HTML',
-		tags: ['html', 'entities', 'escape']
+		tags: ['html', 'entities', 'escape'],
+		route: '/tools/html'
 	},
 	{
 		id: 'base64-encoder',
@@ -97,7 +99,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Convert text or binary to base64 and back.',
 		format: 'Input: text/file | Output: base64',
-		tags: ['base64', 'encode', 'decode']
+		tags: ['base64', 'encode', 'decode'],
+		route: '/tools/base64'
 	},
 	{
 		id: 'md5-hasher',
