@@ -358,10 +358,11 @@ export const tools = [
 		id: 'ascii-table',
 		name: 'ASCII Reference Table',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Lookup ASCII codes and characters.',
 		format: 'Output: table',
-		tags: ['ascii', 'table']
+		tags: ['ascii', 'table'],
+		route: '/tools/ascii-table'
 	},
 	{
 		id: 'vim-help',
@@ -376,10 +377,11 @@ export const tools = [
 		id: 'diff-viewer',
 		name: 'File Diff + Patch Viewer',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compare files and preview patch application.',
 		format: 'Input: files | Output: diff',
-		tags: ['diff', 'patch']
+		tags: ['diff', 'patch'],
+		route: '/tools/diff-viewer'
 	},
 	{
 		id: 'emoji-picker',
