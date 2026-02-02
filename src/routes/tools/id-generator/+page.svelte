@@ -137,7 +137,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>
@@ -165,10 +165,7 @@
 						<input type="number" min="1" max="200" class="search-input" bind:value={uuidCount} />
 						<button type="button" class="ghost-button" on:click={generateUuids}>Generate</button>
 					</div>
-					<textarea
-						class="search-input min-h-[160px] resize-y font-mono"
-						readonly
-						value={uuidOutput}
+					<textarea class="search-input min-h-40 resize-y font-mono" readonly value={uuidOutput}
 					></textarea>
 				</div>
 
@@ -181,10 +178,7 @@
 						<input type="number" min="1" max="200" class="search-input" bind:value={ulidCount} />
 						<button type="button" class="ghost-button" on:click={generateUlids}>Generate</button>
 					</div>
-					<textarea
-						class="search-input min-h-[160px] resize-y font-mono"
-						readonly
-						value={ulidOutput}
+					<textarea class="search-input min-h-40 resize-y font-mono" readonly value={ulidOutput}
 					></textarea>
 				</div>
 
@@ -197,10 +191,7 @@
 						<input type="number" min="1" max="200" class="search-input" bind:value={ksuidCount} />
 						<button type="button" class="ghost-button" on:click={generateKsuids}>Generate</button>
 					</div>
-					<textarea
-						class="search-input min-h-[160px] resize-y font-mono"
-						readonly
-						value={ksuidOutput}
+					<textarea class="search-input min-h-40 resize-y font-mono" readonly value={ksuidOutput}
 					></textarea>
 				</div>
 			</div>

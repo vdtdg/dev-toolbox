@@ -83,7 +83,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>
@@ -100,7 +100,7 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Original</span>
 					<textarea
-						class="search-input min-h-[200px] resize-y"
+						class="search-input min-h-50 resize-y"
 						placeholder="Paste original file"
 						bind:value={originalText}
 					></textarea>
@@ -108,7 +108,7 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Modified</span>
 					<textarea
-						class="search-input min-h-[200px] resize-y"
+						class="search-input min-h-50 resize-y"
 						placeholder="Paste modified file"
 						bind:value={modifiedText}
 					></textarea>
@@ -144,10 +144,7 @@
 				</div>
 				<div class="panel panel-muted p-5">
 					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Patch</p>
-					<textarea
-						class="search-input mt-3 min-h-[240px] resize-y font-mono"
-						readonly
-						value={patchText}
+					<textarea class="search-input mt-3 min-h-60 resize-y font-mono" readonly value={patchText}
 					></textarea>
 				</div>
 			</div>

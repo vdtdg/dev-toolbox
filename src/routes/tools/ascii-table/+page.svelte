@@ -124,7 +124,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href="/">
 				<span aria-hidden="true">←</span>
@@ -146,7 +146,7 @@
 			</label>
 
 			<div class="panel panel-muted overflow-x-auto p-4">
-				<table class="w-full min-w-[880px] text-left text-sm">
+				<table class="w-full min-w-220 text-left text-sm">
 					<thead class="text-xs text-[var(--color-muted)] uppercase">
 						<tr>
 							<th class="pr-4 pb-3">Dec</th>

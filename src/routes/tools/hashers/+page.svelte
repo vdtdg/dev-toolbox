@@ -389,7 +389,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>
@@ -424,17 +424,14 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Input</span>
 					<textarea
-						class="search-input min-h-[180px] resize-y"
+						class="search-input min-h-45 resize-y"
 						placeholder="Paste text to hash"
 						bind:value={inputValue}
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Digest</span>
-					<textarea
-						class="search-input min-h-[180px] resize-y font-mono"
-						readonly
-						value={outputValue}
+					<textarea class="search-input min-h-45 resize-y font-mono" readonly value={outputValue}
 					></textarea>
 				</label>
 			</div>

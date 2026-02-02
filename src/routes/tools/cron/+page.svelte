@@ -208,7 +208,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>

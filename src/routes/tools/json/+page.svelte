@@ -63,7 +63,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>
@@ -78,17 +78,14 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Input JSON</span>
 					<textarea
-						class="search-input min-h-[220px] resize-y font-mono"
+						class="search-input min-h-55 resize-y font-mono"
 						placeholder="Paste JSON"
 						bind:value={inputValue}
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Output</span>
-					<textarea
-						class="search-input min-h-[220px] resize-y font-mono"
-						readonly
-						value={outputValue}
+					<textarea class="search-input min-h-55 resize-y font-mono" readonly value={outputValue}
 					></textarea>
 				</label>
 			</div>
@@ -115,7 +112,7 @@
 					</label>
 					<div class="text-xs text-[var(--color-muted)]">Results update live as you type.</div>
 				</div>
-				<textarea class="search-input min-h-[160px] resize-y font-mono" readonly value={pathResult}
+				<textarea class="search-input min-h-40 resize-y font-mono" readonly value={pathResult}
 				></textarea>
 			</div>
 		</section>

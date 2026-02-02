@@ -29,7 +29,7 @@
 </svelte:head>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1560px] flex-col gap-8 px-6 py-8">
+	<div class="mx-auto flex max-w-390 flex-col gap-8 px-6 py-8">
 		<main class="space-y-6">
 			<header class="space-y-5">
 				<div class="flex flex-wrap items-center justify-between gap-4">
@@ -52,7 +52,7 @@
 						<p class="text-sm text-[var(--color-muted)]">Search by name, capability, or tag.</p>
 					</div>
 					<div class="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
-						<div class="w-full sm:w-[220px] sm:flex-none">
+						<div class="w-full sm:w-55 sm:flex-none">
 							<label class="sr-only" for="category-select">Category</label>
 							<select
 								id="category-select"
@@ -68,7 +68,7 @@
 								{/each}
 							</select>
 						</div>
-						<div class="w-full sm:min-w-[300px] sm:flex-1 xl:min-w-[420px]">
+						<div class="w-full sm:min-w-75 sm:flex-1 xl:min-w-105">
 							<input
 								type="search"
 								class="search-input"

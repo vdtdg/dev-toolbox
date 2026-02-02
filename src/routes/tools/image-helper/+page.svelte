@@ -161,7 +161,7 @@
 </script>
 
 <div class="min-h-screen">
-	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
+	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
 			<a class="back-link" href="/">
 				<span aria-hidden="true">←</span>
@@ -188,7 +188,7 @@
 									on:load={handleImageLoad}
 									src={imageSrc}
 									alt={imageName || 'Uploaded image'}
-									class="max-h-[260px] w-full object-contain"
+									class="max-h-65 w-full object-contain"
 								/>
 							</div>
 							<p class="mt-2 text-xs text-[var(--color-muted)]">
@@ -208,7 +208,7 @@
 								<img
 									src={outputUrl}
 									alt="Processed output"
-									class="max-h-[260px] w-full object-contain"
+									class="max-h-65 w-full object-contain"
 								/>
 							</div>
 							<p class="mt-2 text-xs text-[var(--color-muted)]">
