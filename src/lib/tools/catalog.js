@@ -333,15 +333,6 @@ export const tools = [
 		route: '/tools/image-metadata'
 	},
 	{
-		id: 'http-request',
-		name: 'HTTP Request',
-		category: 'network',
-		status: 'planned',
-		description: 'Compose and send HTTP requests locally.',
-		format: 'Output: response',
-		tags: ['http', 'request']
-	},
-	{
 		id: 'url-parser',
 		name: 'URL Parser',
 		category: 'network',
