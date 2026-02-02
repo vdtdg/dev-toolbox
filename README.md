@@ -48,7 +48,6 @@ All tools run fully client-side for privacy and offline usability.
 ### Time
 
 - Timestamp to Time
-- LinkedIn Post Date Parser
 - Timezone Converter
 - Relative Time Calculator
 
@@ -79,7 +78,6 @@ All tools run fully client-side for privacy and offline usability.
 - ASCII Reference Table
 - Help me I'm stuck in Vim!
 - File Diff + Patch Viewer (apply preview)
-- Emoji Picker
 - Lorem Ipsum Generator
 - JSON Formatter/Minifier + JSONPath
 - YAML ↔ JSON Converter
