@@ -1,5 +1,8 @@
 <script>
+	import { base } from '$app/paths';
 	import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
+
+	const homeHref = base || '/';
 
 	let mode = 'yaml-to-json';
 	let inputValue = '';
@@ -35,7 +38,7 @@
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
-			<a class="back-link" href="/">
+			<a class="back-link" href={homeHref}>
 				<span aria-hidden="true">←</span>
 				Back to toolbox
 			</a>

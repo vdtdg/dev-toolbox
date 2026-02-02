@@ -1,6 +1,8 @@
 <script>
+	import { base } from '$app/paths';
 	import { categories, tools } from '$lib/tools/catalog.js';
 
+	const basePath = base || '';
 	let query = '';
 	let activeCategory = 'all';
 
@@ -91,7 +93,11 @@
 			<section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 				{#each filteredTools as tool}
 					{#if tool.route}
-						<a class="tool-card block" href={tool.route} aria-label={`Open ${tool.name}`}>
+						<a
+							class="tool-card block"
+							href={`${basePath}${tool.route}`}
+							aria-label={`Open ${tool.name}`}
+						>
 							<div>
 								<h3 class="text-lg font-semibold">{tool.name}</h3>
 								<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
