@@ -1,25 +1,7 @@
 <script>
-	const minifyXml = (value) => value.replace(/>\s+</g, '><').trim();
+	import formatXml from 'xml-formatter';
 
-	const formatXml = (xml, indent = '  ') => {
-		const minified = minifyXml(xml);
-		const tokens = minified.split(/(?=<)/g).filter(Boolean);
-		let depth = 0;
-		const lines = [];
-		for (const token of tokens) {
-			const isClosing = token.startsWith('</');
-			const isDeclaration = token.startsWith('<?') || token.startsWith('<!');
-			const isSelfClosing = /\/>\s*$/.test(token);
-			if (isClosing) {
-				depth = Math.max(depth - 1, 0);
-			}
-			lines.push(`${indent.repeat(depth)}${token}`);
-			if (!isClosing && !isDeclaration && !isSelfClosing && /^<[^>]+>$/.test(token)) {
-				depth += 1;
-			}
-		}
-		return lines.join('\n').trim();
-	};
+	const minifyXml = (value) => value.replace(/>\s+</g, '><').trim();
 
 	let inputValue = '';
 	let outputValue = '';
@@ -40,7 +22,7 @@
 				errorMessage = 'Invalid XML input.';
 				return null;
 			}
-			outputValue = formatXml(inputValue);
+			outputValue = formatXml(inputValue, { indentation: '  ' });
 			return doc;
 		} catch (error) {
 			errorMessage = 'Invalid XML input.';
@@ -84,7 +66,7 @@
 	const applyFormat = () => {
 		const doc = parseXml();
 		if (!doc) return;
-		outputValue = formatXml(inputValue);
+		outputValue = formatXml(inputValue, { indentation: '  ' });
 	};
 
 	$: (inputValue,
