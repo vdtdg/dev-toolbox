@@ -450,10 +450,11 @@ export const tools = [
 		id: 'regex-tester',
 		name: 'Regex Tester + Explainer',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Test regex patterns and explain matches.',
 		format: 'Input: regex/text | Output: matches',
-		tags: ['regex', 'test']
+		tags: ['regex', 'test'],
+		route: '/tools/regex'
 	},
 	{
 		id: 'text-case',
@@ -469,9 +470,10 @@ export const tools = [
 		id: 'base-n-encoders',
 		name: 'Base-N Encoders',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Encode data in Base32, Base58, or Base85.',
 		format: 'Input: text | Output: encoded',
-		tags: ['base32', 'base58', 'base85']
+		tags: ['base32', 'base58', 'base85'],
+		route: '/tools/base-n-encoders'
 	}
 ];
