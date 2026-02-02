@@ -392,15 +392,6 @@ export const tools = [
 		route: '/tools/diff-viewer'
 	},
 	{
-		id: 'emoji-picker',
-		name: 'Emoji Picker',
-		category: 'misc',
-		status: 'planned',
-		description: 'Browse and copy emoji symbols.',
-		format: 'Output: emoji',
-		tags: ['emoji', 'picker']
-	},
-	{
 		id: 'lorem-ipsum',
 		name: 'Lorem Ipsum Generator',
 		category: 'misc',
@@ -414,10 +405,11 @@ export const tools = [
 		id: 'json-formatter',
 		name: 'JSON Formatter/Minifier + JSONPath',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Format JSON, minify, and query with JSONPath.',
 		format: 'Input: JSON | Output: formatted JSON',
-		tags: ['json', 'jsonpath', 'format']
+		tags: ['json', 'jsonpath', 'format'],
+		route: '/tools/json'
 	},
 	{
 		id: 'yaml-json-converter',
