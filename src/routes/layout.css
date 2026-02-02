@@ -295,9 +295,8 @@
 		background: rgba(255, 255, 255, 0.06);
 		font-size: 0.8rem;
 		font-weight: 600;
-		letter-spacing: 0.06em;
+		letter-spacing: 0.02em;
 		color: var(--color-text);
-		text-transform: uppercase;
 	}
 
 	.back-link {

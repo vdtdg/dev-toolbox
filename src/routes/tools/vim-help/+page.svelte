@@ -18,6 +18,10 @@
 					<p>
 						Save: type <span class="keycap">:w</span> then press <span class="keycap">Enter</span>
 					</p>
+					<p>
+						Save and quit: type <span class="keycap">:wq</span> or press
+						<span class="keycap">ZZ</span>
+					</p>
 					<p>Quit without saving: type <span class="keycap">:q!</span></p>
 				</div>
 			</div>
