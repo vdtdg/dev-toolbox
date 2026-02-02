@@ -415,28 +415,31 @@ export const tools = [
 		id: 'yaml-json-converter',
 		name: 'YAML ↔ JSON Converter',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert YAML to JSON and back.',
 		format: 'Input: YAML/JSON | Output: converted',
-		tags: ['yaml', 'json', 'convert']
+		tags: ['yaml', 'json', 'convert'],
+		route: '/tools/yaml-json'
 	},
 	{
 		id: 'csv-json-converter',
 		name: 'CSV ↔ JSON Converter',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert CSV to JSON and back.',
 		format: 'Input: CSV/JSON | Output: converted',
-		tags: ['csv', 'json', 'convert']
+		tags: ['csv', 'json', 'convert'],
+		route: '/tools/csv-json'
 	},
 	{
 		id: 'xml-formatter',
 		name: 'XML Formatter + XPath Tester',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Format XML and evaluate XPath queries.',
 		format: 'Input: XML | Output: formatted XML',
-		tags: ['xml', 'xpath']
+		tags: ['xml', 'xpath'],
+		route: '/tools/xml'
 	},
 	{
 		id: 'id-generator',
