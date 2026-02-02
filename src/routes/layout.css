@@ -284,6 +284,22 @@
 		transition: width 200ms ease;
 	}
 
+	.keycap {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2rem;
+		padding: 0.2rem 0.5rem;
+		border-radius: 8px;
+		border: 1px solid var(--color-border);
+		background: rgba(255, 255, 255, 0.06);
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		color: var(--color-text);
+		text-transform: uppercase;
+	}
+
 	.back-link {
 		display: inline-flex;
 		align-items: center;

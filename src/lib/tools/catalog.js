@@ -306,10 +306,11 @@ export const tools = [
 		id: 'qr-code',
 		name: 'QR Code Generator + Reader',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Create or scan QR codes.',
 		format: 'Input: text/image | Output: QR',
-		tags: ['qr', 'scan']
+		tags: ['qr', 'scan'],
+		route: '/tools/qr'
 	},
 	{
 		id: 'color-contrast',
@@ -325,10 +326,11 @@ export const tools = [
 		id: 'image-metadata',
 		name: 'Image Metadata Viewer',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Read EXIF/IPTC metadata from images.',
 		format: 'Input: image | Output: metadata',
-		tags: ['exif', 'iptc', 'metadata']
+		tags: ['exif', 'iptc', 'metadata'],
+		route: '/tools/image-metadata'
 	},
 	{
 		id: 'http-request',
@@ -343,10 +345,11 @@ export const tools = [
 		id: 'url-parser',
 		name: 'URL Parser',
 		category: 'network',
-		status: 'planned',
+		status: 'ready',
 		description: 'Parse URLs into structured components.',
 		format: 'Input: URL | Output: parts',
-		tags: ['url', 'parse']
+		tags: ['url', 'parse'],
+		route: '/tools/url-parser'
 	},
 	{
 		id: 'openapi-viewer',
@@ -372,10 +375,11 @@ export const tools = [
 		id: 'vim-help',
 		name: "Help me I'm stuck in Vim!",
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Quick exit cheatsheet for Vim.',
 		format: 'Output: instructions',
-		tags: ['vim', 'help']
+		tags: ['vim', 'help'],
+		route: '/tools/vim-help'
 	},
 	{
 		id: 'diff-viewer',
