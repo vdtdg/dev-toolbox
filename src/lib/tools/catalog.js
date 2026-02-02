@@ -168,7 +168,8 @@ export const tools = [
 		status: 'planned',
 		description: 'Check hashes against known values.',
 		format: 'Input: text/hash | Output: match',
-		tags: ['hash', 'verify']
+		tags: ['hash', 'verify'],
+		route: '/tools/hash-verifier'
 	},
 	{
 		id: 'hmac-generator',
