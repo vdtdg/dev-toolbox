@@ -276,28 +276,31 @@ export const tools = [
 		id: 'image-helper',
 		name: 'Image Helper',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Resize, compress, and convert images.',
 		format: 'Input: image | Output: transformed image',
-		tags: ['image', 'convert', 'resize']
+		tags: ['image', 'convert', 'resize', 'crop'],
+		route: '/tools/image-helper'
 	},
 	{
 		id: 'color-picker',
 		name: 'Color Picker',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Pick colors and copy values.',
 		format: 'Output: color values',
-		tags: ['color', 'picker']
+		tags: ['color', 'picker'],
+		route: '/tools/color-picker'
 	},
 	{
 		id: 'color-shades',
 		name: 'Color Shades Generator',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Generate tints and shades for a palette.',
 		format: 'Output: color scale',
-		tags: ['color', 'palette']
+		tags: ['color', 'palette'],
+		route: '/tools/color-shades'
 	},
 	{
 		id: 'qr-code',
@@ -312,10 +315,11 @@ export const tools = [
 		id: 'color-contrast',
 		name: 'Color Contrast Checker',
 		category: 'graphics',
-		status: 'planned',
+		status: 'ready',
 		description: 'Check WCAG contrast ratios.',
 		format: 'Input: colors | Output: contrast',
-		tags: ['wcag', 'accessibility']
+		tags: ['wcag', 'accessibility'],
+		route: '/tools/color-contrast'
 	},
 	{
 		id: 'image-metadata',
