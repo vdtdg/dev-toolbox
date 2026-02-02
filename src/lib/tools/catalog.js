@@ -46,7 +46,7 @@ export const tools = [
 		id: 'pomodoro',
 		name: 'Pomodoro',
 		category: 'productivity',
-		status: 'planned',
+		status: 'ready',
 		description: 'Focus timer with configurable work and break cycles.',
 		format: 'Output: timers',
 		tags: ['focus', 'timer', 'productivity'],
@@ -56,7 +56,7 @@ export const tools = [
 		id: 'cron-visualizer',
 		name: 'Cron Tab Helper + Visualizer',
 		category: 'productivity',
-		status: 'planned',
+		status: 'ready',
 		description: 'Build cron expressions and preview upcoming runs.',
 		format: 'Input: cron | Output: schedule',
 		tags: ['cron', 'schedule', 'planner'],
@@ -66,7 +66,7 @@ export const tools = [
 		id: 'levenshtein',
 		name: 'Levenshtein Distance Calculator',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compare strings and compute edit distance.',
 		format: 'Input: text pair | Output: distance',
 		tags: ['string', 'distance', 'compare'],
@@ -76,7 +76,7 @@ export const tools = [
 		id: 'uri-encoder',
 		name: 'URI Encoder / Decoder',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Encode or decode URI components safely.',
 		format: 'Input: text | Output: URI',
 		tags: ['uri', 'encode', 'decode'],
@@ -86,7 +86,7 @@ export const tools = [
 		id: 'html-encoder',
 		name: 'HTML Encoder / Decoder',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Escape or decode HTML entities.',
 		format: 'Input: text | Output: encoded HTML',
 		tags: ['html', 'entities', 'escape'],
@@ -96,7 +96,7 @@ export const tools = [
 		id: 'base64-encoder',
 		name: 'Base64 Encoder / Decoder',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert text or binary to base64 and back.',
 		format: 'Input: text/file | Output: base64',
 		tags: ['base64', 'encode', 'decode'],
@@ -106,7 +106,7 @@ export const tools = [
 		id: 'md5-hasher',
 		name: 'MD5 Hasher',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Generate MD5 hashes for strings or files.',
 		format: 'Input: text/file | Output: hash',
 		tags: ['md5', 'hash'],
@@ -116,7 +116,7 @@ export const tools = [
 		id: 'sha1-hasher',
 		name: 'SHA1 Hasher',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute SHA-1 digests.',
 		format: 'Input: text/file | Output: hash',
 		tags: ['sha1', 'hash'],
@@ -126,7 +126,7 @@ export const tools = [
 		id: 'sha256-hasher',
 		name: 'SHA256 Hasher',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute SHA-256 digests.',
 		format: 'Input: text/file | Output: hash',
 		tags: ['sha256', 'hash'],
@@ -136,7 +136,7 @@ export const tools = [
 		id: 'sha512-hasher',
 		name: 'SHA512 Hasher',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute SHA-512 digests.',
 		format: 'Input: text/file | Output: hash',
 		tags: ['sha512', 'hash'],
@@ -146,7 +146,7 @@ export const tools = [
 		id: 'ripemd160-hasher',
 		name: 'RIPEMD-160 Hasher',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute RIPEMD-160 digests.',
 		format: 'Input: text/file | Output: hash',
 		tags: ['ripemd160', 'hash'],
@@ -156,16 +156,17 @@ export const tools = [
 		id: 'jwt-helper',
 		name: 'JWT Helper',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Validate tokens, import JWKs, and manage clock skew.',
 		format: 'Input: JWT | Output: claims',
-		tags: ['jwt', 'jwk', 'auth']
+		tags: ['jwt', 'jwk', 'auth'],
+		route: '/tools/jwt'
 	},
 	{
 		id: 'hash-verifier',
 		name: 'Hash Verifier',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Check hashes against known values.',
 		format: 'Input: text/hash | Output: match',
 		tags: ['hash', 'verify'],
@@ -175,34 +176,37 @@ export const tools = [
 		id: 'hmac-generator',
 		name: 'HMAC Generator',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Generate HMAC signatures with SHA-256/SHA-512.',
 		format: 'Input: text/key | Output: signature',
-		tags: ['hmac', 'sha256', 'sha512']
+		tags: ['hmac', 'sha256', 'sha512'],
+		route: '/tools/hmac'
 	},
 	{
 		id: 'ssh-key-fingerprint',
 		name: 'SSH Key Fingerprint',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute MD5 or SHA-256 fingerprints for SSH keys.',
 		format: 'Input: public key | Output: fingerprint',
-		tags: ['ssh', 'fingerprint', 'md5']
+		tags: ['ssh', 'fingerprint', 'md5'],
+		route: '/tools/ssh-fingerprint'
 	},
 	{
 		id: 'tls-cert-decoder',
 		name: 'TLS Certificate Decoder',
 		category: 'cryptography',
-		status: 'planned',
+		status: 'ready',
 		description: 'Decode PEM certificates locally.',
 		format: 'Input: PEM | Output: certificate data',
-		tags: ['tls', 'pem', 'certificate']
+		tags: ['tls', 'pem', 'certificate'],
+		route: '/tools/tls-cert'
 	},
 	{
 		id: 'timestamp-to-time',
 		name: 'Timestamp to Time',
 		category: 'time',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert Unix timestamps to readable dates.',
 		format: 'Input: timestamp | Output: date',
 		tags: ['timestamp', 'unix', 'date'],
@@ -212,7 +216,7 @@ export const tools = [
 		id: 'timezone-converter',
 		name: 'Timezone Converter',
 		category: 'time',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert times across timezones.',
 		format: 'Input: date/time | Output: converted time',
 		tags: ['timezone', 'convert'],
@@ -222,7 +226,7 @@ export const tools = [
 		id: 'relative-time',
 		name: 'Relative Time Calculator',
 		category: 'time',
-		status: 'planned',
+		status: 'ready',
 		description: 'Compute relative durations and offsets.',
 		format: 'Input: date/time | Output: relative time',
 		tags: ['relative', 'duration'],
@@ -232,37 +236,41 @@ export const tools = [
 		id: 'base-converter',
 		name: 'Change Base Helper',
 		category: 'number',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert numbers between bases.',
 		format: 'Input: number/base | Output: converted',
-		tags: ['base', 'convert']
+		tags: ['base', 'convert'],
+		route: '/tools/base'
 	},
 	{
 		id: 'ipv4-helper',
 		name: 'IPv4 Helper',
 		category: 'number',
-		status: 'planned',
+		status: 'ready',
 		description: 'Work with IPv4 addresses and CIDR.',
 		format: 'Input: IPv4 | Output: analysis',
-		tags: ['ipv4', 'cidr', 'network']
+		tags: ['ipv4', 'cidr', 'network'],
+		route: '/tools/ipv4'
 	},
 	{
 		id: 'binary-helper',
 		name: 'Binary Helper',
 		category: 'number',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert and inspect binary values.',
 		format: 'Input: number | Output: binary',
-		tags: ['binary', 'bits']
+		tags: ['binary', 'bits'],
+		route: '/tools/binary'
 	},
 	{
 		id: 'unix-permissions',
 		name: 'Unix Permission Calculator',
 		category: 'number',
-		status: 'planned',
+		status: 'ready',
 		description: 'Translate chmod values to symbolic permissions.',
 		format: 'Input: octal | Output: rwx',
-		tags: ['chmod', 'permissions']
+		tags: ['chmod', 'permissions'],
+		route: '/tools/unix-permissions'
 	},
 	{
 		id: 'image-helper',
@@ -340,10 +348,11 @@ export const tools = [
 		id: 'openapi-viewer',
 		name: 'OpenAPI/Swagger Viewer',
 		category: 'network',
-		status: 'planned',
+		status: 'ready',
 		description: 'Preview OpenAPI specs with a local viewer.',
 		format: 'Input: OpenAPI | Output: docs',
-		tags: ['openapi', 'swagger', 'api']
+		tags: ['openapi', 'swagger', 'api'],
+		route: '/tools/openapi'
 	},
 	{
 		id: 'ascii-table',
@@ -385,10 +394,11 @@ export const tools = [
 		id: 'lorem-ipsum',
 		name: 'Lorem Ipsum Generator',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Generate placeholder text blocks.',
 		format: 'Output: text',
-		tags: ['lorem', 'placeholder']
+		tags: ['lorem', 'placeholder'],
+		route: '/tools/lorem-ipsum'
 	},
 	{
 		id: 'json-formatter',
@@ -430,10 +440,11 @@ export const tools = [
 		id: 'id-generator',
 		name: 'UUID/ULID/KSUID Generator',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Generate sortable and random IDs.',
 		format: 'Output: identifiers',
-		tags: ['uuid', 'ulid', 'ksuid']
+		tags: ['uuid', 'ulid', 'ksuid'],
+		route: '/tools/id-generator'
 	},
 	{
 		id: 'regex-tester',
@@ -448,10 +459,11 @@ export const tools = [
 		id: 'text-case',
 		name: 'Text Case Converter + Slugify',
 		category: 'misc',
-		status: 'planned',
+		status: 'ready',
 		description: 'Convert text case and generate slugs.',
 		format: 'Input: text | Output: transformed text',
-		tags: ['case', 'slug', 'text']
+		tags: ['case', 'slug', 'text'],
+		route: '/tools/text-case'
 	},
 	{
 		id: 'base-n-encoders',
@@ -463,9 +475,3 @@ export const tools = [
 		tags: ['base32', 'base58', 'base85']
 	}
 ];
-
-export const statusLabels = {
-	ready: 'Ready',
-	beta: 'Beta',
-	planned: 'Planned'
-};
