@@ -117,7 +117,7 @@
 
 			<datalist id="timezone-options">
 				{#each timeZones as zone}
-					<option value={zone} />
+					<option value={zone}></option>
 				{/each}
 			</datalist>
 

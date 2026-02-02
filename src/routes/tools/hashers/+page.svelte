@@ -1,7 +1,7 @@
 <script>
 	import { base } from '$app/paths';
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 
 	const homeHref = base || '/';
 	const algorithms = [
@@ -36,30 +36,30 @@
 			note: 'Legacy, compatibility'
 		}
 	];
+	const validIds = new Set(algorithms.map((algo) => algo.id));
 
 	let selectedAlgorithm = 'sha256';
 	let inputValue = '';
 	let outputValue = '';
 	let errorMessage = '';
-	let lastAlgoParam = null;
 	let lastSelectedAlgorithm = selectedAlgorithm;
+	let hasMounted = false;
 
-	$: algoParam = $page.url.searchParams.get('algo');
-	$: {
-		const validIds = new Set(algorithms.map((algo) => algo.id));
-		if (algoParam && algoParam !== lastAlgoParam) {
-			lastAlgoParam = algoParam;
-			if (validIds.has(algoParam)) {
-				selectedAlgorithm = algoParam;
-			}
+	onMount(() => {
+		hasMounted = true;
+		const params = new URL(window.location.href).searchParams;
+		const algoParam = params.get('algo');
+		if (algoParam && validIds.has(algoParam)) {
+			selectedAlgorithm = algoParam;
 		}
-	}
-
-	$: if (selectedAlgorithm !== lastSelectedAlgorithm) {
 		lastSelectedAlgorithm = selectedAlgorithm;
-		const url = new URL($page.url);
+	});
+
+	$: if (browser && hasMounted && selectedAlgorithm !== lastSelectedAlgorithm) {
+		lastSelectedAlgorithm = selectedAlgorithm;
+		const url = new URL(window.location.href);
 		url.searchParams.set('algo', selectedAlgorithm);
-		goto(url, { replaceState: true, keepfocus: true, noscroll: true });
+		history.replaceState(history.state, '', url);
 	}
 
 	const toHex = (bytes) =>
