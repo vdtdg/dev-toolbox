@@ -12,16 +12,25 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-ARG BASE_PATH
-ENV BASE_PATH=${BASE_PATH}
+ENV SVELTEKIT_ADAPTER=node
 
 RUN pnpm run build
 
-FROM nginx:alpine
+# Keep runtime image smaller.
+RUN pnpm prune --prod --ignore-scripts
 
-COPY --from=build /app/build /usr/share/nginx/html
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+FROM node:lts-alpine AS runtime
 
-EXPOSE 80
+WORKDIR /app
 
-CMD ["nginx", "-g", "daemon off;"]
+ENV NODE_ENV=production
+ENV PORT=3000
+
+COPY --from=build /app/build ./build
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package.json ./package.json
+COPY server.mjs ./server.mjs
+
+EXPOSE 3000
+
+CMD ["node", "server.mjs"]

@@ -90,14 +90,78 @@ All tools run fully client-side for privacy and offline usability.
 
 ## Run Locally
 
-### Node
+### Dev Server
 
 ```bash
-npm install
-npm run dev
+corepack enable
+pnpm install
+pnpm run dev
 ```
 
 Open http://localhost:5173 to access the toolbox.
+
+## Build & Deploy
+
+This repo supports two build targets:
+
+- `static` (default): fully static site output in `build/`
+- `node`: Node server build (useful for Docker with a runtime-configurable `BASE_PATH`)
+
+You can select the adapter via `SVELTEKIT_ADAPTER`.
+
+### Static Build (Airgapped-Friendly)
+
+Build a fully static site:
+
+```bash
+pnpm run build
+```
+
+Build for a subpath (base URL) like `/dev-toolbox`:
+
+```bash
+BASE_PATH=/dev-toolbox pnpm run build
+```
+
+Output is written to `build/`.
+
+Preview the production build locally:
+
+```bash
+pnpm run preview
+```
+
+### Docker (Node Server + Runtime BASE_PATH)
+
+The Docker image uses the Node adapter so you can set the URL prefix at runtime.
+
+Build:
+
+```bash
+docker build -t dev-toolbox:latest .
+```
+
+Run at a subpath (example: `/dev-toolbox`):
+
+```bash
+docker run --rm -p 8080:3000 -e BASE_PATH=/dev-toolbox dev-toolbox:latest
+```
+
+Then open: http://localhost:8080/dev-toolbox/
+
+Run at the root (no prefix):
+
+```bash
+docker run --rm -p 8080:3000 dev-toolbox:latest
+```
+
+### Docker Compose
+
+`docker-compose.yml` is configured to run the Node server and pass a `BASE_PATH`.
+
+```bash
+docker compose up --build
+```
 
 ### Docker
 
@@ -113,4 +177,4 @@ proposal.
 
 ## License
 
-Distributed under the GPU GPLv3 License. See `LICENSE` for details.
+Distributed under the GNU GPLv3 License. See `LICENSE` for details.

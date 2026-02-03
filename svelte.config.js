@@ -1,13 +1,18 @@
-import adapter from '@sveltejs/adapter-static';
+import adapterStatic from '@sveltejs/adapter-static';
+import adapterNode from '@sveltejs/adapter-node';
 
-const base = process.env.BASE_PATH ? process.env.BASE_PATH.replace(/\/$/, '') : '';
+const adapterName = process.env.SVELTEKIT_ADAPTER || 'static';
+const isNode = adapterName === 'node';
+
+const base = !isNode && process.env.BASE_PATH ? process.env.BASE_PATH.replace(/\/$/, '') : '';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: isNode ? adapterNode() : adapterStatic(),
 		paths: {
-			base
+			base,
+			relative: true
 		}
 	}
 };
