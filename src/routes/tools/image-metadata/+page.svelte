@@ -121,7 +121,7 @@
 					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">EXIF</p>
 					{#if exifRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
-							{#each exifRows as row}
+							{#each exifRows as row (row.key)}
 								<li class="flex items-start justify-between gap-4">
 									<span class="text-[var(--color-muted)]">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value}</span>
@@ -137,7 +137,7 @@
 					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">IPTC</p>
 					{#if iptcRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
-							{#each iptcRows as row}
+							{#each iptcRows as row (row.key)}
 								<li class="flex items-start justify-between gap-4">
 									<span class="text-[var(--color-muted)]">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value}</span>
@@ -154,7 +154,7 @@
 				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">GPS</p>
 				{#if gpsRows.length}
 					<ul class="mt-3 space-y-2 text-xs">
-						{#each gpsRows as row}
+						{#each gpsRows as row (row.key)}
 							<li class="flex items-start justify-between gap-4">
 								<span class="text-[var(--color-muted)]">{row.key}</span>
 								<span class="text-right font-mono break-all">{row.value}</span>

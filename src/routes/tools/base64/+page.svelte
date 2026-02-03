@@ -69,7 +69,7 @@
 				<div class="w-full sm:max-w-xs">
 					<label class="text-sm text-[var(--color-muted)]" for="mode-select">Mode</label>
 					<select id="mode-select" class="select-input" bind:value={mode}>
-						{#each modes as item}
+						{#each modes as item (item.value)}
 							<option value={item.value}>{item.label}</option>
 						{/each}
 					</select>

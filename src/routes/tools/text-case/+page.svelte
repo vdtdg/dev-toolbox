@@ -148,7 +148,7 @@
 						No transformations yet.
 					</div>
 				{:else}
-					{#each caseOptions as option}
+					{#each caseOptions as option (option.id)}
 						<div class="panel panel-muted p-5">
 							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
 								{option.label}

@@ -155,7 +155,7 @@
 					<div class="flex items-center justify-between">
 						<p class="text-sm font-semibold">UUID</p>
 						<select class="select-input" bind:value={uuidVersion}>
-							{#each uuidVersions as version}
+							{#each uuidVersions as version (version.id)}
 								<option value={version.id}>{version.label}</option>
 							{/each}
 						</select>

@@ -230,7 +230,7 @@
 						<label class="space-y-2 text-sm">
 							<span class="text-[var(--color-muted)]">Format</span>
 							<select class="select-input" bind:value={format}>
-								{#each formats as option}
+								{#each formats as option (option.id)}
 									<option value={option.id}>{option.label}</option>
 								{/each}
 							</select>

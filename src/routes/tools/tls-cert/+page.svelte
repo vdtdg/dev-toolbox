@@ -111,7 +111,7 @@
 					<p class="text-sm text-[var(--color-muted)]">No certificate data yet.</p>
 				{:else}
 					<ul class="space-y-3 text-sm">
-						{#each output as row}
+						{#each output as row (row.label)}
 							<li class="flex flex-col gap-1">
 								<span class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
 									{row.label}

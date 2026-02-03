@@ -60,7 +60,7 @@
 								bind:value={activeCategory}
 								aria-label="Filter by category"
 							>
-								{#each categories as category}
+								{#each categories as category (category.id)}
 									<option value={category.id}>
 										{category.label}
 										({category.id === 'all' ? tools.length : categoryCounts[category.id] || 0})
@@ -91,7 +91,7 @@
 			</section>
 
 			<section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-				{#each filteredTools as tool}
+				{#each filteredTools as tool (tool.id)}
 					{#if tool.route}
 						<a
 							class="tool-card block"

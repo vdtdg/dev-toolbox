@@ -125,7 +125,7 @@
 				<div class="panel panel-muted p-5">
 					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Diff</p>
 					<ul class="mt-3 space-y-1 font-mono text-xs">
-						{#each diffLines as line}
+						{#each diffLines as line (line.type + ':' + line.lineNumber)}
 							<li
 								class={line.type === 'add'
 									? 'text-[var(--color-accent)]'

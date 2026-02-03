@@ -208,7 +208,7 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Encoding</span>
 					<select class="select-input" bind:value={encoder}>
-						{#each encoders as option}
+						{#each encoders as option (option.id)}
 							<option value={option.id}>{option.label}</option>
 						{/each}
 					</select>
@@ -216,7 +216,7 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Mode</span>
 					<select class="select-input" bind:value={mode}>
-						{#each modes as option}
+						{#each modes as option (option.id)}
 							<option value={option.id}>{option.label}</option>
 						{/each}
 					</select>

@@ -119,7 +119,7 @@
 					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Query Params</p>
 					{#if queryRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
-							{#each queryRows as row}
+							{#each queryRows as row (row.key + ':' + row.value)}
 								<li class="flex items-start justify-between gap-4">
 									<span class="text-[var(--color-muted)]">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value || '--'}</span>

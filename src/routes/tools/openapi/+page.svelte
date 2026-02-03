@@ -149,7 +149,7 @@
 						<div>
 							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Servers</p>
 							<ul class="mt-2 space-y-1 font-mono text-xs">
-								{#each specInfo.servers as server}
+								{#each specInfo.servers as server (server.url)}
 									<li>{server.url}</li>
 								{/each}
 							</ul>
@@ -172,7 +172,7 @@
 				</div>
 
 				<div class="space-y-3">
-					{#each filteredPaths as item}
+					{#each filteredPaths as item (item.method + ' ' + item.path)}
 						<div class="panel panel-muted p-4">
 							<div class="flex flex-wrap items-center justify-between gap-2">
 								<p class="font-mono text-xs text-[var(--color-accent)]">{item.method}</p>

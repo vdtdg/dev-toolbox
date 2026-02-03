@@ -89,7 +89,7 @@
 				<label class="space-y-2 text-sm">
 					<span class="text-[var(--color-muted)]">Input base</span>
 					<select class="select-input" bind:value={inputBase}>
-						{#each presets as preset}
+						{#each presets as preset (preset.base)}
 							<option value={preset.base}>{preset.label} (base {preset.base})</option>
 						{/each}
 					</select>
@@ -106,7 +106,7 @@
 						No conversions yet.
 					</div>
 				{:else}
-					{#each outputs as output}
+					{#each outputs as output (output.label)}
 						<div class="panel panel-muted p-5">
 							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
 								{output.label}

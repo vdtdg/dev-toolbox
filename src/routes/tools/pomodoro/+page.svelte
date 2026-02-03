@@ -143,7 +143,7 @@
 		<section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
 			<div class="panel space-y-6 p-6">
 				<div class="flex flex-wrap items-center gap-2">
-					{#each Object.entries(modeLabels) as [mode, label]}
+					{#each Object.entries(modeLabels) as [mode, label] (mode)}
 						<button
 							type="button"
 							class="mode-button"

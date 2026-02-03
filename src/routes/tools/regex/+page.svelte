@@ -130,7 +130,7 @@
 						<p class="mt-2 text-sm text-[var(--color-muted)]">No matches yet.</p>
 					{:else}
 						<ul class="mt-2 space-y-3 text-xs">
-							{#each matches as match, index}
+							{#each matches as match, index (match.index + ':' + match.match)}
 								<li class="space-y-1">
 									<p class="font-mono">#{index + 1} @ {match.index}</p>
 									<p class="font-mono">{match.match}</p>

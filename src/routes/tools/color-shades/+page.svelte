@@ -96,7 +96,7 @@
 			{/if}
 
 			<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-				{#each palette as swatch}
+				{#each palette as swatch (swatch.label)}
 					<div class="panel panel-muted p-4">
 						<div
 							class="h-16 rounded-lg border border-[var(--color-border)]"

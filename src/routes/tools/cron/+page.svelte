@@ -249,7 +249,7 @@
 						<p class="mt-3 text-sm text-[var(--color-muted)]">No upcoming runs found.</p>
 					{:else}
 						<ol class="mt-4 space-y-3 text-sm">
-							{#each nextRuns as run}
+							{#each nextRuns as run (run.getTime())}
 								<li class="flex items-center justify-between gap-3">
 									<span>{formatDateTime(run)}</span>
 									<span class="text-xs text-[var(--color-muted)]">{formatRelative(run)}</span>
@@ -261,7 +261,7 @@
 				<div class="panel panel-muted p-5">
 					<h2 class="text-lg font-semibold">Field breakdown</h2>
 					<ul class="mt-4 space-y-3 text-sm">
-						{#each fieldSummary as field}
+						{#each fieldSummary as field (field.label)}
 							<li class="flex flex-col gap-1">
 								<span class="text-[var(--color-muted)]">{field.label}</span>
 								<span class="font-mono text-xs text-[var(--color-text)]">

@@ -162,7 +162,7 @@
 						</tr>
 					</thead>
 					<tbody class="divide-y divide-[var(--color-border)]">
-						{#each filteredRows as row}
+						{#each filteredRows as row (row.decimal)}
 							<tr>
 								<td class="py-2 pr-4 font-mono text-xs">{row.decimal}</td>
 								<td class="py-2 pr-4 font-mono text-xs">{row.octal}</td>

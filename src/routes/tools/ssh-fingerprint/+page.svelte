@@ -216,7 +216,7 @@
 				<div class="w-full sm:max-w-xs">
 					<label class="text-sm text-[var(--color-muted)]" for="algorithm-select">Algorithm</label>
 					<select id="algorithm-select" class="select-input" bind:value={algorithm}>
-						{#each algorithms as item}
+						{#each algorithms as item (item.id)}
 							<option value={item.id}>{item.label}</option>
 						{/each}
 					</select>

@@ -243,7 +243,7 @@
 					</p>
 					{#if claimDetails.length > 0}
 						<ul class="space-y-2 text-xs">
-							{#each claimDetails as claim}
+							{#each claimDetails as claim (claim.label)}
 								<li class="flex items-center justify-between">
 									<span class="font-mono">{claim.label}: {claim.value}</span>
 									<span
