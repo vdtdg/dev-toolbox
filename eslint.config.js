@@ -3,6 +3,7 @@ import path from 'node:path';
 import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
 import svelte from 'eslint-plugin-svelte';
+import tailwindcss from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 import svelteConfig from './svelte.config.js';
 
@@ -12,6 +13,16 @@ const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
 	...svelte.configs.recommended,
+	...tailwindcss.configs['flat/recommended'],
+	{
+		// Tailwind v4 doesn't ship the legacy "resolveConfigPath" helper this plugin expects.
+		// Setting an explicit config disables repeated warnings during lint runs.
+		settings: {
+			tailwindcss: {
+				config: {}
+			}
+		}
+	},
 	prettier,
 	...svelte.configs.prettier,
 	{
@@ -38,7 +49,12 @@ const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 			'svelte/no-reactive-literals': 'off',
 			'svelte/no-immutable-reactive-statements': 'off',
 			'svelte/no-reactive-reassign': 'off',
-			'svelte/no-at-html-tags': 'off'
+			'svelte/no-at-html-tags': 'off',
+
+			// Tailwind plugin defaults are aimed at utility-only codebases.
+			// This repo intentionally mixes Tailwind utilities with custom component classes.
+			'tailwindcss/no-custom-classname': 'off',
+			'tailwindcss/migration-from-tailwind-2': 'off'
 		}
 	}
 ];
