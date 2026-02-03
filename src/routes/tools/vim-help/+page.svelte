@@ -12,7 +12,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Help me I'm stuck in VIM !</h1>
-			<p class="text-sm text-[var(--color-muted)]">Don't panic.</p>
+			<p class="text-sm text-(--color-muted)">Don't panic.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">

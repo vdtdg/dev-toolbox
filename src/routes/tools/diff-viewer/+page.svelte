@@ -90,7 +90,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">File Diff + Patch Viewer</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Paste two versions to see a unified diff and patch preview.
 			</p>
 		</header>
@@ -98,7 +98,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Original</span>
+					<span class="text-(--color-muted)">Original</span>
 					<textarea
 						class="search-input min-h-50 resize-y"
 						placeholder="Paste original file"
@@ -106,7 +106,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Modified</span>
+					<span class="text-(--color-muted)">Modified</span>
 					<textarea
 						class="search-input min-h-50 resize-y"
 						placeholder="Paste modified file"
@@ -115,7 +115,7 @@
 				</label>
 			</div>
 
-			<div class="flex flex-wrap items-center gap-3 text-xs text-[var(--color-muted)]">
+			<div class="flex flex-wrap items-center gap-3 text-xs text-(--color-muted)">
 				<span>+{stats.added} added</span>
 				<span>-{stats.removed} removed</span>
 				<span>{stats.unchanged} unchanged</span>
@@ -123,17 +123,17 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Diff</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Diff</p>
 					<ul class="mt-3 space-y-1 font-mono text-xs">
 						{#each diffLines as line (line.type + ':' + line.lineNumber)}
 							<li
 								class={line.type === 'add'
-									? 'text-[var(--color-accent)]'
+									? 'text-(var(--color-accent)]'
 									: line.type === 'remove'
-										? 'text-[var(--color-danger)]'
-										: 'text-[var(--color-text)]'}
+										? 'text-(var(--color-danger)]'
+										: 'text-(var(--color-text)]'}
 							>
-								<span class="text-[var(--color-muted)]">{line.lineNumber}</span>
+								<span class="text-(--color-muted)">{line.lineNumber}</span>
 								<span class="px-2"
 									>{line.type === 'add' ? '+' : line.type === 'remove' ? '-' : ' '}</span
 								>
@@ -143,7 +143,7 @@
 					</ul>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Patch</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Patch</p>
 					<textarea class="search-input mt-3 min-h-60 resize-y font-mono" readonly value={patchText}
 					></textarea>
 				</div>

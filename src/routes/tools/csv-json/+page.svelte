@@ -102,20 +102,20 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">CSV ↔ JSON Converter</h1>
-			<p class="text-sm text-[var(--color-muted)]">Convert CSV rows to JSON arrays and back.</p>
+			<p class="text-sm text-(--color-muted)">Convert CSV rows to JSON arrays and back.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="mode-select">Mode</label>
+					<label class="text-sm text-(--color-muted)" for="mode-select">Mode</label>
 					<select id="mode-select" class="select-input" bind:value={mode}>
 						<option value="csv-to-json">CSV → JSON</option>
 						<option value="json-to-csv">JSON → CSV</option>
 					</select>
 				</div>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Delimiter</span>
+					<span class="text-(--color-muted)">Delimiter</span>
 					<input type="text" class="search-input" maxlength="1" bind:value={delimiter} />
 				</label>
 				<button type="button" class="ghost-button" on:click={swapDirection}>Swap direction</button>
@@ -127,7 +127,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<textarea
 						class="search-input min-h-50 resize-y font-mono"
 						placeholder="Paste CSV or JSON"
@@ -135,7 +135,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Output</span>
+					<span class="text-(--color-muted)">Output</span>
 					<textarea class="search-input min-h-50 resize-y font-mono" readonly value={outputValue}
 					></textarea>
 				</label>

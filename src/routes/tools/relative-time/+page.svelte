@@ -50,7 +50,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Relative Time Calculator</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Measure a target date relative to now or a custom base.
 			</p>
 		</header>
@@ -58,11 +58,11 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Target date</span>
+					<span class="text-(--color-muted)">Target date</span>
 					<input type="datetime-local" class="search-input" bind:value={targetDate} />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Base date (optional)</span>
+					<span class="text-(--color-muted)">Base date (optional)</span>
 					<input type="datetime-local" class="search-input" bind:value={baseDate} />
 				</label>
 			</div>
@@ -72,7 +72,7 @@
 			{/if}
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Result</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Result</p>
 				<p class="mt-2 font-mono text-sm">{outputValue || '--'}</p>
 			</div>
 		</section>

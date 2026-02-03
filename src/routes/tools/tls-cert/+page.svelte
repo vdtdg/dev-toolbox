@@ -80,7 +80,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">TLS Certificate Decoder</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Parse PEM certificates locally in your browser.
 			</p>
 		</header>
@@ -88,13 +88,13 @@
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Upload PEM file</span>
+					<span class="text-(--color-muted)">Upload PEM file</span>
 					<input type="file" accept=".pem,.crt" class="search-input" on:change={handleFile} />
 				</label>
 			</div>
 
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">PEM</span>
+				<span class="text-(--color-muted)">PEM</span>
 				<textarea
 					class="search-input min-h-40 resize-y font-mono"
 					placeholder="-----BEGIN CERTIFICATE-----"
@@ -108,12 +108,12 @@
 
 			<div class="panel panel-muted p-5">
 				{#if output.length === 0}
-					<p class="text-sm text-[var(--color-muted)]">No certificate data yet.</p>
+					<p class="text-sm text-(--color-muted)">No certificate data yet.</p>
 				{:else}
 					<ul class="space-y-3 text-sm">
 						{#each output as row (row.label)}
 							<li class="flex flex-col gap-1">
-								<span class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
+								<span class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
 									{row.label}
 								</span>
 								<span class="font-mono text-xs break-all">{row.value}</span>

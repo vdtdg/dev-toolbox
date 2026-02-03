@@ -72,13 +72,13 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Change Base Helper</h1>
-			<p class="text-sm text-[var(--color-muted)]">Convert numbers between common bases.</p>
+			<p class="text-sm text-(--color-muted)">Convert numbers between common bases.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input value</span>
+					<span class="text-(--color-muted)">Input value</span>
 					<input
 						type="text"
 						class="search-input"
@@ -87,7 +87,7 @@
 					/>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input base</span>
+					<span class="text-(--color-muted)">Input base</span>
 					<select class="select-input" bind:value={inputBase}>
 						{#each presets as preset (preset.base)}
 							<option value={preset.base}>{preset.label} (base {preset.base})</option>
@@ -102,13 +102,13 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				{#if outputs.length === 0}
-					<div class="panel panel-muted p-5 text-sm text-[var(--color-muted)]">
+					<div class="panel panel-muted p-5 text-sm text-(--color-muted)">
 						No conversions yet.
 					</div>
 				{:else}
 					{#each outputs as output (output.label)}
 						<div class="panel panel-muted p-5">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
 								{output.label}
 							</p>
 							<p class="mt-2 font-mono text-xs break-all">{output.value}</p>

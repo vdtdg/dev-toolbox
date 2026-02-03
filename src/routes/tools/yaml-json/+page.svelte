@@ -43,13 +43,13 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">YAML ↔ JSON Converter</h1>
-			<p class="text-sm text-[var(--color-muted)]">Convert YAML to JSON or JSON to YAML locally.</p>
+			<p class="text-sm text-(--color-muted)">Convert YAML to JSON or JSON to YAML locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="mode-select">Mode</label>
+					<label class="text-sm text-(--color-muted)" for="mode-select">Mode</label>
 					<select id="mode-select" class="select-input" bind:value={mode}>
 						<option value="yaml-to-json">YAML → JSON</option>
 						<option value="json-to-yaml">JSON → YAML</option>
@@ -64,7 +64,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<textarea
 						class="search-input min-h-50 resize-y font-mono"
 						placeholder="Paste YAML or JSON"
@@ -72,7 +72,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Output</span>
+					<span class="text-(--color-muted)">Output</span>
 					<textarea class="search-input min-h-50 resize-y font-mono" readonly value={outputValue}
 					></textarea>
 				</label>

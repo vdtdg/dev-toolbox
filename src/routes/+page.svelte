@@ -34,11 +34,11 @@
 			<header class="space-y-5">
 				<div class="flex flex-wrap items-center justify-between gap-4">
 					<div>
-						<p class="text-xs tracking-[0.32em] text-[var(--color-muted)] uppercase">
+						<p class="text-xs tracking-[0.32em] text-(--color-muted) uppercase">
 							Offline developer utilities
 						</p>
 						<h1 class="mt-2 text-3xl font-semibold md:text-4xl">Dev Toolbox</h1>
-						<p class="mt-2 max-w-xl text-sm text-[var(--color-muted)]">
+						<p class="mt-2 max-w-xl text-sm text-(--color-muted)">
 							Fast, local tools for encoding, security, and daily engineering workflows.
 						</p>
 					</div>
@@ -49,7 +49,7 @@
 				<div class="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
 					<div>
 						<h2 class="text-lg font-semibold">Tool Registry</h2>
-						<p class="text-sm text-[var(--color-muted)]">Search by name, capability, or tag.</p>
+						<p class="text-sm text-(--color-muted)">Search by name, capability, or tag.</p>
 					</div>
 					<div class="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
 						<div class="w-full sm:w-55 sm:flex-none">
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex flex-wrap items-center gap-2 text-xs text-[var(--color-muted)]">
+				<div class="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
 					<span>
 						{filteredTools.length} result{filteredTools.length === 1 ? '' : 's'}
 					</span>
@@ -100,38 +100,38 @@
 						>
 							<div>
 								<h3 class="text-lg font-semibold">{tool.name}</h3>
-								<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
+								<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
 							</div>
-							<p class="mt-4 text-xs text-[var(--color-muted)]">{tool.format}</p>
+							<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
 						</a>
 					{:else}
 						<article class="tool-card">
 							<div>
 								<h3 class="text-lg font-semibold">{tool.name}</h3>
-								<p class="mt-2 text-sm text-[var(--color-muted)]">{tool.description}</p>
+								<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
 							</div>
-							<p class="mt-4 text-xs text-[var(--color-muted)]">{tool.format}</p>
+							<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
 						</article>
 					{/if}
 				{/each}
 			</section>
 
 			{#if filteredTools.length === 0}
-				<section class="panel p-6 text-sm text-[var(--color-muted)]">
+				<section class="panel p-6 text-sm text-(--color-muted)">
 					No tools match this filter yet. Clear the query or switch categories.
 				</section>
 			{/if}
 
-			<footer class="panel panel-muted px-5 py-4 text-xs text-[var(--color-muted)]">
+			<footer class="panel panel-muted px-5 py-4 text-xs text-(--color-muted)">
 				<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
 					<span>All tools run locally in your browser. No data is sent to a server.</span>
 					<span>
 						Made by
-						<a class="text-[var(--color-accent)] hover:underline" href="https://dtdg.fr">
+						<a class="text-(var(--color-accent)] hover:underline" href="https://dtdg.fr">
 							Valérian de Thézan de Gaussan
 						</a>. Code is open-sourced on
 						<a
-							class="text-[var(--color-accent)] hover:underline"
+							class="text-(var(--color-accent)] hover:underline"
 							href="https://github.com/vdtdg/dev-toolbox"
 						>
 							GitHub

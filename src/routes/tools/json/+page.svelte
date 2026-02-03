@@ -70,13 +70,13 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">JSON Formatter + JSONPath</h1>
-			<p class="text-sm text-[var(--color-muted)]">Format, minify, and query JSON locally.</p>
+			<p class="text-sm text-(--color-muted)">Format, minify, and query JSON locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input JSON</span>
+					<span class="text-(--color-muted)">Input JSON</span>
 					<textarea
 						class="search-input min-h-55 resize-y font-mono"
 						placeholder="Paste JSON"
@@ -84,7 +84,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Output</span>
+					<span class="text-(--color-muted)">Output</span>
 					<textarea class="search-input min-h-55 resize-y font-mono" readonly value={outputValue}
 					></textarea>
 				</label>
@@ -102,7 +102,7 @@
 			<div class="panel panel-muted space-y-4 p-5">
 				<div class="grid gap-4 lg:grid-cols-[1fr_0.8fr]">
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">JSONPath query</span>
+						<span class="text-(--color-muted)">JSONPath query</span>
 						<input
 							type="text"
 							class="search-input"
@@ -110,7 +110,7 @@
 							bind:value={pathQuery}
 						/>
 					</label>
-					<div class="text-xs text-[var(--color-muted)]">Results update live as you type.</div>
+					<div class="text-xs text-(--color-muted)">Results update live as you type.</div>
 				</div>
 				<textarea class="search-input min-h-40 resize-y font-mono" readonly value={pathResult}
 				></textarea>

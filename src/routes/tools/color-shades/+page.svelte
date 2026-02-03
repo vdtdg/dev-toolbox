@@ -76,17 +76,17 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Color Shades Generator</h1>
-			<p class="text-sm text-[var(--color-muted)]">Create tints and shades from a base color.</p>
+			<p class="text-sm text-(--color-muted)">Create tints and shades from a base color.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1fr_0.6fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Base color</span>
+					<span class="text-(--color-muted)">Base color</span>
 					<input type="text" class="search-input" bind:value={baseColor} placeholder="#52D6FF" />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Steps</span>
+					<span class="text-(--color-muted)">Steps</span>
 					<input type="number" min="3" max="20" class="search-input" bind:value={steps} />
 				</label>
 			</div>
@@ -99,10 +99,10 @@
 				{#each palette as swatch (swatch.label)}
 					<div class="panel panel-muted p-4">
 						<div
-							class="h-16 rounded-lg border border-[var(--color-border)]"
+							class="h-16 rounded-lg border border-(var(--color-border)]  "
 							style={`background:${swatch.value};`}
 						></div>
-						<p class="mt-2 text-xs text-[var(--color-muted)]">{swatch.label}</p>
+						<p class="mt-2 text-xs text-(--color-muted)">{swatch.label}</p>
 						<p class="font-mono text-xs">{swatch.value}</p>
 					</div>
 				{/each}

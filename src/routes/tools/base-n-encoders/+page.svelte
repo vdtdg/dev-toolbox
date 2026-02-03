@@ -198,7 +198,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Base-N Encoders</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Encode or decode Base32, Base58, and Base85 strings locally.
 			</p>
 		</header>
@@ -206,7 +206,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 sm:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Encoding</span>
+					<span class="text-(--color-muted)">Encoding</span>
 					<select class="select-input" bind:value={encoder}>
 						{#each encoders as option (option.id)}
 							<option value={option.id}>{option.label}</option>
@@ -214,7 +214,7 @@
 					</select>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Mode</span>
+					<span class="text-(--color-muted)">Mode</span>
 					<select class="select-input" bind:value={mode}>
 						{#each modes as option (option.id)}
 							<option value={option.id}>{option.label}</option>
@@ -229,7 +229,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<textarea
 						class="search-input min-h-45 resize-y"
 						placeholder={mode === 'encode' ? 'Paste text to encode' : 'Paste encoded string'}
@@ -237,12 +237,12 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Output</span>
+					<span class="text-(--color-muted)">Output</span>
 					<textarea class="search-input min-h-45 resize-y" readonly value={outputValue}></textarea>
 				</label>
 			</div>
 
-			<p class="text-xs text-[var(--color-muted)]">
+			<p class="text-xs text-(--color-muted)">
 				Base32 uses RFC 4648 padding, Base58 uses the Bitcoin alphabet, and Base85 is ASCII85
 				without zero compression.
 			</p>

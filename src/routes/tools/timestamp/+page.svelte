@@ -52,7 +52,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Timestamp to Time</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Convert Unix timestamps to local time, UTC, and ISO.
 			</p>
 		</header>
@@ -60,7 +60,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<div class="space-y-3">
-					<label class="text-sm text-[var(--color-muted)]" for="timestamp-input"> Timestamp </label>
+					<label class="text-sm text-(--color-muted)" for="timestamp-input"> Timestamp </label>
 					<input
 						id="timestamp-input"
 						type="text"
@@ -68,7 +68,7 @@
 						placeholder="1700000000"
 						bind:value={timestamp}
 					/>
-					<div class="flex flex-wrap items-center gap-2 text-xs text-[var(--color-muted)]">
+					<div class="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
 						<label class="flex items-center gap-2">
 							<input type="radio" name="unit" value="seconds" bind:group={unit} />
 							Seconds
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div
-					class="rounded-xl border border-[var(--color-border)] bg-[rgba(10,14,20,0.6)] p-4 text-xs text-[var(--color-muted)]"
+					class="rounded-xl border border-(var(--color-border)]   bg-[rgba(10,14,20,0.6)] p-4 text-xs text-(--color-muted)"
 				>
 					<p>Current timestamps</p>
 					<p class="mt-2 font-mono">Seconds: {nowSeconds}</p>
@@ -94,15 +94,15 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Local</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Local</p>
 					<p class="mt-2 font-mono text-sm">{localTime || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">UTC</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">UTC</p>
 					<p class="mt-2 font-mono text-sm">{utcTime || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">ISO 8601</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">ISO 8601</p>
 					<p class="mt-2 font-mono text-sm">{isoTime || '--'}</p>
 				</div>
 			</div>

@@ -44,13 +44,13 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">URI Encoder / Decoder</h1>
-			<p class="text-sm text-[var(--color-muted)]">Encode or decode URI components locally.</p>
+			<p class="text-sm text-(--color-muted)">Encode or decode URI components locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="mode-select">Mode</label>
+					<label class="text-sm text-(--color-muted)" for="mode-select">Mode</label>
 					<select id="mode-select" class="select-input" bind:value={mode}>
 						{#each modes as item (item.value)}
 							<option value={item.value}>{item.label}</option>
@@ -68,7 +68,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<textarea
 						class="search-input min-h-45 resize-y"
 						placeholder="Paste text to encode or decode"
@@ -76,7 +76,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Output</span>
+					<span class="text-(--color-muted)">Output</span>
 					<textarea class="search-input min-h-45 resize-y" readonly value={outputValue}></textarea>
 				</label>
 			</div>

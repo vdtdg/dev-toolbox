@@ -84,7 +84,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Timezone Converter</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Convert a local time from one timezone to another.
 			</p>
 		</header>
@@ -92,11 +92,11 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-3">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Date and time</span>
+					<span class="text-(--color-muted)">Date and time</span>
 					<input type="datetime-local" class="search-input" bind:value={dateTime} />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">From</span>
+					<span class="text-(--color-muted)">From</span>
 					<input
 						class="search-input"
 						list="timezone-options"
@@ -105,7 +105,7 @@
 					/>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">To</span>
+					<span class="text-(--color-muted)">To</span>
 					<input
 						class="search-input"
 						list="timezone-options"
@@ -126,7 +126,7 @@
 			{/if}
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Converted</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Converted</p>
 				<p class="mt-2 font-mono text-sm">{outputValue || '--'}</p>
 			</div>
 		</section>

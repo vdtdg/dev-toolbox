@@ -78,7 +78,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Color Picker</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Pick a color and get hex, RGB, and HSL values.
 			</p>
 		</header>
@@ -86,11 +86,11 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1fr_0.6fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Hex</span>
+					<span class="text-(--color-muted)">Hex</span>
 					<input type="text" class="search-input" bind:value={color} placeholder="#52D6FF" />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Picker</span>
+					<span class="text-(--color-muted)">Picker</span>
 					<input type="color" class="search-input h-10.5 p-1" bind:value={color} />
 				</label>
 			</div>
@@ -101,18 +101,18 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Preview</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Preview</p>
 					<div
-						class="mt-3 h-20 rounded-xl border border-[var(--color-border)]"
+						class="mt-3 h-20 rounded-xl border border-(var(--color-border)]  "
 						style={`background:${hexValue};`}
 					></div>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">RGB</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">RGB</p>
 					<p class="mt-2 font-mono text-sm">{rgbText}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">HSL</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">HSL</p>
 					<p class="mt-2 font-mono text-sm">{hslText}</p>
 				</div>
 			</div>

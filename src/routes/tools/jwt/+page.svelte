@@ -179,14 +179,14 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">JWT Helper</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Decode tokens, validate time-based claims, and verify HMAC signatures.
 			</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">JWT</span>
+				<span class="text-(--color-muted)">JWT</span>
 				<textarea
 					class="search-input min-h-35 resize-y"
 					placeholder="Paste your JWT here"
@@ -196,11 +196,11 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Shared secret</span>
+					<span class="text-(--color-muted)">Shared secret</span>
 					<input type="text" class="search-input" placeholder="Optional" bind:value={secret} />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">JWK (oct)</span>
+					<span class="text-(--color-muted)">JWK (oct)</span>
 					<textarea
 						class="search-input min-h-22.5 resize-y"
 						placeholder={'{"kty":"oct","k":"..."}'}
@@ -208,7 +208,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Clock skew (seconds)</span>
+					<span class="text-(--color-muted)">Clock skew (seconds)</span>
 					<input type="number" min="0" class="search-input" bind:value={clockSkew} />
 				</label>
 			</div>
@@ -219,26 +219,26 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Header</p>
-					<pre class="text-xs text-[var(--color-text)]">{headerJson || '--'}</pre>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Header</p>
+					<pre class="text-xs text-(var(--color-text)]">{headerJson || '--'}</pre>
 				</div>
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Payload</p>
-					<pre class="text-xs text-[var(--color-text)]">{payloadJson || '--'}</pre>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Payload</p>
+					<pre class="text-xs text-(var(--color-text)]">{payloadJson || '--'}</pre>
 				</div>
 			</div>
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Signature</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Signature</p>
 					<p class="font-mono text-xs">{signatureValue || '--'}</p>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						{signatureStatus || 'Signature not verified yet.'}
 					</p>
 				</div>
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Claims</p>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Claims</p>
+					<p class="text-xs text-(--color-muted)">
 						{claimStatus || 'No claim check performed.'}
 					</p>
 					{#if claimDetails.length > 0}
@@ -248,8 +248,8 @@
 									<span class="font-mono">{claim.label}: {claim.value}</span>
 									<span
 										class={claim.status === 'valid'
-											? 'text-[var(--color-accent)]'
-											: 'text-[var(--color-danger)]'}
+											? 'text-(var(--color-accent)]'
+											: 'text-(var(--color-danger)]'}
 									>
 										{claim.status}
 									</span>

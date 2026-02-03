@@ -131,7 +131,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">IPv4 Helper</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Analyze IPv4 addresses and CIDR blocks locally.
 			</p>
 		</header>
@@ -139,7 +139,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<div class="space-y-3">
-					<label class="text-sm text-[var(--color-muted)]" for="ipv4-input">Address or CIDR</label>
+					<label class="text-sm text-(--color-muted)" for="ipv4-input">Address or CIDR</label>
 					<input
 						id="ipv4-input"
 						type="text"
@@ -147,13 +147,13 @@
 						placeholder="192.168.1.10/24"
 						bind:value={addressInput}
 					/>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						Paste <span class="font-mono">192.168.1.10</span> or a CIDR like
 						<span class="font-mono">10.0.0.0/16</span>.
 					</p>
 				</div>
 				<div class="space-y-3">
-					<label class="text-sm text-[var(--color-muted)]" for="prefix-input">CIDR prefix</label>
+					<label class="text-sm text-(--color-muted)" for="prefix-input">CIDR prefix</label>
 					<input
 						id="prefix-input"
 						type="number"
@@ -162,7 +162,7 @@
 						class="search-input"
 						bind:value={prefixLength}
 					/>
-					<p class="text-xs text-[var(--color-muted)]">Used when no prefix is provided.</p>
+					<p class="text-xs text-(--color-muted)">Used when no prefix is provided.</p>
 				</div>
 			</div>
 
@@ -172,29 +172,29 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">CIDR</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">CIDR</p>
 					<p class="mt-2 font-mono text-sm">{summary?.cidr || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Class</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Class</p>
 					<p class="mt-2 text-sm">{summary?.classLabel || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Range</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Range</p>
 					<p class="mt-2 text-sm">{summary?.hostRange || '--'}</p>
 				</div>
 			</div>
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Network</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Network</p>
 					<p class="font-mono text-sm">Network: {summary?.network || '--'}</p>
 					<p class="font-mono text-sm">Broadcast: {summary?.broadcast || '--'}</p>
 					<p class="font-mono text-sm">Netmask: {summary?.mask || '--'}</p>
 					<p class="font-mono text-sm">Wildcard: {summary?.wildcard || '--'}</p>
 				</div>
 				<div class="panel panel-muted space-y-3 p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Counts</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Counts</p>
 					<p class="text-sm">Total addresses: {summary?.totalAddresses ?? '--'}</p>
 					<p class="text-sm">Usable hosts: {summary?.usableHosts ?? '--'}</p>
 					<p class="text-sm">Private: {summary ? (summary.isPrivate ? 'Yes' : 'No') : '--'}</p>
@@ -206,12 +206,12 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Binary</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Binary</p>
 					<p class="mt-2 font-mono text-xs break-all">IP: {summary?.addressBinary || '--'}</p>
 					<p class="mt-2 font-mono text-xs break-all">Mask: {summary?.maskBinary || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Integer</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Integer</p>
 					<p class="mt-2 font-mono text-sm">{summary?.addressInt ?? '--'}</p>
 				</div>
 			</div>

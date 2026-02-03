@@ -103,7 +103,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">OpenAPI / Swagger Viewer</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Paste a spec or upload a JSON/YAML file to preview endpoints.
 			</p>
 		</header>
@@ -111,7 +111,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Upload spec</span>
+					<span class="text-(--color-muted)">Upload spec</span>
 					<input
 						type="file"
 						accept=".json,.yaml,.yml"
@@ -119,11 +119,11 @@
 						on:change={handleFile}
 					/>
 				</label>
-				<div class="text-xs text-[var(--color-muted)]">{fileName || 'No file selected'}</div>
+				<div class="text-xs text-(--color-muted)">{fileName || 'No file selected'}</div>
 			</div>
 
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">OpenAPI / Swagger</span>
+				<span class="text-(--color-muted)">OpenAPI / Swagger</span>
 				<textarea
 					class="search-input min-h-45 resize-y font-mono"
 					placeholder="Paste OpenAPI JSON or YAML"
@@ -138,16 +138,16 @@
 			{#if specInfo}
 				<div class="panel panel-muted space-y-4 p-5">
 					<div>
-						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">API</p>
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">API</p>
 						<p class="mt-2 text-lg font-semibold">{specInfo.title}</p>
-						<p class="text-xs text-[var(--color-muted)]">Version: {specInfo.version}</p>
+						<p class="text-xs text-(--color-muted)">Version: {specInfo.version}</p>
 					</div>
 					{#if specInfo.description}
-						<p class="text-xs text-[var(--color-muted)]">{specInfo.description}</p>
+						<p class="text-xs text-(--color-muted)">{specInfo.description}</p>
 					{/if}
 					{#if specInfo.servers.length}
 						<div>
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Servers</p>
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Servers</p>
 							<ul class="mt-2 space-y-1 font-mono text-xs">
 								{#each specInfo.servers as server (server.url)}
 									<li>{server.url}</li>
@@ -158,7 +158,7 @@
 				</div>
 
 				<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						{filteredPaths.length} endpoint{filteredPaths.length === 1 ? '' : 's'}
 					</p>
 					<div class="w-full sm:w-80">
@@ -175,14 +175,14 @@
 					{#each filteredPaths as item (item.method + ' ' + item.path)}
 						<div class="panel panel-muted p-4">
 							<div class="flex flex-wrap items-center justify-between gap-2">
-								<p class="font-mono text-xs text-[var(--color-accent)]">{item.method}</p>
+								<p class="font-mono text-xs text-(var(--color-accent)]">{item.method}</p>
 								<p class="font-mono text-xs">{item.path}</p>
 							</div>
 							{#if item.summary}
-								<p class="mt-2 text-xs text-[var(--color-muted)]">{item.summary}</p>
+								<p class="mt-2 text-xs text-(--color-muted)">{item.summary}</p>
 							{/if}
 							{#if item.tags.length}
-								<p class="mt-2 text-xs text-[var(--color-muted)]">
+								<p class="mt-2 text-xs text-(--color-muted)">
 									Tags: {item.tags.join(', ')}
 								</p>
 							{/if}

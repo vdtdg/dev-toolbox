@@ -102,14 +102,14 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Text Case Converter + Slugify</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Convert text casing and generate URL-safe slugs locally.
 			</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Input</span>
+				<span class="text-(--color-muted)">Input</span>
 				<textarea
 					class="search-input min-h-40 resize-y"
 					placeholder="Paste text to transform"
@@ -119,23 +119,23 @@
 
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Slugify</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Slugify</p>
 					<p class="mt-2 font-mono text-xs break-all">{slugValue || '--'}</p>
 				</div>
 				<div class="space-y-3">
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">Separator</span>
+						<span class="text-(--color-muted)">Separator</span>
 						<select class="select-input" bind:value={slugSeparator}>
 							<option value="-">Hyphen (-)</option>
 							<option value="_">Underscore (_)</option>
 							<option value=".">Dot (.)</option>
 						</select>
 					</label>
-					<label class="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+					<label class="flex items-center gap-2 text-sm text-(--color-muted)">
 						<input type="checkbox" bind:checked={slugLowercase} />
 						Lowercase output
 					</label>
-					<label class="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+					<label class="flex items-center gap-2 text-sm text-(--color-muted)">
 						<input type="checkbox" bind:checked={slugStripDiacritics} />
 						Strip diacritics
 					</label>
@@ -144,13 +144,13 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				{#if outputValues.length === 0}
-					<div class="panel panel-muted p-5 text-sm text-[var(--color-muted)]">
+					<div class="panel panel-muted p-5 text-sm text-(--color-muted)">
 						No transformations yet.
 					</div>
 				{:else}
 					{#each caseOptions as option (option.id)}
 						<div class="panel panel-muted p-5">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
 								{option.label}
 							</p>
 							<p class="mt-2 font-mono text-xs break-all">

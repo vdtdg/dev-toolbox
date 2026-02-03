@@ -86,7 +86,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Regex Tester</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Test patterns, highlight matches, and inspect capture groups.
 			</p>
 		</header>
@@ -94,18 +94,18 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Pattern</span>
+					<span class="text-(--color-muted)">Pattern</span>
 					<input type="text" class="search-input" placeholder="[A-Z]+" bind:value={pattern} />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Flags</span>
+					<span class="text-(--color-muted)">Flags</span>
 					<input type="text" class="search-input" placeholder="gim" bind:value={flags} />
-					<p class="text-xs text-[var(--color-muted)]">Common: g i m s u y</p>
+					<p class="text-xs text-(--color-muted)">Common: g i m s u y</p>
 				</label>
 			</div>
 
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Test text</span>
+				<span class="text-(--color-muted)">Test text</span>
 				<textarea
 					class="search-input min-h-45 resize-y"
 					placeholder="Paste text to match"
@@ -119,15 +119,15 @@
 
 			<div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Highlighted</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Highlighted</p>
 					<div class="mt-2 text-sm leading-6">
 						{@html highlighted}
 					</div>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Matches</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Matches</p>
 					{#if matches.length === 0}
-						<p class="mt-2 text-sm text-[var(--color-muted)]">No matches yet.</p>
+						<p class="mt-2 text-sm text-(--color-muted)">No matches yet.</p>
 					{:else}
 						<ul class="mt-2 space-y-3 text-xs">
 							{#each matches as match, index (match.index + ':' + match.match)}
@@ -135,7 +135,7 @@
 									<p class="font-mono">#{index + 1} @ {match.index}</p>
 									<p class="font-mono">{match.match}</p>
 									{#if match.groups.length}
-										<p class="text-[var(--color-muted)]">Groups: {match.groups.join(', ')}</p>
+										<p class="text-(--color-muted)">Groups: {match.groups.join(', ')}</p>
 									{/if}
 								</li>
 							{/each}

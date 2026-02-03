@@ -215,7 +215,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Cron Tab Helper + Visualizer</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Preview upcoming runs and validate 5-field cron expressions locally.
 			</p>
 		</header>
@@ -223,7 +223,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
 				<div class="flex-1 space-y-2">
-					<label class="text-sm text-[var(--color-muted)]" for="cron-input">Cron expression</label>
+					<label class="text-sm text-(--color-muted)" for="cron-input">Cron expression</label>
 					<input
 						id="cron-input"
 						type="text"
@@ -232,7 +232,7 @@
 						bind:value={cronExpression}
 						aria-label="Cron expression"
 					/>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						Supports: *, lists, ranges, and steps. Uses local time.
 					</p>
 				</div>
@@ -246,13 +246,13 @@
 				<div class="panel panel-muted p-5">
 					<h2 class="text-lg font-semibold">Next runs</h2>
 					{#if nextRuns.length === 0}
-						<p class="mt-3 text-sm text-[var(--color-muted)]">No upcoming runs found.</p>
+						<p class="mt-3 text-sm text-(--color-muted)">No upcoming runs found.</p>
 					{:else}
 						<ol class="mt-4 space-y-3 text-sm">
 							{#each nextRuns as run (run.getTime())}
 								<li class="flex items-center justify-between gap-3">
 									<span>{formatDateTime(run)}</span>
-									<span class="text-xs text-[var(--color-muted)]">{formatRelative(run)}</span>
+									<span class="text-xs text-(--color-muted)">{formatRelative(run)}</span>
 								</li>
 							{/each}
 						</ol>
@@ -263,11 +263,11 @@
 					<ul class="mt-4 space-y-3 text-sm">
 						{#each fieldSummary as field (field.label)}
 							<li class="flex flex-col gap-1">
-								<span class="text-[var(--color-muted)]">{field.label}</span>
-								<span class="font-mono text-xs text-[var(--color-text)]">
+								<span class="text-(--color-muted)">{field.label}</span>
+								<span class="font-mono text-xs text-(var(--color-text)]">
 									{field.values}
 								</span>
-								<span class="text-xs text-[var(--color-muted)]">
+								<span class="text-xs text-(--color-muted)">
 									Range {field.range}. {field.hint}
 								</span>
 							</li>

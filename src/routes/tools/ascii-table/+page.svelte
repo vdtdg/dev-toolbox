@@ -135,12 +135,12 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">ASCII Reference Table</h1>
-			<p class="text-sm text-[var(--color-muted)]">Standard ASCII (0-127) lookup table.</p>
+			<p class="text-sm text-(--color-muted)">Standard ASCII (0-127) lookup table.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Search</span>
+				<span class="text-(--color-muted)">Search</span>
 				<input
 					type="search"
 					class="search-input"
@@ -151,7 +151,7 @@
 
 			<div class="panel panel-muted overflow-x-auto p-4">
 				<table class="w-full min-w-220 text-left text-sm">
-					<thead class="text-xs text-[var(--color-muted)] uppercase">
+					<thead class="text-xs text-(--color-muted) uppercase">
 						<tr>
 							<th class="pr-4 pb-3">Dec</th>
 							<th class="pr-4 pb-3">Oct</th>
@@ -161,7 +161,7 @@
 							<th class="pb-3">Description</th>
 						</tr>
 					</thead>
-					<tbody class="divide-y divide-[var(--color-border)]">
+					<tbody class="divide-y divide-(--color-border)">
 						{#each filteredRows as row (row.decimal)}
 							<tr>
 								<td class="py-2 pr-4 font-mono text-xs">{row.decimal}</td>
@@ -169,7 +169,7 @@
 								<td class="py-2 pr-4 font-mono text-xs">{row.hex}</td>
 								<td class="py-2 pr-4 font-mono text-xs">{row.binary}</td>
 								<td class="py-2 pr-4 font-mono text-xs">{row.value}</td>
-								<td class="py-2 text-xs text-[var(--color-muted)]">{row.description || '--'}</td>
+								<td class="py-2 text-xs text-(--color-muted)">{row.description || '--'}</td>
 							</tr>
 						{/each}
 					</tbody>

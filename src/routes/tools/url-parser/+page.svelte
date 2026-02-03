@@ -46,12 +46,12 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">URL Parser</h1>
-			<p class="text-sm text-[var(--color-muted)]">Break URLs into structured components.</p>
+			<p class="text-sm text-(--color-muted)">Break URLs into structured components.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">URL</span>
+				<span class="text-(--color-muted)">URL</span>
 				<input
 					type="text"
 					class="search-input"
@@ -66,68 +66,68 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Components</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Components</p>
 					<ul class="mt-3 space-y-2 text-xs">
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Href</span>
+							<span class="text-(--color-muted)">Href</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.href || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Origin</span>
+							<span class="text-(--color-muted)">Origin</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.origin || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Protocol</span>
+							<span class="text-(--color-muted)">Protocol</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.protocol || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Username</span>
+							<span class="text-(--color-muted)">Username</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.username || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Password</span>
+							<span class="text-(--color-muted)">Password</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.password || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Host</span>
+							<span class="text-(--color-muted)">Host</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.host || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Hostname</span>
+							<span class="text-(--color-muted)">Hostname</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.hostname || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Port</span>
+							<span class="text-(--color-muted)">Port</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.port || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Pathname</span>
+							<span class="text-(--color-muted)">Pathname</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.pathname || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Search</span>
+							<span class="text-(--color-muted)">Search</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.search || '--'}</span>
 						</li>
 						<li class="flex items-start justify-between gap-4">
-							<span class="text-[var(--color-muted)]">Hash</span>
+							<span class="text-(--color-muted)">Hash</span>
 							<span class="text-right font-mono break-all">{parsedUrl?.hash || '--'}</span>
 						</li>
 					</ul>
 				</div>
 
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Query Params</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Query Params</p>
 					{#if queryRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
 							{#each queryRows as row (row.key + ':' + row.value)}
 								<li class="flex items-start justify-between gap-4">
-									<span class="text-[var(--color-muted)]">{row.key}</span>
+									<span class="text-(--color-muted)">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value || '--'}</span>
 								</li>
 							{/each}
 						</ul>
 					{:else}
-						<p class="mt-2 text-xs text-[var(--color-muted)]">No query parameters.</p>
+						<p class="mt-2 text-xs text-(--color-muted)">No query parameters.</p>
 					{/if}
 				</div>
 			</div>

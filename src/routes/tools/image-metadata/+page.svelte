@@ -91,22 +91,22 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Image Metadata Viewer</h1>
-			<p class="text-sm text-[var(--color-muted)]">Inspect EXIF and IPTC metadata locally.</p>
+			<p class="text-sm text-(--color-muted)">Inspect EXIF and IPTC metadata locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Upload image</span>
+				<span class="text-(--color-muted)">Upload image</span>
 				<input type="file" accept="image/*" class="search-input" on:change={handleFile} />
 			</label>
 
 			{#if imageSrc}
 				<div class="panel panel-muted p-4">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Preview</p>
-					<div class="mt-3 overflow-hidden rounded-lg border border-[var(--color-border)]">
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Preview</p>
+					<div class="mt-3 overflow-hidden rounded-lg border border-(var(--color-border)]  ">
 						<img src={imageSrc} alt={imageName} class="max-h-60 w-full object-contain" />
 					</div>
-					<p class="mt-2 text-xs text-[var(--color-muted)]">
+					<p class="mt-2 text-xs text-(--color-muted)">
 						{imageName} • {formatBytes(imageSize)}
 					</p>
 				</div>
@@ -118,51 +118,51 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">EXIF</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">EXIF</p>
 					{#if exifRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
 							{#each exifRows as row (row.key)}
 								<li class="flex items-start justify-between gap-4">
-									<span class="text-[var(--color-muted)]">{row.key}</span>
+									<span class="text-(--color-muted)">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value}</span>
 								</li>
 							{/each}
 						</ul>
 					{:else}
-						<p class="mt-2 text-xs text-[var(--color-muted)]">No EXIF metadata found.</p>
+						<p class="mt-2 text-xs text-(--color-muted)">No EXIF metadata found.</p>
 					{/if}
 				</div>
 
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">IPTC</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">IPTC</p>
 					{#if iptcRows.length}
 						<ul class="mt-3 space-y-2 text-xs">
 							{#each iptcRows as row (row.key)}
 								<li class="flex items-start justify-between gap-4">
-									<span class="text-[var(--color-muted)]">{row.key}</span>
+									<span class="text-(--color-muted)">{row.key}</span>
 									<span class="text-right font-mono break-all">{row.value}</span>
 								</li>
 							{/each}
 						</ul>
 					{:else}
-						<p class="mt-2 text-xs text-[var(--color-muted)]">No IPTC metadata found.</p>
+						<p class="mt-2 text-xs text-(--color-muted)">No IPTC metadata found.</p>
 					{/if}
 				</div>
 			</div>
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">GPS</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">GPS</p>
 				{#if gpsRows.length}
 					<ul class="mt-3 space-y-2 text-xs">
 						{#each gpsRows as row (row.key)}
 							<li class="flex items-start justify-between gap-4">
-								<span class="text-[var(--color-muted)]">{row.key}</span>
+								<span class="text-(--color-muted)">{row.key}</span>
 								<span class="text-right font-mono break-all">{row.value}</span>
 							</li>
 						{/each}
 					</ul>
 				{:else}
-					<p class="mt-2 text-xs text-[var(--color-muted)]">No GPS metadata found.</p>
+					<p class="mt-2 text-xs text-(--color-muted)">No GPS metadata found.</p>
 				{/if}
 			</div>
 		</section>

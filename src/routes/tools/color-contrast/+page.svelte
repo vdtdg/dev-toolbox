@@ -64,7 +64,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Color Contrast Checker</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Check WCAG contrast ratios for text and UI elements.
 			</p>
 		</header>
@@ -72,11 +72,11 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Foreground</span>
+					<span class="text-(--color-muted)">Foreground</span>
 					<input type="text" class="search-input" bind:value={foreground} placeholder="#E4EDF5" />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Background</span>
+					<span class="text-(--color-muted)">Background</span>
 					<input type="text" class="search-input" bind:value={background} placeholder="#0A0D12" />
 				</label>
 			</div>
@@ -91,39 +91,39 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Contrast</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Contrast</p>
 					<p class="mt-2 text-2xl font-semibold">{ratioText}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">AA</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">AA</p>
 					<p
 						class={pass(contrast, 4.5)
-							? 'mt-2 text-sm text-[var(--color-accent)]'
-							: 'mt-2 text-sm text-[var(--color-danger)]'}
+							? 'mt-2 text-sm text-(var(--color-accent)]'
+							: 'mt-2 text-sm text-(var(--color-danger)]'}
 					>
 						Normal text (4.5:1)
 					</p>
 					<p
 						class={pass(contrast, 3)
-							? 'mt-1 text-xs text-[var(--color-accent)]'
-							: 'mt-1 text-xs text-[var(--color-danger)]'}
+							? 'mt-1 text-xs text-(var(--color-accent)]'
+							: 'mt-1 text-xs text-(var(--color-danger)]'}
 					>
 						Large text (3:1)
 					</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">AAA</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">AAA</p>
 					<p
 						class={pass(contrast, 7)
-							? 'mt-2 text-sm text-[var(--color-accent)]'
-							: 'mt-2 text-sm text-[var(--color-danger)]'}
+							? 'mt-2 text-sm text-(var(--color-accent)]'
+							: 'mt-2 text-sm text-(var(--color-danger)]'}
 					>
 						Normal text (7:1)
 					</p>
 					<p
 						class={pass(contrast, 4.5)
-							? 'mt-1 text-xs text-[var(--color-accent)]'
-							: 'mt-1 text-xs text-[var(--color-danger)]'}
+							? 'mt-1 text-xs text-(var(--color-accent)]'
+							: 'mt-1 text-xs text-(var(--color-danger)]'}
 					>
 						Large text (4.5:1)
 					</p>

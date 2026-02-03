@@ -352,20 +352,20 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Hash Verifier</h1>
-			<p class="text-sm text-[var(--color-muted)]">Verify a digest matches the input value.</p>
+			<p class="text-sm text-(--color-muted)">Verify a digest matches the input value.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="algorithm-select">Algorithm</label>
+					<label class="text-sm text-(--color-muted)" for="algorithm-select">Algorithm</label>
 					<select id="algorithm-select" class="select-input" bind:value={selectedAlgorithm}>
 						{#each algorithms as algorithm (algorithm.id)}
 							<option value={algorithm.id}>{algorithm.label}</option>
 						{/each}
 					</select>
 				</div>
-				<div class="text-xs text-[var(--color-muted)]">Matches are case-insensitive.</div>
+				<div class="text-xs text-(--color-muted)">Matches are case-insensitive.</div>
 			</div>
 
 			{#if errorMessage}
@@ -374,7 +374,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<textarea
 						class="search-input min-h-40 resize-y"
 						placeholder="Paste text to verify"
@@ -382,7 +382,7 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Expected hash</span>
+					<span class="text-(--color-muted)">Expected hash</span>
 					<textarea
 						class="search-input min-h-40 resize-y font-mono"
 						placeholder="Paste expected hash"
@@ -392,12 +392,12 @@
 			</div>
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Computed</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Computed</p>
 				<p class="mt-2 font-mono text-xs break-all">{computedHash || '--'}</p>
 				{#if matchState}
 					<p
 						class={`mt-3 text-xs ${
-							matchState === 'match' ? 'text-[var(--color-accent)]' : 'text-[var(--color-danger)]'
+							matchState === 'match' ? 'text-(var(--color-accent)]' : 'text-(var(--color-danger)]'
 						}`}
 					>
 						{matchState === 'match' ? 'Match confirmed.' : 'Hash does not match.'}

@@ -41,12 +41,12 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">QR Code Generator</h1>
-			<p class="text-sm text-[var(--color-muted)]">Generate QR codes from text or URLs.</p>
+			<p class="text-sm text-(--color-muted)">Generate QR codes from text or URLs.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Content</span>
+				<span class="text-(--color-muted)">Content</span>
 				<textarea
 					class="search-input min-h-30 resize-y"
 					placeholder="Paste text or a URL"
@@ -56,7 +56,7 @@
 
 			<div class="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Size (px)</span>
+					<span class="text-(--color-muted)">Size (px)</span>
 					<input type="number" min="128" max="512" class="search-input" bind:value={size} />
 				</label>
 				{#if dataUrl}
@@ -73,7 +73,7 @@
 					<img src={dataUrl} alt="QR code" class="h-auto max-w-full" />
 				</div>
 			{:else}
-				<div class="panel panel-muted p-6 text-sm text-[var(--color-muted)]">
+				<div class="panel panel-muted p-6 text-sm text-(--color-muted)">
 					Enter text to generate a QR code.
 				</div>
 			{/if}

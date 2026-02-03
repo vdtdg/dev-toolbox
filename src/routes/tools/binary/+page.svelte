@@ -63,7 +63,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Binary Helper</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Convert between binary, decimal, and hex with bit grouping.
 			</p>
 		</header>
@@ -71,11 +71,11 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input</span>
+					<span class="text-(--color-muted)">Input</span>
 					<input type="text" class="search-input" placeholder="10101010" bind:value={inputValue} />
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Input base</span>
+					<span class="text-(--color-muted)">Input base</span>
 					<select class="select-input" bind:value={inputBase}>
 						<option value="binary">Binary</option>
 						<option value="decimal">Decimal</option>
@@ -90,21 +90,21 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Binary</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Binary</p>
 					<p class="mt-2 font-mono text-xs break-all">{binaryValue || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Decimal</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Decimal</p>
 					<p class="mt-2 font-mono text-xs break-all">{decimalValue || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Hex</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Hex</p>
 					<p class="mt-2 font-mono text-xs break-all">{hexValue || '--'}</p>
 				</div>
 			</div>
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Grouped bits</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Grouped bits</p>
 				<p class="mt-2 font-mono text-xs break-all">
 					{bitGroups.length ? bitGroups.join(' ') : '--'}
 				</p>

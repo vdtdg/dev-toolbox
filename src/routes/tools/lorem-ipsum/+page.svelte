@@ -107,13 +107,13 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Lorem Ipsum Generator</h1>
-			<p class="text-sm text-[var(--color-muted)]">Generate placeholder text blocks locally.</p>
+			<p class="text-sm text-(--color-muted)">Generate placeholder text blocks locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Mode</span>
+					<span class="text-(--color-muted)">Mode</span>
 					<select class="select-input" bind:value={mode}>
 						{#each modes as option (option.id)}
 							<option value={option.id}>{option.label}</option>
@@ -121,14 +121,14 @@
 					</select>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Count</span>
+					<span class="text-(--color-muted)">Count</span>
 					<input type="number" min="1" max="99" class="search-input" bind:value={count} />
 				</label>
 			</div>
 
 			{#if mode === 'paragraphs'}
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Sentences per paragraph</span>
+					<span class="text-(--color-muted)">Sentences per paragraph</span>
 					<input
 						type="number"
 						min="1"
@@ -140,7 +140,7 @@
 			{/if}
 
 			<div class="flex flex-wrap items-center justify-between gap-3">
-				<p class="text-xs text-[var(--color-muted)]">
+				<p class="text-xs text-(--color-muted)">
 					{mode === 'words'
 						? 'Generated as a single line of words.'
 						: mode === 'sentences'
@@ -149,12 +149,12 @@
 				</p>
 				<div class="flex items-center gap-3">
 					<button type="button" class="ghost-button" on:click={copyOutput}>Copy</button>
-					<span class="text-xs text-[var(--color-muted)]">{copyStatus}</span>
+					<span class="text-xs text-(--color-muted)">{copyStatus}</span>
 				</div>
 			</div>
 
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Output</span>
+				<span class="text-(--color-muted)">Output</span>
 				<textarea class="search-input min-h-55 resize-y" readonly value={outputValue}></textarea>
 			</label>
 		</section>

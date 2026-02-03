@@ -172,21 +172,21 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Image Helper</h1>
-			<p class="text-sm text-[var(--color-muted)]">Convert, resize, and crop images locally.</p>
+			<p class="text-sm text-(--color-muted)">Convert, resize, and crop images locally.</p>
 		</header>
 
 		<section class="panel space-y-5 p-6">
 			<label class="space-y-2 text-sm">
-				<span class="text-[var(--color-muted)]">Upload image</span>
+				<span class="text-(--color-muted)">Upload image</span>
 				<input type="file" accept="image/*" class="search-input" on:change={handleFile} />
 			</label>
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<div class="space-y-4">
 					<div class="panel panel-muted p-4">
-						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Preview</p>
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Preview</p>
 						{#if imageSrc}
-							<div class="mt-3 overflow-hidden rounded-lg border border-[var(--color-border)]">
+							<div class="mt-3 overflow-hidden rounded-lg border border-(var(--color-border)]  ">
 								<img
 									bind:this={imageElement}
 									on:load={handleImageLoad}
@@ -195,40 +195,40 @@
 									class="max-h-65 w-full object-contain"
 								/>
 							</div>
-							<p class="mt-2 text-xs text-[var(--color-muted)]">
+							<p class="mt-2 text-xs text-(--color-muted)">
 								Original: {originalWidth} x {originalHeight}
 							</p>
 						{:else}
-							<p class="mt-2 text-xs text-[var(--color-muted)]">No image loaded yet.</p>
+							<p class="mt-2 text-xs text-(--color-muted)">No image loaded yet.</p>
 						{/if}
 					</div>
 
 					<div class="panel panel-muted p-4">
-						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
 							Output Preview
 						</p>
 						{#if outputUrl}
-							<div class="mt-3 overflow-hidden rounded-lg border border-[var(--color-border)]">
+							<div class="mt-3 overflow-hidden rounded-lg border border-(var(--color-border)]  ">
 								<img
 									src={outputUrl}
 									alt="Processed output"
 									class="max-h-65 w-full object-contain"
 								/>
 							</div>
-							<p class="mt-2 text-xs text-[var(--color-muted)]">
+							<p class="mt-2 text-xs text-(--color-muted)">
 								Output: {outputWidth} x {outputHeight}
 							</p>
 						{:else}
-							<p class="mt-2 text-xs text-[var(--color-muted)]">No output yet.</p>
+							<p class="mt-2 text-xs text-(--color-muted)">No output yet.</p>
 						{/if}
 					</div>
 				</div>
 
 				<div class="space-y-4">
 					<div class="panel panel-muted space-y-3 p-4">
-						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Convert</p>
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Convert</p>
 						<label class="space-y-2 text-sm">
-							<span class="text-[var(--color-muted)]">Format</span>
+							<span class="text-(--color-muted)">Format</span>
 							<select class="select-input" bind:value={format}>
 								{#each formats as option (option.id)}
 									<option value={option.id}>{option.label}</option>
@@ -237,7 +237,7 @@
 						</label>
 						{#if format !== 'png'}
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Quality</span>
+								<span class="text-(--color-muted)">Quality</span>
 								<input
 									type="number"
 									min="0.1"
@@ -252,15 +252,15 @@
 
 					<div class="panel panel-muted space-y-3 p-4">
 						<div class="flex items-center justify-between">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Resize</p>
-							<label class="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Resize</p>
+							<label class="flex items-center gap-2 text-sm text-(--color-muted)">
 								<input type="checkbox" bind:checked={resizeEnabled} />
 								Enabled
 							</label>
 						</div>
 						<div class="grid gap-3 sm:grid-cols-2">
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Width</span>
+								<span class="text-(--color-muted)">Width</span>
 								<input
 									type="number"
 									min="1"
@@ -270,7 +270,7 @@
 								/>
 							</label>
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Height</span>
+								<span class="text-(--color-muted)">Height</span>
 								<input
 									type="number"
 									min="1"
@@ -280,7 +280,7 @@
 								/>
 							</label>
 						</div>
-						<label class="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+						<label class="flex items-center gap-2 text-sm text-(--color-muted)">
 							<input type="checkbox" bind:checked={keepAspect} />
 							Lock aspect ratio
 						</label>
@@ -288,31 +288,31 @@
 
 					<div class="panel panel-muted space-y-3 p-4">
 						<div class="flex items-center justify-between">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Crop</p>
-							<label class="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Crop</p>
+							<label class="flex items-center gap-2 text-sm text-(--color-muted)">
 								<input type="checkbox" bind:checked={cropEnabled} on:change={handleCropToggle} />
 								Enabled
 							</label>
 						</div>
 						<div class="grid gap-3 sm:grid-cols-2">
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">X</span>
+								<span class="text-(--color-muted)">X</span>
 								<input type="number" min="0" class="search-input" bind:value={cropX} />
 							</label>
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Y</span>
+								<span class="text-(--color-muted)">Y</span>
 								<input type="number" min="0" class="search-input" bind:value={cropY} />
 							</label>
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Width</span>
+								<span class="text-(--color-muted)">Width</span>
 								<input type="number" min="1" class="search-input" bind:value={cropWidth} />
 							</label>
 							<label class="space-y-2 text-sm">
-								<span class="text-[var(--color-muted)]">Height</span>
+								<span class="text-(--color-muted)">Height</span>
 								<input type="number" min="1" class="search-input" bind:value={cropHeight} />
 							</label>
 						</div>
-						<p class="text-xs text-[var(--color-muted)]">
+						<p class="text-xs text-(--color-muted)">
 							Crop uses the original image coordinates.
 						</p>
 					</div>
@@ -325,7 +325,7 @@
 						{#if outputUrl}
 							<a class="action-button" href={outputUrl} download={`image-${format}`}> Download </a>
 						{/if}
-						<span class="text-xs text-[var(--color-muted)]">
+						<span class="text-xs text-(--color-muted)">
 							Processing stays in your browser.
 						</span>
 					</div>

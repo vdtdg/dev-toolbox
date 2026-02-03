@@ -50,7 +50,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">HMAC Generator</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Generate HMAC signatures using SHA-256 or SHA-512.
 			</p>
 		</header>
@@ -58,7 +58,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="algorithm-select">Algorithm</label>
+					<label class="text-sm text-(--color-muted)" for="algorithm-select">Algorithm</label>
 					<select id="algorithm-select" class="select-input" bind:value={algorithm}>
 						{#each algorithms as item (item.id)}
 							<option value={item.id}>{item.label}</option>
@@ -73,7 +73,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Message</span>
+					<span class="text-(--color-muted)">Message</span>
 					<textarea
 						class="search-input min-h-40 resize-y"
 						placeholder="Message to sign"
@@ -81,13 +81,13 @@
 					></textarea>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Secret</span>
+					<span class="text-(--color-muted)">Secret</span>
 					<input type="text" class="search-input" placeholder="Shared secret" bind:value={secret} />
 				</label>
 			</div>
 
 			<div class="panel panel-muted p-5">
-				<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Signature</p>
+				<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Signature</p>
 				<p class="mt-2 font-mono text-xs break-all">{outputValue || '--'}</p>
 			</div>
 		</section>

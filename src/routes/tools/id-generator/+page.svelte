@@ -144,7 +144,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">UUID / ULID / KSUID Generator</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				UUID v4 is random, UUID v7 is time-ordered, ULID and KSUID are sortable identifiers.
 			</p>
 		</header>
@@ -160,7 +160,7 @@
 							{/each}
 						</select>
 					</div>
-					<p class="text-xs text-[var(--color-muted)]">v4 is random, v7 sorts by time.</p>
+					<p class="text-xs text-(--color-muted)">v4 is random, v7 sorts by time.</p>
 					<div class="flex items-center gap-2">
 						<input type="number" min="1" max="200" class="search-input" bind:value={uuidCount} />
 						<button type="button" class="ghost-button" on:click={generateUuids}>Generate</button>
@@ -171,7 +171,7 @@
 
 				<div class="panel panel-muted space-y-3 p-5">
 					<p class="text-sm font-semibold">ULID</p>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						Sortable IDs with 48-bit time and 80-bit randomness.
 					</p>
 					<div class="flex items-center gap-2">
@@ -184,7 +184,7 @@
 
 				<div class="panel panel-muted space-y-3 p-5">
 					<p class="text-sm font-semibold">KSUID</p>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						Sortable IDs with 32-bit time and 128-bit randomness.
 					</p>
 					<div class="flex items-center gap-2">

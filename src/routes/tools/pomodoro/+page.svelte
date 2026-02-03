@@ -137,7 +137,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Pomodoro</h1>
-			<p class="text-sm text-[var(--color-muted)]">Focus cycles that stay local in your browser.</p>
+			<p class="text-sm text-(--color-muted)">Focus cycles that stay local in your browser.</p>
 		</header>
 
 		<section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -156,9 +156,9 @@
 				</div>
 
 				<div class="panel panel-muted space-y-4 p-6 text-center">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Now</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Now</p>
 					<p class="text-5xl font-semibold sm:text-6xl">{timeLabel}</p>
-					<p class="text-xs text-[var(--color-muted)]">
+					<p class="text-xs text-(--color-muted)">
 						Cycle {cyclesCompleted + 1} - {modeLabels[currentMode]}
 					</p>
 					<div class="progress-track">
@@ -178,7 +178,7 @@
 						{isRunning ? 'Pause' : 'Start'}
 					</button>
 					<button type="button" class="ghost-button" on:click={resetTimer}>Reset</button>
-					<span class="text-xs text-[var(--color-muted)]">
+					<span class="text-xs text-(--color-muted)">
 						Auto long break every {longBreakInterval} focus sessions
 					</span>
 				</div>
@@ -187,11 +187,11 @@
 			<div class="panel space-y-5 p-6">
 				<div>
 					<h2 class="text-lg font-semibold">Session Settings</h2>
-					<p class="text-sm text-[var(--color-muted)]">Adjust durations in minutes.</p>
+					<p class="text-sm text-(--color-muted)">Adjust durations in minutes.</p>
 				</div>
 				<div class="grid gap-4">
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">Focus duration</span>
+						<span class="text-(--color-muted)">Focus duration</span>
 						<input
 							type="number"
 							min="5"
@@ -203,7 +203,7 @@
 						/>
 					</label>
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">Short break</span>
+						<span class="text-(--color-muted)">Short break</span>
 						<input
 							type="number"
 							min="3"
@@ -215,7 +215,7 @@
 						/>
 					</label>
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">Long break</span>
+						<span class="text-(--color-muted)">Long break</span>
 						<input
 							type="number"
 							min="10"
@@ -227,7 +227,7 @@
 						/>
 					</label>
 					<label class="space-y-2 text-sm">
-						<span class="text-[var(--color-muted)]">Long break frequency</span>
+						<span class="text-(--color-muted)">Long break frequency</span>
 						<input
 							type="number"
 							min="2"
@@ -239,8 +239,8 @@
 						/>
 					</label>
 				</div>
-				<div class="rounded-xl border border-[var(--color-border)] bg-[rgba(10,14,20,0.6)] p-4">
-					<p class="text-xs text-[var(--color-muted)]">
+				<div class="rounded-xl border border-(var(--color-border)]   bg-[rgba(10,14,20,0.6)] p-4">
+					<p class="text-xs text-(--color-muted)">
 						Timer state is stored locally in memory and resets on refresh.
 					</p>
 				</div>

@@ -206,7 +206,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">SSH Key Fingerprint</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Generate MD5 or SHA-256 fingerprints from SSH public keys locally.
 			</p>
 		</header>
@@ -214,14 +214,14 @@
 		<section class="panel space-y-5 p-6">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 				<div class="w-full sm:max-w-xs">
-					<label class="text-sm text-[var(--color-muted)]" for="algorithm-select">Algorithm</label>
+					<label class="text-sm text-(--color-muted)" for="algorithm-select">Algorithm</label>
 					<select id="algorithm-select" class="select-input" bind:value={algorithm}>
 						{#each algorithms as item (item.id)}
 							<option value={item.id}>{item.label}</option>
 						{/each}
 					</select>
 				</div>
-				<p class="text-xs text-[var(--color-muted)]">
+				<p class="text-xs text-(--color-muted)">
 					Accepts OpenSSH public keys like <span class="font-mono">ssh-ed25519 AAAA... comment</span
 					>.
 				</p>
@@ -233,7 +233,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-2">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Public key input</span>
+					<span class="text-(--color-muted)">Public key input</span>
 					<textarea
 						class="search-input min-h-45 resize-y"
 						placeholder="Paste an SSH public key"
@@ -242,20 +242,20 @@
 				</label>
 				<div class="space-y-4">
 					<div class="panel panel-muted p-5">
-						<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Fingerprint</p>
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Fingerprint</p>
 						<p class="mt-2 font-mono text-xs break-all">{fingerprint || '--'}</p>
 					</div>
 					<div class="grid gap-3 sm:grid-cols-3">
 						<div class="panel panel-muted p-4">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Key Type</p>
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Key Type</p>
 							<p class="mt-1 text-sm">{keyType || '--'}</p>
 						</div>
 						<div class="panel panel-muted p-4">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Comment</p>
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Comment</p>
 							<p class="mt-1 text-sm break-words">{keyComment || '--'}</p>
 						</div>
 						<div class="panel panel-muted p-4">
-							<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Bytes</p>
+							<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Bytes</p>
 							<p class="mt-1 text-sm">{keyByteLength ?? '--'}</p>
 						</div>
 					</div>

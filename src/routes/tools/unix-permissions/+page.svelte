@@ -105,7 +105,7 @@
 				Back to toolbox
 			</a>
 			<h1 class="text-3xl font-semibold">Unix Permission Calculator</h1>
-			<p class="text-sm text-[var(--color-muted)]">
+			<p class="text-sm text-(--color-muted)">
 				Decode octal chmod values into readable permissions.
 			</p>
 		</header>
@@ -113,7 +113,7 @@
 		<section class="panel space-y-5 p-6">
 			<div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
 				<label class="space-y-2 text-sm">
-					<span class="text-[var(--color-muted)]">Octal input</span>
+					<span class="text-(--color-muted)">Octal input</span>
 					<input
 						type="text"
 						class="search-input"
@@ -122,7 +122,7 @@
 					/>
 				</label>
 				<div
-					class="rounded-xl border border-[var(--color-border)] bg-[rgba(10,14,20,0.6)] p-4 text-xs text-[var(--color-muted)]"
+					class="rounded-xl border border-(var(--color-border)]   bg-[rgba(10,14,20,0.6)] p-4 text-xs text-(--color-muted)"
 				>
 					<p>Accepted formats</p>
 					<p class="mt-2 font-mono">755, 0644, 4755, chmod 640</p>
@@ -135,36 +135,36 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
 						Permission String
 					</p>
 					<p class="mt-2 font-mono text-sm">{summary?.string || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Special Bits</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Special Bits</p>
 					<p class="mt-2 text-sm">{summary?.flags || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Chmod</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Chmod</p>
 					<p class="mt-2 font-mono text-sm">{summary?.chmod || '--'}</p>
 				</div>
 			</div>
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Owner</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Owner</p>
 					<p class="mt-2 font-mono text-sm">
 						{summary ? `${summary.user.digit} → ${summary.user.rwx}` : '--'}
 					</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Group</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Group</p>
 					<p class="mt-2 font-mono text-sm">
 						{summary ? `${summary.group.digit} → ${summary.group.rwx}` : '--'}
 					</p>
 				</div>
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-[var(--color-muted)] uppercase">Other</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Other</p>
 					<p class="mt-2 font-mono text-sm">
 						{summary ? `${summary.other.digit} → ${summary.other.rwx}` : '--'}
 					</p>
