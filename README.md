@@ -135,10 +135,20 @@ pnpm run preview
 
 The Docker image uses the Node adapter so you can set the URL prefix at runtime.
 
+Prebuilt images are published on Docker Hub:
+
+- https://hub.docker.com/r/vdtdg/dev-toolbox
+
 Build:
 
 ```bash
 docker build -t dev-toolbox:latest .
+```
+
+Run (prebuilt image):
+
+```bash
+docker run --rm -p 8080:3000 -e BASE_PATH=/dev-toolbox vdtdg/dev-toolbox:latest
 ```
 
 Run at a subpath (example: `/dev-toolbox`):
@@ -161,13 +171,6 @@ docker run --rm -p 8080:3000 dev-toolbox:latest
 
 ```bash
 docker compose up --build
-```
-
-### Docker
-
-```bash
-docker-compose build
-docker-compose up -d
 ```
 
 ## Contributing
