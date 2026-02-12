@@ -6,7 +6,8 @@
 	const modes = [
 		{ id: 'paragraphs', label: 'Paragraphs' },
 		{ id: 'sentences', label: 'Sentences' },
-		{ id: 'words', label: 'Words' }
+		{ id: 'words', label: 'Words' },
+		{ id: 'characters', label: 'Characters' }
 	];
 
 	const baseSentences = [
@@ -35,6 +36,8 @@
 	let outputValue = '';
 	let copyStatus = '';
 	let copyTimeout;
+	let countMax = 99;
+	let countLabel = 'Count';
 
 	const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -54,12 +57,25 @@
 		return sentences;
 	};
 
+	const buildCharacters = (characterCount) => {
+		const baseText = baseSentences.join(' ');
+		let result = '';
+		while (result.length < characterCount) {
+			result = result ? `${result} ${baseText}` : baseText;
+		}
+		return result.slice(0, characterCount);
+	};
+
 	const generateOutput = () => {
-		const safeCount = clamp(Number(count) || 1, 1, 99);
+		const safeCount = clamp(Number(count) || 1, 1, countMax);
 		const safeSentences = clamp(Number(sentencesPerParagraph) || 1, 1, 10);
 		if (mode === 'words') {
 			const words = takeWords(safeCount);
 			outputValue = words.join(' ');
+			return;
+		}
+		if (mode === 'characters') {
+			outputValue = buildCharacters(safeCount);
 			return;
 		}
 		if (mode === 'sentences') {
@@ -96,6 +112,8 @@
 		}
 	};
 
+	$: countMax = mode === 'characters' ? 2000 : 99;
+	$: countLabel = mode === 'characters' ? 'Characters' : 'Count';
 	$: (mode, count, sentencesPerParagraph, generateOutput());
 </script>
 
@@ -121,8 +139,8 @@
 					</select>
 				</label>
 				<label class="space-y-2 text-sm">
-					<span class="text-(--color-muted)">Count</span>
-					<input type="number" min="1" max="99" class="search-input" bind:value={count} />
+					<span class="text-(--color-muted)">{countLabel}</span>
+					<input type="number" min="1" max={countMax} class="search-input" bind:value={count} />
 				</label>
 			</div>
 
@@ -143,9 +161,11 @@
 				<p class="text-xs text-(--color-muted)">
 					{mode === 'words'
 						? 'Generated as a single line of words.'
-						: mode === 'sentences'
-							? 'Generated as a single paragraph.'
-							: 'Generated as multiple paragraphs.'}
+						: mode === 'characters'
+							? 'Generated as a single character-limited block.'
+							: mode === 'sentences'
+								? 'Generated as a single paragraph.'
+								: 'Generated as multiple paragraphs.'}
 				</p>
 				<div class="flex items-center gap-3">
 					<button type="button" class="ghost-button" on:click={copyOutput}>Copy</button>
