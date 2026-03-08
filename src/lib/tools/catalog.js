@@ -49,7 +49,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Focus timer with configurable work and break cycles.',
 		format: 'Output: timers',
-		tags: ['focus', 'timer', 'productivity'],
+		tags: ['focus', 'timer', 'productivity', 'countdown', 'breaks', 'work-session'],
 		route: '/tools/pomodoro'
 	},
 	{
@@ -59,7 +59,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Build cron expressions and preview upcoming runs.',
 		format: 'Input: cron | Output: schedule',
-		tags: ['cron', 'schedule', 'planner'],
+		tags: ['cron', 'crontab', 'schedule', 'planner', 'expression', 'automation'],
 		route: '/tools/cron'
 	},
 	{
@@ -69,7 +69,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compare strings and compute edit distance.',
 		format: 'Input: text pair | Output: distance',
-		tags: ['string', 'distance', 'compare'],
+		tags: ['string', 'distance', 'compare', 'similarity', 'typo', 'fuzzy-match'],
 		route: '/tools/levenshtein'
 	},
 	{
@@ -79,7 +79,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Encode or decode URI components safely.',
 		format: 'Input: text | Output: URI',
-		tags: ['uri', 'encode', 'decode'],
+		tags: ['uri', 'url', 'encode', 'decode', 'percent-encoding', 'percent-encode'],
 		route: '/tools/uri'
 	},
 	{
@@ -89,7 +89,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Escape or decode HTML entities.',
 		format: 'Input: text | Output: encoded HTML',
-		tags: ['html', 'entities', 'escape'],
+		tags: ['html', 'entities', 'escape', 'unescape', 'decode', 'xss'],
 		route: '/tools/html'
 	},
 	{
@@ -99,7 +99,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert text or binary to base64 and back.',
 		format: 'Input: text/file | Output: base64',
-		tags: ['base64', 'encode', 'decode'],
+		tags: ['base64', 'b64', 'encode', 'decode', 'text-to-base64', 'file-to-base64'],
 		route: '/tools/base64'
 	},
 	{
@@ -109,7 +109,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Generate MD5 hashes for strings or files.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['md5', 'hash'],
+		tags: ['md5', 'hash', 'digest', 'checksum'],
 		route: '/tools/hashers?algo=md5'
 	},
 	{
@@ -119,7 +119,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute SHA-1 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha1', 'hash'],
+		tags: ['sha1', 'hash', 'digest', 'checksum'],
 		route: '/tools/hashers?algo=sha1'
 	},
 	{
@@ -129,7 +129,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute SHA-256 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha256', 'hash'],
+		tags: ['sha256', 'hash', 'digest', 'checksum'],
 		route: '/tools/hashers?algo=sha256'
 	},
 	{
@@ -139,7 +139,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute SHA-512 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['sha512', 'hash'],
+		tags: ['sha512', 'hash', 'digest', 'checksum'],
 		route: '/tools/hashers?algo=sha512'
 	},
 	{
@@ -149,7 +149,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute RIPEMD-160 digests.',
 		format: 'Input: text/file | Output: hash',
-		tags: ['ripemd160', 'hash'],
+		tags: ['ripemd160', 'hash', 'digest', 'checksum'],
 		route: '/tools/hashers?algo=ripemd160'
 	},
 	{
@@ -159,7 +159,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Validate tokens, import JWKs, and manage clock skew.',
 		format: 'Input: JWT | Output: claims',
-		tags: ['jwt', 'jwk', 'auth'],
+		tags: ['jwt', 'jwk', 'auth', 'token', 'bearer', 'claims'],
 		route: '/tools/jwt'
 	},
 	{
@@ -169,7 +169,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Check hashes against known values.',
 		format: 'Input: text/hash | Output: match',
-		tags: ['hash', 'verify'],
+		tags: ['hash', 'verify', 'checksum', 'integrity', 'compare'],
 		route: '/tools/hash-verifier'
 	},
 	{
@@ -179,7 +179,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Generate HMAC signatures with SHA-256/SHA-512.',
 		format: 'Input: text/key | Output: signature',
-		tags: ['hmac', 'sha256', 'sha512'],
+		tags: ['hmac', 'sha256', 'sha512', 'signature', 'signing', 'webhook'],
 		route: '/tools/hmac'
 	},
 	{
@@ -189,7 +189,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute MD5 or SHA-256 fingerprints for SSH keys.',
 		format: 'Input: public key | Output: fingerprint',
-		tags: ['ssh', 'fingerprint', 'md5'],
+		tags: ['ssh', 'key', 'public-key', 'fingerprint', 'md5', 'sha256'],
 		route: '/tools/ssh-fingerprint'
 	},
 	{
@@ -199,7 +199,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Decode PEM certificates locally.',
 		format: 'Input: PEM | Output: certificate data',
-		tags: ['tls', 'pem', 'certificate'],
+		tags: ['tls', 'ssl', 'pem', 'crt', 'x509', 'certificate'],
 		route: '/tools/tls-cert'
 	},
 	{
@@ -209,7 +209,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert Unix timestamps to readable dates.',
 		format: 'Input: timestamp | Output: date',
-		tags: ['timestamp', 'unix', 'date'],
+		tags: ['timestamp', 'unix', 'epoch', 'date', 'time'],
 		route: '/tools/timestamp'
 	},
 	{
@@ -219,7 +219,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert times across timezones.',
 		format: 'Input: date/time | Output: converted time',
-		tags: ['timezone', 'convert'],
+		tags: ['timezone', 'time-zone', 'utc', 'dst', 'convert'],
 		route: '/tools/timezone'
 	},
 	{
@@ -229,7 +229,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compute relative durations and offsets.',
 		format: 'Input: date/time | Output: relative time',
-		tags: ['relative', 'duration'],
+		tags: ['relative', 'duration', 'offset', 'ago', 'from-now'],
 		route: '/tools/relative-time'
 	},
 	{
@@ -239,7 +239,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert numbers between bases.',
 		format: 'Input: number/base | Output: converted',
-		tags: ['base', 'convert'],
+		tags: ['base', 'convert', 'hex', 'hexadecimal', 'decimal', 'octal', 'binary'],
 		route: '/tools/base'
 	},
 	{
@@ -249,7 +249,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Work with IPv4 addresses and CIDR.',
 		format: 'Input: IPv4 | Output: analysis',
-		tags: ['ipv4', 'cidr', 'network'],
+		tags: ['ipv4', 'ip', 'cidr', 'subnet', 'netmask', 'network'],
 		route: '/tools/ipv4'
 	},
 	{
@@ -259,7 +259,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert and inspect binary values.',
 		format: 'Input: number | Output: binary',
-		tags: ['binary', 'bits'],
+		tags: ['binary', 'bits', 'bitwise', 'hex', 'hexa', 'hexadecimal', 'decimal', 'octal'],
 		route: '/tools/binary'
 	},
 	{
@@ -269,7 +269,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Translate chmod values to symbolic permissions.',
 		format: 'Input: octal | Output: rwx',
-		tags: ['chmod', 'permissions'],
+		tags: ['chmod', 'permissions', 'rwx', 'octal', 'file-mode', 'unix'],
 		route: '/tools/unix-permissions'
 	},
 	{
@@ -279,7 +279,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Resize, compress, and convert images.',
 		format: 'Input: image | Output: transformed image',
-		tags: ['image', 'convert', 'resize', 'crop'],
+		tags: ['image', 'convert', 'resize', 'crop', 'compress', 'optimize', 'png', 'jpg', 'webp'],
 		route: '/tools/image-helper'
 	},
 	{
@@ -289,7 +289,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Pick colors and copy values.',
 		format: 'Output: color values',
-		tags: ['color', 'picker'],
+		tags: ['color', 'picker', 'eyedropper', 'hex', 'rgb', 'hsl'],
 		route: '/tools/color-picker'
 	},
 	{
@@ -299,7 +299,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Generate tints and shades for a palette.',
 		format: 'Output: color scale',
-		tags: ['color', 'palette'],
+		tags: ['color', 'palette', 'shades', 'tints', 'tone', 'gradient'],
 		route: '/tools/color-shades'
 	},
 	{
@@ -309,7 +309,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Create or scan QR codes.',
 		format: 'Input: text/image | Output: QR',
-		tags: ['qr', 'scan'],
+		tags: ['qr', 'qrcode', 'scan', 'reader', 'generator'],
 		route: '/tools/qr'
 	},
 	{
@@ -319,7 +319,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Check WCAG contrast ratios.',
 		format: 'Input: colors | Output: contrast',
-		tags: ['wcag', 'accessibility'],
+		tags: ['wcag', 'a11y', 'accessibility', 'contrast', 'ratio'],
 		route: '/tools/color-contrast'
 	},
 	{
@@ -329,7 +329,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Read EXIF/IPTC metadata from images.',
 		format: 'Input: image | Output: metadata',
-		tags: ['exif', 'iptc', 'metadata'],
+		tags: ['exif', 'iptc', 'metadata', 'gps', 'camera', 'image-info'],
 		route: '/tools/image-metadata'
 	},
 	{
@@ -339,7 +339,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Parse URLs into structured components.',
 		format: 'Input: URL | Output: parts',
-		tags: ['url', 'parse'],
+		tags: ['url', 'uri', 'parse', 'query', 'hostname', 'scheme'],
 		route: '/tools/url-parser'
 	},
 	{
@@ -349,7 +349,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Preview OpenAPI specs with a local viewer.',
 		format: 'Input: OpenAPI | Output: docs',
-		tags: ['openapi', 'swagger', 'api'],
+		tags: ['openapi', 'swagger', 'api', 'spec', 'json', 'yaml', 'documentation'],
 		route: '/tools/openapi'
 	},
 	{
@@ -359,7 +359,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Lookup ASCII codes and characters.',
 		format: 'Output: table',
-		tags: ['ascii', 'table'],
+		tags: ['ascii', 'table', 'characters', 'char-code', 'decimal', 'hex'],
 		route: '/tools/ascii-table'
 	},
 	{
@@ -369,7 +369,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Quick exit cheatsheet for Vim.',
 		format: 'Output: instructions',
-		tags: ['vim', 'help'],
+		tags: ['vim', 'help', 'quit', 'exit', 'cheatsheet', 'editor'],
 		route: '/tools/vim-help'
 	},
 	{
@@ -379,7 +379,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Compare files and preview patch application.',
 		format: 'Input: files | Output: diff',
-		tags: ['diff', 'patch'],
+		tags: ['diff', 'patch', 'compare', 'unified-diff', 'git-diff'],
 		route: '/tools/diff-viewer'
 	},
 	{
@@ -389,7 +389,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Generate placeholder text blocks.',
 		format: 'Output: text',
-		tags: ['lorem', 'placeholder'],
+		tags: ['lorem', 'ipsum', 'placeholder', 'dummy-text', 'latin', 'content'],
 		route: '/tools/lorem-ipsum'
 	},
 	{
@@ -399,7 +399,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Format JSON, minify, and query with JSONPath.',
 		format: 'Input: JSON | Output: formatted JSON',
-		tags: ['json', 'jsonpath', 'format'],
+		tags: ['json', 'jsonpath', 'format', 'formatter', 'prettify', 'minify', 'beautify'],
 		route: '/tools/json'
 	},
 	{
@@ -409,7 +409,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert YAML to JSON and back.',
 		format: 'Input: YAML/JSON | Output: converted',
-		tags: ['yaml', 'json', 'convert'],
+		tags: ['yaml', 'yml', 'json', 'convert', 'serialize', 'deserialize'],
 		route: '/tools/yaml-json'
 	},
 	{
@@ -419,7 +419,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert CSV to JSON and back.',
 		format: 'Input: CSV/JSON | Output: converted',
-		tags: ['csv', 'json', 'convert'],
+		tags: ['csv', 'json', 'convert', 'delimiter', 'tabular', 'records'],
 		route: '/tools/csv-json'
 	},
 	{
@@ -429,7 +429,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Format XML and evaluate XPath queries.',
 		format: 'Input: XML | Output: formatted XML',
-		tags: ['xml', 'xpath'],
+		tags: ['xml', 'xpath', 'format', 'formatter', 'pretty-print', 'minify'],
 		route: '/tools/xml'
 	},
 	{
@@ -439,7 +439,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Generate sortable and random IDs.',
 		format: 'Output: identifiers',
-		tags: ['uuid', 'ulid', 'ksuid'],
+		tags: ['uuid', 'guid', 'ulid', 'ksuid', 'id', 'identifier', 'generator'],
 		route: '/tools/id-generator'
 	},
 	{
@@ -449,7 +449,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Test regex patterns and explain matches.',
 		format: 'Input: regex/text | Output: matches',
-		tags: ['regex', 'test'],
+		tags: ['regex', 'regexp', 'pattern', 'test', 'match', 'pcre'],
 		route: '/tools/regex'
 	},
 	{
@@ -459,7 +459,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Convert text case and generate slugs.',
 		format: 'Input: text | Output: transformed text',
-		tags: ['case', 'slug', 'text'],
+		tags: ['case', 'slug', 'text', 'camel', 'snake', 'kebab', 'pascal'],
 		route: '/tools/text-case'
 	},
 	{
@@ -469,7 +469,7 @@ export const tools = [
 		status: 'ready',
 		description: 'Encode data in Base32, Base58, or Base85.',
 		format: 'Input: text | Output: encoded',
-		tags: ['base32', 'base58', 'base85'],
+		tags: ['base32', 'base58', 'base85', 'ascii85', 'encoding', 'radix'],
 		route: '/tools/base-n-encoders'
 	}
 ];

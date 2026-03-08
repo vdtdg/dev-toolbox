@@ -1,10 +1,92 @@
 <script>
 	import { base } from '$app/paths';
+	import {
+		AlarmClock,
+		ArrowLeftRight,
+		BadgeCheck,
+		Binary,
+		BookOpenText,
+		Calculator,
+		CalendarClock,
+		CaseSensitive,
+		Clock3,
+		CodeXml,
+		Contrast,
+		FileImage,
+		FileText,
+		FingerprintPattern,
+		GitCompare,
+		Globe,
+		Hash,
+		Hourglass,
+		IdCard,
+		Image,
+		KeyRound,
+		Link,
+		Network,
+		Palette,
+		PenLine,
+		Pipette,
+		QrCode,
+		Regex,
+		ScrollText,
+		Search,
+		Shield,
+		Table,
+		Terminal,
+		Wrench
+	} from 'lucide-svelte';
 	import { categories, tools } from '$lib/tools/catalog.js';
 
 	const basePath = base || '';
 	let query = '';
 	let activeCategory = 'all';
+	const toolCategories = categories.filter((category) => category.id !== 'all');
+	const toolIcons = {
+		pomodoro: AlarmClock,
+		'cron-visualizer': CalendarClock,
+		levenshtein: ArrowLeftRight,
+		'uri-encoder': Link,
+		'html-encoder': CodeXml,
+		'base64-encoder': Binary,
+		'md5-hasher': Hash,
+		'sha1-hasher': Hash,
+		'sha256-hasher': Hash,
+		'sha512-hasher': Hash,
+		'ripemd160-hasher': Hash,
+		'jwt-helper': KeyRound,
+		'hash-verifier': BadgeCheck,
+		'hmac-generator': PenLine,
+		'ssh-key-fingerprint': FingerprintPattern,
+		'tls-cert-decoder': ScrollText,
+		'timestamp-to-time': Clock3,
+		'timezone-converter': Globe,
+		'relative-time': Hourglass,
+		'base-converter': Calculator,
+		'ipv4-helper': Network,
+		'binary-helper': Binary,
+		'unix-permissions': Shield,
+		'image-helper': Image,
+		'color-picker': Pipette,
+		'color-shades': Palette,
+		'qr-code': QrCode,
+		'color-contrast': Contrast,
+		'image-metadata': FileImage,
+		'url-parser': Search,
+		'openapi-viewer': BookOpenText,
+		'ascii-table': Table,
+		'vim-help': Terminal,
+		'diff-viewer': GitCompare,
+		'lorem-ipsum': FileText,
+		'json-formatter': Binary,
+		'yaml-json-converter': ArrowLeftRight,
+		'csv-json-converter': ArrowLeftRight,
+		'xml-formatter': CodeXml,
+		'id-generator': IdCard,
+		'regex-tester': Regex,
+		'text-case': CaseSensitive,
+		'base-n-encoders': Binary
+	};
 
 	const categoryCounts = tools.reduce((accumulator, tool) => {
 		accumulator[tool.category] = (accumulator[tool.category] || 0) + 1;
@@ -12,15 +94,25 @@
 	}, {});
 
 	$: normalizedQuery = query.trim().toLowerCase();
-	$: filteredTools = tools.filter((tool) => {
-		const matchesCategory = activeCategory === 'all' || tool.category === activeCategory;
+	$: filteredByQuery = tools.filter((tool) => {
 		const matchesQuery =
 			!normalizedQuery ||
 			tool.name.toLowerCase().includes(normalizedQuery) ||
 			tool.description.toLowerCase().includes(normalizedQuery) ||
 			tool.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
-		return matchesCategory && matchesQuery;
+		return matchesQuery;
 	});
+	$: visibleCategories = toolCategories.filter(
+		(category) => activeCategory === 'all' || category.id === activeCategory
+	);
+	$: groupedTools = visibleCategories
+		.map((category) => ({
+			category,
+			tools: filteredByQuery.filter((tool) => tool.category === category.id)
+		}))
+		.filter((group) => group.tools.length > 0);
+	$: filteredCount = groupedTools.reduce((count, group) => count + group.tools.length, 0);
+	const toolIcon = (toolId) => toolIcons[toolId] || Wrench;
 </script>
 
 <svelte:head>
@@ -81,7 +173,7 @@
 				</div>
 				<div class="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
 					<span>
-						{filteredTools.length} result{filteredTools.length === 1 ? '' : 's'}
+						{filteredCount} result{filteredCount === 1 ? '' : 's'}
 					</span>
 					<span class="tag">Total tools: {tools.length}</span>
 					<span class="tag"
@@ -90,36 +182,63 @@
 				</div>
 			</section>
 
-			<section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-				{#each filteredTools as tool (tool.id)}
-					{#if tool.route}
-						<a
-							class="tool-card block"
-							href={`${basePath}${tool.route}`}
-							aria-label={`Open ${tool.name}`}
-						>
-							<div>
-								<h3 class="text-lg font-semibold">{tool.name}</h3>
-								<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
-							</div>
-							<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
-						</a>
-					{:else}
-						<article class="tool-card">
-							<div>
-								<h3 class="text-lg font-semibold">{tool.name}</h3>
-								<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
-							</div>
-							<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
-						</article>
-					{/if}
-				{/each}
-			</section>
-
-			{#if filteredTools.length === 0}
+			{#if groupedTools.length === 0}
 				<section class="panel p-6 text-sm text-(--color-muted)">
 					No tools match this filter yet. Clear the query or switch categories.
 				</section>
+			{:else}
+				{#each groupedTools as group (group.category.id)}
+					<section class="space-y-3">
+						<div class="flex items-center justify-between gap-3">
+							<div>
+								<h3 class="text-base font-semibold">{group.category.label}</h3>
+								<p class="text-xs text-(--color-muted)">{group.category.description}</p>
+							</div>
+							<span class="tag">{group.tools.length}</span>
+						</div>
+						<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+							{#each group.tools as tool (tool.id)}
+								{#if tool.route}
+									<a
+										class="tool-card block"
+										href={`${basePath}${tool.route}`}
+										aria-label={`Open ${tool.name}`}
+									>
+										<div>
+											<div class="flex items-center gap-2">
+												<span
+													class="inline-flex h-7 min-w-7 items-center justify-center rounded border border-(--color-border) bg-(--color-elevated) px-1 text-xs font-semibold text-(--color-accent)"
+													aria-hidden="true"
+												>
+													<svelte:component this={toolIcon(tool.id)} class="h-4 w-4" />
+												</span>
+												<h4 class="text-lg font-semibold">{tool.name}</h4>
+											</div>
+											<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
+										</div>
+										<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
+									</a>
+								{:else}
+									<article class="tool-card">
+										<div>
+											<div class="flex items-center gap-2">
+												<span
+													class="inline-flex h-7 min-w-7 items-center justify-center rounded border border-(--color-border) bg-(--color-elevated) px-1 text-xs font-semibold text-(--color-accent)"
+													aria-hidden="true"
+												>
+													<svelte:component this={toolIcon(tool.id)} class="h-4 w-4" />
+												</span>
+												<h4 class="text-lg font-semibold">{tool.name}</h4>
+											</div>
+											<p class="mt-2 text-sm text-(--color-muted)">{tool.description}</p>
+										</div>
+										<p class="mt-4 text-xs text-(--color-muted)">{tool.format}</p>
+									</article>
+								{/if}
+							{/each}
+						</div>
+					</section>
+				{/each}
 			{/if}
 
 			<footer class="panel panel-muted px-5 py-4 text-xs text-(--color-muted)">
