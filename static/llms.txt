@@ -1,0 +1,61 @@
+# Dev Toolbox
+
+Canonical URL: https://dtdg.fr/dev-toolbox/
+
+Dev Toolbox is an open-source, offline-first developer toolbox. Tools run client-side in the browser for privacy and airgapped usability. No user input is uploaded to a server by the application.
+
+## Categories
+
+- Productivity: timers and scheduling helpers.
+- Cryptography: encoding, hashing, signatures, fingerprints, JWTs, and certificate inspection.
+- Time: timestamps, timezones, relative time, and date calculations.
+- Number: bases, binary values, IPv4, and Unix permissions.
+- Graphics: image, color, contrast, metadata, and QR tools.
+- Network: URL parsing, HTTP request helpers, and OpenAPI viewing.
+- Misc: text, structured data, IDs, diffs, regex, and reference utilities.
+
+## Tools
+
+- Pomodoro: https://dtdg.fr/dev-toolbox/tools/pomodoro/
+- Cron Tab Helper + Visualizer: https://dtdg.fr/dev-toolbox/tools/cron/
+- Levenshtein Distance Calculator: https://dtdg.fr/dev-toolbox/tools/levenshtein/
+- URI Encoder / Decoder: https://dtdg.fr/dev-toolbox/tools/uri/
+- HTML Encoder / Decoder: https://dtdg.fr/dev-toolbox/tools/html/
+- Base64 Encoder / Decoder: https://dtdg.fr/dev-toolbox/tools/base64/
+- Hashers for MD5, SHA1, SHA256, SHA512, and RIPEMD-160: https://dtdg.fr/dev-toolbox/tools/hashers/
+- JWT Helper: https://dtdg.fr/dev-toolbox/tools/jwt/
+- Hash Verifier: https://dtdg.fr/dev-toolbox/tools/hash-verifier/
+- HMAC Generator: https://dtdg.fr/dev-toolbox/tools/hmac/
+- SSH Key Fingerprint: https://dtdg.fr/dev-toolbox/tools/ssh-fingerprint/
+- TLS Certificate Decoder: https://dtdg.fr/dev-toolbox/tools/tls-cert/
+- Timestamp to Time: https://dtdg.fr/dev-toolbox/tools/timestamp/
+- Timezone Converter: https://dtdg.fr/dev-toolbox/tools/timezone/
+- Relative Time Calculator: https://dtdg.fr/dev-toolbox/tools/relative-time/
+- Change Base Helper: https://dtdg.fr/dev-toolbox/tools/base/
+- IPv4 Helper: https://dtdg.fr/dev-toolbox/tools/ipv4/
+- Binary Helper: https://dtdg.fr/dev-toolbox/tools/binary/
+- Unix Permission Calculator: https://dtdg.fr/dev-toolbox/tools/unix-permissions/
+- Image Helper: https://dtdg.fr/dev-toolbox/tools/image-helper/
+- Color Picker: https://dtdg.fr/dev-toolbox/tools/color-picker/
+- Color Shades Generator: https://dtdg.fr/dev-toolbox/tools/color-shades/
+- QR Code Generator + Reader: https://dtdg.fr/dev-toolbox/tools/qr/
+- Color Contrast Checker: https://dtdg.fr/dev-toolbox/tools/color-contrast/
+- Image Metadata Viewer: https://dtdg.fr/dev-toolbox/tools/image-metadata/
+- URL Parser: https://dtdg.fr/dev-toolbox/tools/url-parser/
+- OpenAPI/Swagger Viewer: https://dtdg.fr/dev-toolbox/tools/openapi/
+- ASCII Reference Table: https://dtdg.fr/dev-toolbox/tools/ascii-table/
+- Help me I'm stuck in Vim!: https://dtdg.fr/dev-toolbox/tools/vim-help/
+- File Diff + Patch Viewer: https://dtdg.fr/dev-toolbox/tools/diff-viewer/
+- Lorem Ipsum Generator: https://dtdg.fr/dev-toolbox/tools/lorem-ipsum/
+- JSON Formatter/Minifier + JSONPath: https://dtdg.fr/dev-toolbox/tools/json/
+- YAML to JSON Converter: https://dtdg.fr/dev-toolbox/tools/yaml-json/
+- CSV to JSON Converter: https://dtdg.fr/dev-toolbox/tools/csv-json/
+- XML Formatter + XPath Tester: https://dtdg.fr/dev-toolbox/tools/xml/
+- UUID/ULID/KSUID Generator: https://dtdg.fr/dev-toolbox/tools/id-generator/
+- Regex Tester + Explainer: https://dtdg.fr/dev-toolbox/tools/regex/
+- Text Case Converter + Slugify: https://dtdg.fr/dev-toolbox/tools/text-case/
+- Base-N Encoders: https://dtdg.fr/dev-toolbox/tools/base-n-encoders/
+
+## Crawling Notes
+
+Use https://dtdg.fr/dev-toolbox/sitemap.xml for the canonical URL list. Tool pages include structured metadata and visible descriptions for input, output, use cases, and privacy behavior.
