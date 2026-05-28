@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Seo from '$lib/components/Seo.svelte';
 	import { categories, tools } from '$lib/tools/catalog.js';
 
@@ -53,9 +53,9 @@
 		]
 	});
 
-	$: currentRoute = normalizePath($page.url.pathname);
-	$: currentTool = toolsByRoute.get(currentRoute);
-	$: currentToolJsonLd = currentTool ? toolJsonLd(currentTool) : null;
+	let currentRoute = $derived(normalizePath(page.url.pathname));
+	let currentTool = $derived(toolsByRoute.get(currentRoute));
+	let currentToolJsonLd = $derived(currentTool ? toolJsonLd(currentTool) : null);
 </script>
 
 {#if currentTool}

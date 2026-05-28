@@ -11,8 +11,8 @@
 		jsonLd = null
 	} = $props();
 
-	$: fullTitle = title?.includes(siteName) ? title : `${title} - ${siteName}`;
-	$: jsonLdString = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : '';
+	let fullTitle = $derived(title?.includes(siteName) ? title : `${title} - ${siteName}`);
+	let jsonLdString = $derived(jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : '');
 </script>
 
 <svelte:head>

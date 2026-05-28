@@ -7,12 +7,14 @@
 	const canonicalBaseUrl = 'https://dtdg.fr/dev-toolbox';
 	const basePath = base || '';
 
-	$: category = data.category;
-	$: categoryTools = data.categoryTools;
-	$: pageTitle = `${category.label} Developer Tools`;
-	$: pageDescription = `Offline ${category.label.toLowerCase()} developer tools that run locally in your browser. ${category.description}.`;
-	$: canonicalUrl = `${canonicalBaseUrl}/tools/${category.id}/`;
-	$: categoryJsonLd = {
+	let category = $derived(data.category);
+	let categoryTools = $derived(data.categoryTools);
+	let pageTitle = $derived(`${category.label} Developer Tools`);
+	let pageDescription = $derived(
+		`Offline ${category.label.toLowerCase()} developer tools that run locally in your browser. ${category.description}.`
+	);
+	let canonicalUrl = $derived(`${canonicalBaseUrl}/tools/${category.id}/`);
+	let categoryJsonLd = $derived({
 		'@context': 'https://schema.org',
 		'@graph': [
 			{
@@ -32,7 +34,7 @@
 				}))
 			}
 		]
-	};
+	});
 </script>
 
 <Seo title={pageTitle} description={pageDescription} {canonicalUrl} jsonLd={categoryJsonLd} />
