@@ -131,7 +131,7 @@
 						</p>
 						<h1 class="mt-2 text-3xl font-semibold md:text-4xl">Dev Toolbox</h1>
 						<p class="mt-2 max-w-xl text-sm text-(--color-muted)">
-							Fast, local tools for encoding, security, and daily engineering workflows.
+							Fast, local tools for encoding, security, and daily workflows.
 						</p>
 					</div>
 				</div>
