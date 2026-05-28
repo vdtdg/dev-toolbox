@@ -41,7 +41,52 @@ export const categories = [
 	}
 ];
 
-export const tools = [
+const localPrivacyDescription =
+	'All processing happens locally in your browser. No input is uploaded or sent to a server.';
+
+const normalizeRoute = (route) => `${route.split('?')[0].replace(/\/$/, '')}/`;
+
+const descriptionWithPrivacy = (description) =>
+	`${description} Works offline with local browser processing.`;
+
+const parseFormatPart = (format, label) => {
+	const match = format.match(new RegExp(`${label}:\\s*([^|]+)`, 'i'));
+	return match?.[1]?.trim() || '';
+};
+
+const formatInputDescription = (tool) => {
+	const input = parseFormatPart(tool.format, 'Input');
+	if (!input) return `${tool.name} can be used directly in your browser.`;
+	return `Provide ${input.toLowerCase()} to use ${tool.name}.`;
+};
+
+const formatOutputDescription = (tool) => {
+	const output = parseFormatPart(tool.format, 'Output');
+	if (!output) return `${tool.name} displays results immediately in the browser.`;
+	return `${tool.name} returns ${output.toLowerCase()} immediately in the browser.`;
+};
+
+const formatUseCases = (tool) => {
+	const primaryTags = tool.tags.slice(0, 3).join(', ');
+	return [
+		`Use ${tool.name} for ${tool.description.toLowerCase()}`,
+		primaryTags ? `Find it when searching for ${primaryTags}.` : `Run this utility offline.`
+	];
+};
+
+const enrichToolSeo = (tool) => ({
+	...tool,
+	canonicalRoute: normalizeRoute(tool.route),
+	seoTitle: `${tool.name} - Dev Toolbox`,
+	seoDescription: descriptionWithPrivacy(tool.description),
+	keywords: tool.tags,
+	inputDescription: formatInputDescription(tool),
+	outputDescription: formatOutputDescription(tool),
+	useCases: formatUseCases(tool),
+	privacyDescription: localPrivacyDescription
+});
+
+const rawTools = [
 	{
 		id: 'pomodoro',
 		name: 'Pomodoro',
@@ -473,3 +518,5 @@ export const tools = [
 		route: '/tools/base-n-encoders'
 	}
 ];
+
+export const tools = rawTools.map(enrichToolSeo);
