@@ -36,8 +36,12 @@
 		Terminal,
 		Wrench
 	} from 'lucide-svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import { categories, tools } from '$lib/tools/catalog.js';
 
+	const canonicalBaseUrl = 'https://dtdg.fr/dev-toolbox';
+	const pageDescription =
+		'Offline-first developer toolbox with client-side encoders, hashers, formatters, time tools, network helpers, image tools, and utilities.';
 	const basePath = base || '';
 	let query = '';
 	let activeCategory = 'all';
@@ -113,12 +117,49 @@
 		.filter((group) => group.tools.length > 0);
 	$: filteredCount = groupedTools.reduce((count, group) => count + group.tools.length, 0);
 	const toolIcon = (toolId) => toolIcons[toolId] || Wrench;
+	const homepageJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebSite',
+				name: 'Dev Toolbox',
+				url: `${canonicalBaseUrl}/`,
+				description: pageDescription,
+				inLanguage: 'en'
+			},
+			{
+				'@type': 'SoftwareApplication',
+				name: 'Dev Toolbox',
+				applicationCategory: 'DeveloperApplication',
+				operatingSystem: 'Any',
+				url: `${canonicalBaseUrl}/`,
+				description: pageDescription,
+				offers: {
+					'@type': 'Offer',
+					price: '0',
+					priceCurrency: 'USD'
+				}
+			},
+			{
+				'@type': 'ItemList',
+				name: 'Dev Toolbox tools',
+				itemListElement: tools.map((tool, index) => ({
+					'@type': 'ListItem',
+					position: index + 1,
+					name: tool.name,
+					url: `${canonicalBaseUrl}${tool.canonicalRoute}`
+				}))
+			}
+		]
+	};
 </script>
 
-<svelte:head>
-	<title>Dev Toolbox</title>
-	<meta name="description" content="Offline-first developer utilities." />
-</svelte:head>
+<Seo
+	title="Dev Toolbox"
+	description={pageDescription}
+	canonicalUrl={`${canonicalBaseUrl}/`}
+	jsonLd={homepageJsonLd}
+/>
 
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-390 flex-col gap-8 px-6 py-8">
