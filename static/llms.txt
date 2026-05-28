@@ -6,13 +6,13 @@ Dev Toolbox is an open-source, offline-first developer toolbox. Tools run client
 
 ## Categories
 
-- Productivity: timers and scheduling helpers.
-- Cryptography: encoding, hashing, signatures, fingerprints, JWTs, and certificate inspection.
-- Time: timestamps, timezones, relative time, and date calculations.
-- Number: bases, binary values, IPv4, and Unix permissions.
-- Graphics: image, color, contrast, metadata, and QR tools.
-- Network: URL parsing, HTTP request helpers, and OpenAPI viewing.
-- Misc: text, structured data, IDs, diffs, regex, and reference utilities.
+- Productivity: timers and scheduling helpers. https://dtdg.fr/dev-toolbox/tools/productivity/
+- Cryptography: encoding, hashing, signatures, fingerprints, JWTs, and certificate inspection. https://dtdg.fr/dev-toolbox/tools/cryptography/
+- Time: timestamps, timezones, relative time, and date calculations. https://dtdg.fr/dev-toolbox/tools/time/
+- Number: bases, binary values, IPv4, and Unix permissions. https://dtdg.fr/dev-toolbox/tools/number/
+- Graphics: image, color, contrast, metadata, and QR tools. https://dtdg.fr/dev-toolbox/tools/graphics/
+- Network: URL parsing, HTTP request helpers, and OpenAPI viewing. https://dtdg.fr/dev-toolbox/tools/network/
+- Misc: text, structured data, IDs, diffs, regex, and reference utilities. https://dtdg.fr/dev-toolbox/tools/misc/
 
 ## Tools
 

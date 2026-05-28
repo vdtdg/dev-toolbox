@@ -1,4 +1,4 @@
-import { tools } from '$lib/tools/catalog.js';
+import { categories, tools } from '$lib/tools/catalog.js';
 
 export const prerender = true;
 
@@ -14,6 +14,9 @@ const escapeXml = (value) =>
 
 const uniqueUrls = [
 	`${canonicalBaseUrl}/`,
+	...categories
+		.filter((category) => category.id !== 'all')
+		.map((category) => `${canonicalBaseUrl}/tools/${category.id}/`),
 	...new Set(tools.map((tool) => `${canonicalBaseUrl}${tool.canonicalRoute}`))
 ];
 
