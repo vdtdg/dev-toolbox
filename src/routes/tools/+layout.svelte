@@ -69,3 +69,39 @@
 {/if}
 
 {@render children()}
+
+{#if currentTool}
+	<section class="mx-auto flex max-w-300 flex-col gap-4 px-6 pb-10">
+		<div class="panel panel-muted space-y-4 p-5">
+			<div>
+				<p class="text-xs tracking-[0.24em] text-(--color-muted) uppercase">About this tool</p>
+				<h2 class="mt-1 text-xl font-semibold">{currentTool.name}</h2>
+			</div>
+
+			<div class="grid gap-4 text-sm md:grid-cols-2">
+				<div class="space-y-1">
+					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">What it does</h3>
+					<p class="text-(--color-muted)">{currentTool.description}</p>
+				</div>
+				<div class="space-y-1">
+					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">Input</h3>
+					<p class="text-(--color-muted)">{currentTool.inputDescription}</p>
+				</div>
+				<div class="space-y-1">
+					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">Output</h3>
+					<p class="text-(--color-muted)">{currentTool.outputDescription}</p>
+				</div>
+				<div class="space-y-1">
+					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">Privacy</h3>
+					<p class="text-(--color-muted)">{currentTool.privacyDescription}</p>
+				</div>
+			</div>
+
+			<div class="flex flex-wrap gap-2">
+				{#each currentTool.useCases as useCase}
+					<span class="tag">{useCase}</span>
+				{/each}
+			</div>
+		</div>
+	</section>
+{/if}
