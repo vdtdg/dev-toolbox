@@ -47,7 +47,7 @@ const localPrivacyDescription =
 const normalizeRoute = (route) => `${route.split('?')[0].replace(/\/$/, '')}/`;
 
 const descriptionWithPrivacy = (description) =>
-	`${description} Works offline with local browser processing.`;
+	`${description} Runs locally in your browser, with no uploads, and works offline.`;
 
 const parseFormatPart = (format, label) => {
 	const match = format.match(new RegExp(`${label}:\\s*([^|]+)`, 'i'));
@@ -77,7 +77,7 @@ const formatUseCases = (tool) => {
 const enrichToolSeo = (tool) => ({
 	...tool,
 	canonicalRoute: normalizeRoute(tool.route),
-	seoTitle: `${tool.name} - Dev Toolbox`,
+	seoTitle: `${tool.name} | Dev Toolbox`,
 	seoDescription: descriptionWithPrivacy(tool.description),
 	keywords: tool.tags,
 	inputDescription: formatInputDescription(tool),

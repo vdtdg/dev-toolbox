@@ -63,6 +63,7 @@
 		title={currentTool.seoTitle}
 		description={currentTool.seoDescription}
 		canonicalUrl={`${canonicalBaseUrl}${currentTool.canonicalRoute}`}
+		keywords={currentTool.keywords.join(', ')}
 		type="website"
 		jsonLd={currentToolJsonLd}
 	/>
@@ -92,15 +93,15 @@
 					<p class="text-(--color-muted)">{currentTool.outputDescription}</p>
 				</div>
 				<div class="space-y-1">
+					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">Use cases</h3>
+					{#each currentTool.useCases as useCase, index (`${currentTool.id}-${index}`)}
+						<p class="text-(--color-muted)">{useCase}</p>
+					{/each}
+				</div>
+				<div class="space-y-1">
 					<h3 class="text-xs tracking-[0.18em] text-(--color-accent) uppercase">Privacy</h3>
 					<p class="text-(--color-muted)">{currentTool.privacyDescription}</p>
 				</div>
-			</div>
-
-			<div class="flex flex-wrap gap-2">
-				{#each currentTool.useCases as useCase}
-					<span class="tag">{useCase}</span>
-				{/each}
 			</div>
 		</div>
 	</section>

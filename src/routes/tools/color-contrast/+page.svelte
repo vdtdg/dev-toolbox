@@ -1,4 +1,7 @@
 <script>
+	import Seo from '$lib/components/Seo.svelte';
+	import { tools } from '$lib/tools/catalog.js';
+
 	import { base } from '$app/paths';
 
 	const homeHref = base || '/';
@@ -54,11 +57,68 @@
 
 	$: (foreground, background, calculateContrast());
 	$: ratioText = contrast ? contrast.toFixed(2) : '--';
+
+	const tool = tools.find((entry) => entry.canonicalRoute === '/tools/color-contrast/');
+	const canonicalUrl = `https://dtdg.fr/dev-toolbox/tools/color-contrast/`;
+	const toolJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebApplication',
+				name: tool.name,
+				applicationCategory: 'DeveloperApplication',
+				operatingSystem: 'Any',
+				url: canonicalUrl,
+				description: tool.seoDescription,
+				keywords: tool.keywords.join(', '),
+				offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+			},
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Dev Toolbox',
+						item: 'https://dtdg.fr/dev-toolbox/'
+					},
+					{ '@type': 'ListItem', position: 2, name: tool.name, item: canonicalUrl }
+				]
+			}
+		]
+	};
 </script>
 
-<svelte:head>
-	<title>Color Contrast Checker | Dev Toolbox</title>
-</svelte:head>
+<Seo
+	title={tool.seoTitle}
+	description={tool.seoDescription}
+	{canonicalUrl}
+	keywords={tool.keywords.join(', ')}
+	jsonLd={toolJsonLd}
+/>
+
+<section class="panel space-y-3 p-5">
+	<h2 class="text-lg font-semibold">About this tool</h2>
+	<p class="text-sm text-(--color-muted)">{tool.description}</p>
+	<dl class="grid gap-3 text-sm sm:grid-cols-2">
+		<div>
+			<dt class="font-medium">Input</dt>
+			<dd class="text-(--color-muted)">{tool.inputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Output</dt>
+			<dd class="text-(--color-muted)">{tool.outputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Use cases</dt>
+			<dd class="text-(--color-muted)">{tool.useCases.join(' ')}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Privacy</dt>
+			<dd class="text-(--color-muted)">{tool.privacyDescription}</dd>
+		</div>
+	</dl>
+</section>
 
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
@@ -102,15 +162,15 @@
 					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">AA</p>
 					<p
 						class={pass(contrast, 4.5)
-							? 'mt-2 text-sm text-(var(--color-accent)]'
-							: 'mt-2 text-sm text-(var(--color-danger)]'}
+							? 'text-(var(--color-accent)] mt-2 text-sm'
+							: 'text-(var(--color-danger)] mt-2 text-sm'}
 					>
 						Normal text (4.5:1)
 					</p>
 					<p
 						class={pass(contrast, 3)
-							? 'mt-1 text-xs text-(var(--color-accent)]'
-							: 'mt-1 text-xs text-(var(--color-danger)]'}
+							? 'text-(var(--color-accent)] mt-1 text-xs'
+							: 'text-(var(--color-danger)] mt-1 text-xs'}
 					>
 						Large text (3:1)
 					</p>
@@ -119,15 +179,15 @@
 					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">AAA</p>
 					<p
 						class={pass(contrast, 7)
-							? 'mt-2 text-sm text-(var(--color-accent)]'
-							: 'mt-2 text-sm text-(var(--color-danger)]'}
+							? 'text-(var(--color-accent)] mt-2 text-sm'
+							: 'text-(var(--color-danger)] mt-2 text-sm'}
 					>
 						Normal text (7:1)
 					</p>
 					<p
 						class={pass(contrast, 4.5)
-							? 'mt-1 text-xs text-(var(--color-accent)]'
-							: 'mt-1 text-xs text-(var(--color-danger)]'}
+							? 'text-(var(--color-accent)] mt-1 text-xs'
+							: 'text-(var(--color-danger)] mt-1 text-xs'}
 					>
 						Large text (4.5:1)
 					</p>

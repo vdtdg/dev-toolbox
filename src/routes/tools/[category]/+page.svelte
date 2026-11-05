@@ -37,7 +37,14 @@
 	});
 </script>
 
-<Seo title={pageTitle} description={pageDescription} {canonicalUrl} jsonLd={categoryJsonLd} />
+<Seo
+	title={pageTitle}
+	description={pageDescription}
+	{canonicalUrl}
+	keywords={`${category.label.toLowerCase()} developer tools, offline tools, browser utilities`}
+	type="website"
+	jsonLd={categoryJsonLd}
+/>
 
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-390 flex-col gap-6 px-6 py-8">

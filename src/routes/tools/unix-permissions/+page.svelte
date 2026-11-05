@@ -1,4 +1,7 @@
 <script>
+	import Seo from '$lib/components/Seo.svelte';
+	import { tools } from '$lib/tools/catalog.js';
+
 	import { base as basePath } from '$app/paths';
 
 	const homeHref = basePath ? `${basePath}/` : '/';
@@ -95,11 +98,68 @@
 	};
 
 	$: (octalInput, updateSummary());
+
+	const tool = tools.find((entry) => entry.canonicalRoute === '/tools/unix-permissions/');
+	const canonicalUrl = `https://dtdg.fr/dev-toolbox/tools/unix-permissions/`;
+	const toolJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebApplication',
+				name: tool.name,
+				applicationCategory: 'DeveloperApplication',
+				operatingSystem: 'Any',
+				url: canonicalUrl,
+				description: tool.seoDescription,
+				keywords: tool.keywords.join(', '),
+				offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+			},
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Dev Toolbox',
+						item: 'https://dtdg.fr/dev-toolbox/'
+					},
+					{ '@type': 'ListItem', position: 2, name: tool.name, item: canonicalUrl }
+				]
+			}
+		]
+	};
 </script>
 
-<svelte:head>
-	<title>Unix Permission Calculator | Dev Toolbox</title>
-</svelte:head>
+<Seo
+	title={tool.seoTitle}
+	description={tool.seoDescription}
+	{canonicalUrl}
+	keywords={tool.keywords.join(', ')}
+	jsonLd={toolJsonLd}
+/>
+
+<section class="panel space-y-3 p-5">
+	<h2 class="text-lg font-semibold">About this tool</h2>
+	<p class="text-sm text-(--color-muted)">{tool.description}</p>
+	<dl class="grid gap-3 text-sm sm:grid-cols-2">
+		<div>
+			<dt class="font-medium">Input</dt>
+			<dd class="text-(--color-muted)">{tool.inputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Output</dt>
+			<dd class="text-(--color-muted)">{tool.outputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Use cases</dt>
+			<dd class="text-(--color-muted)">{tool.useCases.join(' ')}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Privacy</dt>
+			<dd class="text-(--color-muted)">{tool.privacyDescription}</dd>
+		</div>
+	</dl>
+</section>
 
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
@@ -126,7 +186,7 @@
 					/>
 				</label>
 				<div
-					class="rounded-xl border border-(var(--color-border)]   bg-[rgba(10,14,20,0.6)] p-4 text-xs text-(--color-muted)"
+					class="border-(var(--color-border)] rounded-xl border bg-[rgba(10,14,20,0.6)] p-4 text-xs text-(--color-muted)"
 				>
 					<p>Accepted formats</p>
 					<p class="mt-2 font-mono">755, 0644, 4755, chmod 640</p>
@@ -139,9 +199,7 @@
 
 			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="panel panel-muted p-5">
-					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
-						Permission String
-					</p>
+					<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Permission String</p>
 					<p class="mt-2 font-mono text-sm">{summary?.string || '--'}</p>
 				</div>
 				<div class="panel panel-muted p-5">

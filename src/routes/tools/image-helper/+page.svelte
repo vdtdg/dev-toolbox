@@ -1,4 +1,7 @@
 <script>
+	import Seo from '$lib/components/Seo.svelte';
+	import { tools } from '$lib/tools/catalog.js';
+
 	import { base as basePath } from '$app/paths';
 
 	const homeHref = basePath ? `${basePath}/` : '/';
@@ -162,11 +165,68 @@
 		outputWidth,
 		outputHeight,
 		updateOutput());
+
+	const tool = tools.find((entry) => entry.canonicalRoute === '/tools/image-helper/');
+	const canonicalUrl = `https://dtdg.fr/dev-toolbox/tools/image-helper/`;
+	const toolJsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebApplication',
+				name: tool.name,
+				applicationCategory: 'DeveloperApplication',
+				operatingSystem: 'Any',
+				url: canonicalUrl,
+				description: tool.seoDescription,
+				keywords: tool.keywords.join(', '),
+				offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+			},
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Dev Toolbox',
+						item: 'https://dtdg.fr/dev-toolbox/'
+					},
+					{ '@type': 'ListItem', position: 2, name: tool.name, item: canonicalUrl }
+				]
+			}
+		]
+	};
 </script>
 
-<svelte:head>
-	<title>Image Helper | Dev Toolbox</title>
-</svelte:head>
+<Seo
+	title={tool.seoTitle}
+	description={tool.seoDescription}
+	{canonicalUrl}
+	keywords={tool.keywords.join(', ')}
+	jsonLd={toolJsonLd}
+/>
+
+<section class="panel space-y-3 p-5">
+	<h2 class="text-lg font-semibold">About this tool</h2>
+	<p class="text-sm text-(--color-muted)">{tool.description}</p>
+	<dl class="grid gap-3 text-sm sm:grid-cols-2">
+		<div>
+			<dt class="font-medium">Input</dt>
+			<dd class="text-(--color-muted)">{tool.inputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Output</dt>
+			<dd class="text-(--color-muted)">{tool.outputDescription}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Use cases</dt>
+			<dd class="text-(--color-muted)">{tool.useCases.join(' ')}</dd>
+		</div>
+		<div>
+			<dt class="font-medium">Privacy</dt>
+			<dd class="text-(--color-muted)">{tool.privacyDescription}</dd>
+		</div>
+	</dl>
+</section>
 
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
@@ -190,7 +250,7 @@
 					<div class="panel panel-muted p-4">
 						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Preview</p>
 						{#if imageSrc}
-							<div class="mt-3 overflow-hidden rounded-lg border border-(var(--color-border)]  ">
+							<div class="border-(var(--color-border)] mt-3 overflow-hidden rounded-lg border">
 								<img
 									bind:this={imageElement}
 									on:load={handleImageLoad}
@@ -208,11 +268,9 @@
 					</div>
 
 					<div class="panel panel-muted p-4">
-						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">
-							Output Preview
-						</p>
+						<p class="text-xs tracking-[0.28em] text-(--color-muted) uppercase">Output Preview</p>
 						{#if outputUrl}
-							<div class="mt-3 overflow-hidden rounded-lg border border-(var(--color-border)]  ">
+							<div class="border-(var(--color-border)] mt-3 overflow-hidden rounded-lg border">
 								<img
 									src={outputUrl}
 									alt="Processed output"
@@ -316,9 +374,7 @@
 								<input type="number" min="1" class="search-input" bind:value={cropHeight} />
 							</label>
 						</div>
-						<p class="text-xs text-(--color-muted)">
-							Crop uses the original image coordinates.
-						</p>
+						<p class="text-xs text-(--color-muted)">Crop uses the original image coordinates.</p>
 					</div>
 
 					{#if errorMessage}
@@ -329,9 +385,7 @@
 						{#if outputUrl}
 							<a class="action-button" href={outputUrl} download={`image-${format}`}> Download </a>
 						{/if}
-						<span class="text-xs text-(--color-muted)">
-							Processing stays in your browser.
-						</span>
+						<span class="text-xs text-(--color-muted)"> Processing stays in your browser. </span>
 					</div>
 				</div>
 			</div>

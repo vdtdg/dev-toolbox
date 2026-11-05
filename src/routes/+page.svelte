@@ -41,7 +41,7 @@
 
 	const canonicalBaseUrl = 'https://dtdg.fr/dev-toolbox';
 	const pageDescription =
-		'Offline-first developer toolbox with client-side encoders, hashers, formatters, time tools, network helpers, image tools, and utilities.';
+		'Offline-first developer toolbox with client-side encoders, hashers, formatters, time tools, network helpers, image tools, and utilities. No tracking, ads, or cookies.';
 	const basePath = base || '';
 	let query = '';
 	let activeCategory = 'all';
@@ -158,6 +158,7 @@
 	title="Dev Toolbox"
 	description={pageDescription}
 	canonicalUrl={`${canonicalBaseUrl}/`}
+	keywords="offline developer tools, browser utilities, JSON formatter, Base64 encoder, hash generator, time converter"
 	jsonLd={homepageJsonLd}
 />
 

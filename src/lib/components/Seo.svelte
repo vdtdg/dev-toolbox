@@ -6,18 +6,23 @@
 		title,
 		description,
 		canonicalUrl,
+		keywords = '',
 		type = 'website',
 		image = defaultImage,
 		jsonLd = null
 	} = $props();
 
-	let fullTitle = $derived(title?.includes(siteName) ? title : `${title} - ${siteName}`);
+	let fullTitle = $derived(title?.includes(siteName) ? title : `${title} | ${siteName}`);
 	let jsonLdString = $derived(jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : '');
+	const jsonLdTag = 'script';
 </script>
 
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
+	{#if keywords}
+		<meta name="keywords" content={keywords} />
+	{/if}
 	<link rel="canonical" href={canonicalUrl} />
 
 	<meta property="og:site_name" content={siteName} />
@@ -33,6 +38,7 @@
 	<meta name="twitter:image" content={image} />
 
 	{#if jsonLdString}
-		{@html `<script type="application/ld+json">${jsonLdString}</script>`}
+		<svelte:element this={jsonLdTag} type="application/ld+json">{@html jsonLdString}</svelte:element
+		>
 	{/if}
 </svelte:head>
