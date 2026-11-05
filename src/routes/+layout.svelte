@@ -7,6 +7,7 @@
 </script>
 
 <svelte:head>
+	<title>Dev Toolbox</title>
 	<link rel="apple-touch-icon" sizes="180x180" href={`${assetBase}/apple-touch-icon.png`} />
 	<link rel="icon" type="image/png" sizes="32x32" href={`${assetBase}/favicon-32x32.png`} />
 	<link rel="icon" type="image/png" sizes="16x16" href={`${assetBase}/favicon-16x16.png`} />

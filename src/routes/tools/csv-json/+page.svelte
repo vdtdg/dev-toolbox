@@ -94,6 +94,10 @@
 	$: (inputValue, mode, delimiter, transform());
 </script>
 
+<svelte:head>
+	<title>CSV ↔ JSON Converter | Dev Toolbox</title>
+</svelte:head>
+
 <div class="min-h-screen">
 	<div class="mx-auto flex max-w-300 flex-col gap-6 px-6 py-8">
 		<header class="space-y-2">
